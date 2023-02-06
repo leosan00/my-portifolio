@@ -3,7 +3,10 @@
 @tailwind utilities;
 
 body{
-    background-color: #9CBDE7;
+    /* background-color: #9CBDE7; */
+     @apply bg-blue-200 dark:bg-blue-900;
+    transition: background-color 0.4s ease-in-out, color 0.4s ease-in-out;
+    @apply text-black dark:text-white;
 }
 
 .top-menu {
@@ -11,10 +14,11 @@ body{
     padding: 1rem;
     display: flex;
     justify-content: space-between;
+    
   }
 
   a  {
-    color: black;
+    @apply text-black dark:text-white;
     text-decoration: none;
     margin-right: 1rem;
   }
