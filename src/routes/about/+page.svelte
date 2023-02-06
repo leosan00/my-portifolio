@@ -1,6 +1,8 @@
 <script>
     import CardAbout from "$lib/components/cardAbout.svelte";
 	import DarkMode from "$lib/components/darkMode.svelte";
+	import ExternalLinkCard from "$lib/components/externalLinkCard.svelte";
+
 </script>
 	<style lang="postcss">
 		.grid-content {
@@ -30,25 +32,25 @@
 
 <div class="main-grid">
 	<div class="grid-content">
-		<div class="col-span-2 bg-white/[0.8] dark:bg-zinc-800/90 card  drop-shadow-[0_10px_8px_rgba(0,0,0,0.25)] dark:drop-shadow-[0_10px_8px_rgba(0,0,0,0.25)]drop-shadow-[0_10px_8px_rgba(0,0,0,0.25)] dark:drop-shadow-[0_10px_8px_rgba(0,0,0,0.25)]" >
+		<div class="col-span-2 bg-white/[0.8] dark:bg-zinc-800/90 card  drop-shadow-[0_10px_8px_rgba(0,0,0,0.25)]" >
 		<CardAbout/>
         </div>
-		<div class=" bg-white/[0.8] dark:bg-zinc-800/90 card drop-shadow-[0_10px_8px_rgba(0,0,0,0.25)] dark:drop-shadow-[0_10px_8px_rgba(0,0,0,0.25)]">
+		<div class=" bg-white/[0.8] dark:bg-zinc-800/90 card drop-shadow-[0_10px_8px_rgba(0,0,0,0.25)] ">
 			<DarkMode/>
 		</div>
-		<div class="row-span-3  bg-white/[0.8] dark:bg-zinc-800/90 card drop-shadow-[0_10px_8px_rgba(0,0,0,0.25)] dark:drop-shadow-[0_10px_8px_rgba(0,0,0,0.25)]">
+		<div class="row-span-3  bg-white/[0.8] dark:bg-zinc-800/90 card drop-shadow-[0_10px_8px_rgba(0,0,0,0.25)] ">
 			<div>Projetos</div>
 		</div>
-		<div class="card  bg-white/[0.8] dark:bg-zinc-800/90 drop-shadow-[0_10px_8px_rgba(0,0,0,0.25)] dark:drop-shadow-[0_10px_8px_rgba(0,0,0,0.25)]">
-			<div>Linkedin</div>
+		<div class="card bg-white/[0.8] dark:bg-zinc-800/90 drop-shadow-[0_10px_8px_rgba(0,0,0,0.25)] ">
+			<ExternalLinkCard imageSrc = '/images/linkedin.png' hoveredSubtitle = 'Linkedin' link= 'https://www.linkedin.com/in/leonardo-sanger-297ab713a/'/>
 		</div>
-		<div class="card  bg-white/[0.8] dark:bg-zinc-800/90 drop-shadow-[0_10px_8px_rgba(0,0,0,0.25)] dark:drop-shadow-[0_10px_8px_rgba(0,0,0,0.25)]">
-			<div>Git hub</div>
+		<div class="card  bg-white/[0.8] dark:bg-zinc-800/90 drop-shadow-[0_10px_8px_rgba(0,0,0,0.25)] ">
+			<ExternalLinkCard imageSrc = '/images/github.png' hoveredSubtitle = 'GitHub' link='https://github.com/leosan00/my-portifolio' />
 		</div>
-		<div class="row-span-2 card  bg-white/[0.8] dark:bg-zinc-800/90 drop-shadow-[0_10px_8px_rgba(0,0,0,0.25)] dark:drop-shadow-[0_10px_8px_rgba(0,0,0,0.25)]">
+		<div class="row-span-2 card  bg-white/[0.8] dark:bg-zinc-800/90 drop-shadow-[0_10px_8px_rgba(0,0,0,0.25)] ">
 			<div>Sobre</div>
 		</div>
-		<div class=" col-span-2 card  bg-white/[0.8] dark:bg-zinc-800/90 drop-shadow-[0_10px_8px_rgba(0,0,0,0.25)] dark:drop-shadow-[0_10px_8px_rgba(0,0,0,0.25)]">
+		<div class=" col-span-2 card  bg-white/[0.8] dark:bg-zinc-800/90 drop-shadow-[0_10px_8px_rgba(0,0,0,0.25)] ">
 			<div>Ferramentas</div>
 		</div>
 	</div>
