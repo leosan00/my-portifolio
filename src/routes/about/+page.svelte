@@ -2,6 +2,7 @@
     import CardAbout from "$lib/components/cardAbout.svelte";
 	import DarkMode from "$lib/components/darkMode.svelte";
 	import ExternalLinkCard from "$lib/components/externalLinkCard.svelte";
+    import { fade } from "svelte/transition";
 
 </script>
 	<style lang="postcss">
@@ -28,29 +29,44 @@
 			padding: 40px 15px 80px 15px;
 		}
 
+		@media (max-width: 850px) {
+			.grid-content {
+				grid-template-columns: auto;
+				grid-template-rows: repeat(6, 280px);
+				gap: 1.5rem;
+			}
+		}
+
+		@media (max-width: 650px){
+			.grid-content {
+				grid-template-rows: auto;
+				gap: 1.5rem;
+			}
+		}
+
 	</style>
 
 <div class="main-grid">
-	<div class="grid-content">
-		<div class="col-span-2 bg-white/[0.8] dark:bg-zinc-800/90 card  drop-shadow-[0_10px_8px_rgba(0,0,0,0.25)]" >
+	<div class="grid-content" in:fade>
+		<div class="col-span-2 bg-white/[0.8] dark:bg-zinc-800/90 dark:border-2 dark:border-[#666666] dark:shadow-[0_0_0_2px_inset_rgb(48 54 61)] card  drop-shadow-[0_10px_8px_rgba(0,0,0,0.25)]" >
 		<CardAbout/>
         </div>
-		<div class=" bg-white/[0.8] dark:bg-zinc-800/90 card drop-shadow-[0_10px_8px_rgba(0,0,0,0.25)] ">
+		<div class=" bg-white/[0.8] dark:bg-zinc-800/90 dark:border-2 dark:border-[#666666] dark:shadow-[0_0_0_2px_inset_rgb(48 54 61)] card drop-shadow-[0_10px_8px_rgba(0,0,0,0.25)] ">
 			<DarkMode/>
 		</div>
-		<div class="row-span-3  bg-white/[0.8] dark:bg-zinc-800/90 card drop-shadow-[0_10px_8px_rgba(0,0,0,0.25)] ">
+		<div class="row-span-3  bg-white/[0.8] dark:bg-zinc-800/90 dark:border-2 dark:border-[#666666] dark:shadow-[0_0_0_2px_inset_rgb(48 54 61)] card drop-shadow-[0_10px_8px_rgba(0,0,0,0.25)] ">
 			<div>Projetos</div>
 		</div>
-		<div class="card bg-white/[0.8] dark:bg-zinc-800/90 drop-shadow-[0_10px_8px_rgba(0,0,0,0.25)] ">
-			<ExternalLinkCard imageSrc = '/images/linkedin.png' hoveredSubtitle = 'Linkedin' link= 'https://www.linkedin.com/in/leonardo-sanger-297ab713a/'/>
+		<div class="card bg-sky-600 dark:border-2 dark:border-sky-500/80 dark:shadow-[0_0_0_6px_inset_rgb(12 74 110)] drop-shadow-[0_10px_8px_rgba(0,0,0,0.25)] ">
+			<ExternalLinkCard imageSrc = 'Linkedin' hoveredSubtitle = 'Linkedin' link= 'https://www.linkedin.com/in/leonardo-sanger-297ab713a/'/>
 		</div>
-		<div class="card  bg-white/[0.8] dark:bg-zinc-800/90 drop-shadow-[0_10px_8px_rgba(0,0,0,0.25)] ">
-			<ExternalLinkCard imageSrc = '/images/github.png' hoveredSubtitle = 'GitHub' link='https://github.com/leosan00/my-portifolio' />
+		<div class="card bg-zinc-900/90 dark:border-2 dark:border-zinc-600 dark:shadow-[0_0_0_6px_inset_rgb(68 64 60)] drop-shadow-[0_10px_8px_rgba(0,0,0,0.25)] ">
+			<ExternalLinkCard imageSrc = 'GitHub' hoveredSubtitle = 'GitHub' link='https://github.com/leosan00/my-portifolio' />
 		</div>
-		<div class="row-span-2 card  bg-white/[0.8] dark:bg-zinc-800/90 drop-shadow-[0_10px_8px_rgba(0,0,0,0.25)] ">
+		<div class="row-span-2 card  bg-white/[0.8] dark:bg-zinc-800/90 dark:border-2 dark:border-[#666666] dark:shadow-[0_0_0_2px_inset_rgb(48 54 61)] drop-shadow-[0_10px_8px_rgba(0,0,0,0.25)] ">
 			<div>Sobre</div>
 		</div>
-		<div class=" col-span-2 card  bg-white/[0.8] dark:bg-zinc-800/90 drop-shadow-[0_10px_8px_rgba(0,0,0,0.25)] ">
+		<div class=" col-span-2 card  bg-white/[0.8] dark:bg-zinc-800/90 dark:border-2 dark:border-[#666666] dark:shadow-[0_0_0_2px_inset_rgb(48 54 61)] drop-shadow-[0_10px_8px_rgba(0,0,0,0.25)] ">
 			<div>Ferramentas</div>
 		</div>
 	</div>
