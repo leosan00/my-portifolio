@@ -1,72 +1,73 @@
-<style lang="postcss">
+<script>
+  import DarkMode from "$lib/components/darkMode.svelte";
+  import ExternalLinkCard from "$lib/components/externalLinkCard.svelte";
+  import CardAbout from "$lib/components/cardAbout.svelte";
+  import ProjectCard from "$lib/components/projectCard.svelte";
+  import { fade } from "svelte/transition";
 
-    /* body {
-        background: linear-gradient(45deg, #eee 25%, transparent 25%) 0 0,
-          linear-gradient(-45deg, #eee 25%, transparent 25%) 0 0,
-          linear-gradient(45deg, transparent 75%, #eee 75%) 0 0,
-          linear-gradient(-45deg, transparent 75%, #eee 75%) 0 0;
-        background-size: 40px 40px;
-        animation: move 4s linear infinite;
-      } */
-    
-      @keyframes move {
-        from {
-          background-position: 0 0;
-        }
-        to {
-          background-position: 40px 40px;
-        }
-      }
-    
-        main {
-          max-width: 800px;
-          margin: 2rem auto;
-          text-align: center;
-        }
-      
-        h1 {
-          font-size: 2rem;
-          margin-bottom: 2rem;
-        }
-      
-        .project {
-          margin-bottom: 2rem;
-        }
-      
-        .project img {
-          width: 100%;
-        }
-      
-        .project h2 {
-          font-size: 1.5rem;
-          margin-top: 1rem;
-        }
-      
-        .project p {
-          font-size: 1.25rem;
-          margin-top: 0.5rem;
-        }
-      </style>
-      
-     <main>
-            <h1>My Portfolio</h1>
-          
-            <div class="project">
-              <img src="project1.jpg" alt="Project 1">
-              <h2>Project 1</h2>
-              <p>A brief description of project 1</p>
-            </div>
-          
-            <div class="project">
-              <img src="project2.jpg" alt="Project 2">
-              <h2>Project 2</h2>
-              <p>A brief description of project 2</p>
-            </div>
-          
-            <div class="project">
-              <img src="project3.jpg" alt="Project 3">
-              <h2>Project 3</h2>
-              <p>A brief description of project 3</p>
-            </div>
-          </main>
-        
+</script>
+<style lang="postcss">
+  .grid-content {
+    max-width: 1200px;
+    margin: 0 auto;
+    display: grid;
+    grid-template-columns: repeat(4, minmax(0, 1fr));
+    grid-template-rows: 280px 280px;
+    gap: 1rem;
+  }
+  .card {
+    width: 100%;
+    height: 100%;
+    border-radius: 40px;
+          overflow: hidden;
+    transition: all .2s ease-in-out;
+  }
+  .card:hover { 
+    transform: scale(1.05); 
+  }
+  .main-grid {
+    width: 100%;
+    padding: 40px 15px 80px 15px;
+  }
+
+  @media (max-width: 850px) {
+    .grid-content {
+      grid-template-columns: auto;
+      grid-template-rows: repeat(6, 280px);
+      gap: 1.5rem;
+    }
+  }
+
+  @media (max-width: 650px){
+    .grid-content {
+      grid-template-rows: auto;
+      gap: 1.5rem;
+    }
+  }
+</style>
+
+<div class="main-grid">
+  <div class="grid-content" in:fade>
+    <div class="col-span-2 bg-white/[0.8] dark:bg-zinc-800/90 dark:border-2 dark:border-[#666666] dark:shadow-[0_0_0_2px_inset_rgb(48 54 61)] card  drop-shadow-[0_10px_8px_rgba(0,0,0,0.25)]" >
+      <CardAbout/>
+    </div>
+    <div class=" bg-white/[0.8] dark:bg-zinc-800/90 dark:border-2 dark:border-[#666666] dark:shadow-[0_0_0_2px_inset_rgb(48 54 61)] card drop-shadow-[0_10px_8px_rgba(0,0,0,0.25)] ">
+      <DarkMode/>
+    </div>
+    <div class="row-span-3  bg-white/[0.8] dark:bg-zinc-800/90 dark:border-2 dark:border-[#666666] dark:shadow-[0_0_0_2px_inset_rgb(48 54 61)] card drop-shadow-[0_10px_8px_rgba(0,0,0,0.25)] ">
+      <ProjectCard/>
+    </div>
+    <div class="card bg-sky-600 dark:border-2 dark:border-sky-500/80 dark:shadow-[0_0_0_6px_inset_rgb(12 74 110)] drop-shadow-[0_10px_8px_rgba(0,0,0,0.25)] ">
+      <ExternalLinkCard imageSrc = 'Linkedin' hoveredSubtitle = 'Linkedin' link= 'https://www.linkedin.com/in/leonardo-sanger-297ab713a/'/>
+    </div>
+    <div class="card bg-zinc-900/90 dark:border-2 dark:border-zinc-600 dark:shadow-[0_0_0_6px_inset_rgb(68 64 60)] drop-shadow-[0_10px_8px_rgba(0,0,0,0.25)] ">
+      <ExternalLinkCard imageSrc = 'GitHub' hoveredSubtitle = 'GitHub' link='https://github.com/leosan00/my-portifolio' />
+    </div>
+    <div class="row-span-2 card  bg-white/[0.8] dark:bg-zinc-800/90 dark:border-2 dark:border-[#666666] dark:shadow-[0_0_0_2px_inset_rgb(48 54 61)] drop-shadow-[0_10px_8px_rgba(0,0,0,0.25)] ">
+      <div>Sobre</div>
+    </div>
+    <div class=" col-span-2 card  bg-white/[0.8] dark:bg-zinc-800/90 dark:border-2 dark:border-[#666666] dark:shadow-[0_0_0_2px_inset_rgb(48 54 61)] drop-shadow-[0_10px_8px_rgba(0,0,0,0.25)] ">
+      <div>Ferramentas</div>
+    </div>
+  </div>
+</div>
