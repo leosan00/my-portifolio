@@ -100,7 +100,7 @@
     }
 
 
-    :global(.card:hover .test-position-left, .content-projects:hover .test-position-right){
+    :global(.card:hover .test-position-left, .card:hover .test-position-right){
       opacity: 1;
       transform: translateX(0%) translateY(0%);
       width:  19rem;

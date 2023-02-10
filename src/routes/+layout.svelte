@@ -18,6 +18,7 @@
       <div>
           <a href="/">home</a>
           <a href="/projects">projects</a>
+          <a href="/experience">experience</a>
       </div>
   </div>
   

@@ -44,6 +44,11 @@
     font-size: 1.25rem;
     font-weight: 700;
   }
+  .content-location{
+    display: flex;
+    justify-content: space-between;
+
+  }
   .location-title{
     font-size: 1.05rem;
     font-weight: 600;
@@ -68,7 +73,7 @@
       </div>
       <div class="pl-10">
         <h2 class="sub-title">Startup One FIAP</h2>
-        <div class="flex">
+        <div class="content-location">
           <h3 class="location-title">FIAP</h3>
           <h3 class="location-title">Jan/20 a Dez/20</h3>
         </div>
@@ -81,7 +86,7 @@
       </div>
       <div class="pl-10">
         <h2 class="sub-title">Challenge FIAP</h2>
-        <div class="flex">
+        <div class="content-location">
           <h3 class="location-title">FIAP</h3>
           <h3 class="location-title">Jun/18 a Dez/18</h3>
         </div>
@@ -96,7 +101,7 @@
       </div>
       <div class="pl-10">
         <h2 class="sub-title">Hackathon HCFMUSP (InovaHC – Hospital das clínicas)</h2>
-        <div class="flex">
+        <div class="content-location">
           <h3 class="location-title">Hospital das clínicas</h3>
           <h3 class="location-title">Set/2018</h3>
         </div>
@@ -112,7 +117,7 @@
       </div>
       <div class="pl-10">
         <h2 class="sub-title">Startup in School</h2>
-        <div class="flex">
+        <div class="content-location">
           <h3 class="location-title">ETEC São Paulo</h3>
           <h3 class="location-title">Out/2016</h3>
         </div>
