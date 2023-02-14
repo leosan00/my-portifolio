@@ -34,7 +34,7 @@
   @media (max-width: 850px) {
     .grid-content {
       grid-template-columns: auto;
-      grid-template-rows: repeat(6, 280px);
+      grid-template-rows: repeat(4, 280px);
       gap: 1.5rem;
     }
   }

@@ -1,3 +1,273 @@
-<div>
-	About
-</div>
+<script>
+    import { element } from "svelte/internal";
+
+
+    import { fade } from "svelte/transition";
+
+    let pkg = [
+      {
+      name: 'Visual Studio',
+      imageSrc: '/images/vsLogo.svg',
+      type: 'Ferramentas'
+      },
+      {
+      name: 'Visual Studio Code',
+      imageSrc: '/images/vsCodeLogo.png',
+      type: 'Ferramentas'
+      },
+      {
+      name: 'Sql server management',
+      imageSrc: '/images/sql-server.png',
+      type: 'Ferramentas'
+      },
+      {
+      name: 'Firebase',
+      imageSrc: '/images/firebaseLogo.png',
+      type: 'Ferramentas'
+      },
+      {
+      name: 'Oracle sql Developer',
+      imageSrc: '/images/OracleSqlLogo.png',
+      type: 'Ferramentas'
+      },
+      {
+      name: 'Postman',
+      imageSrc: '/images/postmanLogo.svg',
+      type: 'Ferramentas'
+      },
+      {
+      name: 'Android Studio',
+      imageSrc: '/images/androidStudioLogo.png',
+      type: 'Ferramentas'
+      },
+      {
+      name: 'Flutter',
+      imageSrc: '/images/flutterLogo.png',
+    
+      type:'Framework'
+      },
+      {
+      name: 'Dart',
+      imageSrc: '/images/dartLogo.png',
+      type: 'Linguagens de programação'
+      },
+      {
+      name: 'C#',
+      imageSrc: '/images/c-sharp.png',
+      type: 'Linguagens de programação'
+      },
+      {
+      name: 'JavaScript',
+      imageSrc: '/images/jsLogo.png',
+      type: 'Linguagens de programação'
+      },
+      {
+      name: 'Jquery',
+      imageSrc: '/images/jqueryLogo.png',
+    
+      type:'Framework'
+      },
+      {
+      name: 'HTML',
+      imageSrc: '/images/HTML5Logo.png',
+      type: 'Linguagens de programação'
+      },
+      {
+      name: 'CSS',
+      imageSrc: '/images/css-3.png',
+      type: 'Linguagens de programação'
+      },
+      {
+      name: 'Svelte',
+      imageSrc: '/images/svelteLogo.png',
+    
+      type: 'Framework'
+      },
+      {
+      name: 'Notion',
+      imageSrc: '/images/notionLogo.png',
+      type: 'Ferramentas'
+      },
+      {
+      name: 'Quabro Kanban',
+      imageSrc: '/images/table.png',
+      type: 'Ferramentas'
+      },
+      ];
+
+       var listOfTypes = pkg.map(x => x.type).
+      filter(function(elem, index, self) {
+    return self.indexOf(elem) == index;});
+
+
+    var sortedList = pkg.sort(function(a, b) {
+  const nameA = a.type.toUpperCase(); // ignore upper and lowercase
+  const nameB = b.type.toUpperCase(); // ignore upper and lowercase
+  if (nameA > nameB) {
+    return -1;
+  }
+  if (nameA < nameB) {
+    return 1;
+  }
+
+  // names must be equal
+  return 0;
+});
+
+
+</script>
+<style lang="postcss">
+
+.main-page{
+    padding: 40px 0px 80px 0px;
+    max-width: 1200px;
+    margin-left: auto;
+    margin-right: auto;
+  }
+  .project {
+    margin-top: 2rem;
+    margin-bottom: 2rem;
+    display: flex;
+    padding: 8px 8px 8px 8px;
+  }
+      
+
+  .content-projects{
+    border-radius: 40px;
+    width: 75%;
+    height: 100%;
+    margin-left: auto;
+    margin-right: auto;
+    padding-left: 2.5rem;
+    padding-right: 2.5rem;
+    padding-top: 2.75rem;
+    padding-bottom: 2.75rem;
+  }
+  .grid-content{
+    max-width: 1200px;
+    margin: 0 auto;
+    display: grid;
+    grid-template-columns: repeat(4, minmax(0, 1fr));
+    gap: 1rem;
+    padding: 4px 4px 4px 4px;
+  }
+  .title{
+    margin-bottom: 16px;
+    font-size: 2rem;
+    line-height: 32px;
+    font-weight: 400;
+  }
+  .teste-img{
+    width: 65px;
+    height: 100%;
+  }
+  .img-div{
+    width: 65px;
+    height: 100%;
+    object-fit: cover;
+  }
+  .sub-title {
+    font-size: 1.25rem;
+    font-weight: 700;
+  }
+  .content-location{
+    display: flex;
+    justify-content: space-between;
+
+  }
+  .location-title{
+    font-size: 1.05rem;
+    font-weight: 600;
+  }
+  .content-tools {
+    display: flex;
+    width: 100%;
+    height: 120px;
+    padding: 20px 20px 20px 20px;
+    border-radius: 18px;
+    align-items: center;
+  }
+
+  @media (max-width: 850px) {
+    .grid-content {
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+      grid-template-rows: auto;
+      gap: 1.5rem;
+    }
+  }
+
+  @media (max-width: 650px){
+    .grid-content {
+      grid-template-columns: repeat(1, minmax(0, 1fr));
+      grid-template-rows: auto;
+      gap: 1.5rem;
+    }
+  }
+</style>
+
+<div class="container main-page" in:fade>
+  <div class="content-projects bg-white/[0.8] dark:bg-zinc-800/90 dark:border-2 dark:border-[#666666] dark:shadow-[0_0_0_2px_inset_rgb(48 54 61)] drop-shadow-[0_10px_8px_rgba(0,0,0,0.25)] ">
+    <h1 class="title">Formação</h1>
+    <div class="project">
+      <div class="img-div">
+        <img src="/images/logoFiap.png" class="rounded-xl" alt="Project 1">
+      </div>
+      <div class="pl-10">
+        <h2 class="sub-title">Sistemas de Informação</h2>
+        <div class="content-location">
+          <h3 class="location-title">FIAP</h3>
+          <h3 class="location-title">Jan/17 a Dez/20</h3>
+        </div>
+      </div>
+    </div>
+    <div class="project">
+      <div class="img-div">
+        <img src="/images/logoAtento.jpg" class="rounded-xl" alt="Project 1">
+      </div>
+      <div class="pl-10">
+        <h2 class="sub-title">Técnico em Eletrônica integrado com o Ensino Médio</h2>
+        <div class="content-location">
+          <h3 class="location-title">ETEC São Paulo (ETESP)</h3>
+          <h3 class="location-title">Jan/14 a Dez/16</h3>
+        </div>
+      </div>
+    </div>
+    <h1 class="title">Idiomas</h1>
+    <div>
+      <img src="/images/united-states.png" class="w-36 rounded-xl" alt="Project 1">
+    </div>
+  </div>
+  <!-- <h1 class="title">Ferramentas e linguagens de programação</h1> -->
+    <!-- <h1 class="title">Conhecimentos</h1>
+	<p class="pl-4 pb-10">
+		Domínio do Pacote Office – Word, Power Point e Excel <br>
+		Conhecimento das linguagens de desenvolvimento C#, HTML, CSS, JavaScript <br>
+		Requisições AJAX (Json) <br>
+		Conhecimento em frameworks Bootstrap, Jquery, Jquery UI<br>
+		Conhecimento em Oracle SQL, SQL Server e banco não relacional (Firebase)
+	</p> -->
+  <div>
+    {#each listOfTypes as type}
+    <div class="mb-24 mt-12 container mx-auto">
+      <h1 class="title">{type}</h1>
+      <div class="grid-content">
+      {#each sortedList as item}
+      {#if item.type == type}
+        <div class="content-tools bg-white/[0.8] dark:bg-zinc-800/90 dark:border-2 dark:border-[#666666] dark:shadow-[0_0_0_2px_inset_rgb(48 54 61)] drop-shadow-[0_10px_8px_rgba(0,0,0,0.25)]">
+          <div>
+            <img src={item.imageSrc} class="teste-img" alt="Project 1">
+          </div>
+          <div class="pl-10">
+            <h2 class="sub-title">{item.name}</h2>
+            <!-- <div class="content-location">
+              <h3 class="location-title">{item.type}</h3>
+            </div> -->
+          </div>
+        </div>
+        {/if}
+        {/each}
+      </div> 
+    </div>
+    {/each}
+  </div>
+  </div>
