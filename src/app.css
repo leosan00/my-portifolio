@@ -7,18 +7,107 @@ body{
      @apply bg-blue-200 dark:bg-blue-900;
     transition: background-color 0.4s ease-in-out, color 0.4s ease-in-out;
     @apply text-black dark:text-white;
+    font-family: 'Nunito';
+    letter-spacing: 0.8px;
 }
 
+
 .top-menu {
-    background-color: rgba(255, 255, 255, 0.2);
     padding: 1rem;
     display: flex;
     justify-content: space-between;
+    align-items: center;
     
+  }
+
+  @media (max-width: 640px) {
+    .top-menu {
+      padding: 1rem;
+      align-items: center;
+      
+    }
   }
 
   a  {
     @apply text-black dark:text-white;
     text-decoration: none;
-    margin-right: 1rem;
   }
+
+  .nickname-title-word{
+    font-family: "Nunito";
+    font-weight: 700;
+    font-size: 2.8rem;
+    letter-spacing: .1rem;
+  }
+
+  hr{
+    border: 2px solid #1E40D6;
+    border-radius: 80px;
+    width: 50%;
+    margin-top: 2px;
+    transition: all .2s ease-in-out;
+    will-change: auto;
+  }
+
+  .nav-item:hover hr{
+    border: 2px solid #5E78E8;
+    transform: scale(1.2);
+  }
+  .nav-item:hover .selected{
+    border: 2px solid #4e598d;
+  }
+  .nav-item-side:hover hr{
+    border: 2px solid #5E78E8;
+    transform: scale(1.2);
+  }
+  .nav-item-side:hover .selected{
+    border: 2px solid #4e598d;
+  }
+  .selected{
+    border: 2px solid #101F6A;
+  }
+
+  .nav-item{
+    width: fit-content;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    padding: 0px 10px 0px 16px;
+    white-space: nowrap;
+    cursor: pointer;
+    letter-spacing: .05rem;
+  }
+
+  .font-style-nav{
+    font-weight: 600;
+  }
+  .postion-nav{
+    display: flex;
+  }
+
+  .nav-item-side{
+    width: fit-content;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 8px 0px 20px 0px;
+    white-space: nowrap;
+    cursor: pointer;
+    letter-spacing: .05rem;
+  }
+
+  .postion-nav{
+    display: flex;
+  }
+
+
+  .dark-btn{
+    width: 82px;
+    height: 40px;
+    margin-left: 16px;
+}
+.content-nav{
+  width: 30px;
+}

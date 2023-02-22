@@ -1,10 +1,17 @@
 <script>
   import DarkMode from "$lib/components/darkMode.svelte";
   import ExternalLinkCard from "$lib/components/externalLinkCard.svelte";
-  import CardAbout from "$lib/components/cardAbout.svelte";
+  import CardAbout from "$lib/components/aboutCard.svelte";
   import ProjectCard from "$lib/components/projectCard.svelte";
   import { fade } from "svelte/transition";
+  import {onMount} from "svelte"
   import ExperienceCard from "$lib/components/experienceCard.svelte";
+
+  let mounted = false;
+
+    onMount(() => {
+	    mounted = true;
+    });
 
 </script>
 <style lang="postcss">
@@ -19,8 +26,11 @@
   .card {
     width: 100%;
     height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
     border-radius: 40px;
-          overflow: hidden;
+    overflow: hidden;
     transition: all .2s ease-in-out;
   }
   .card:hover { 
@@ -31,6 +41,14 @@
     padding: 40px 15px 80px 15px;
   }
 
+  .darkMode-content{
+        width: 100px;
+        height: 52px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+
   @media (max-width: 850px) {
     .grid-content {
       grid-template-columns: auto;
@@ -39,21 +57,18 @@
     }
   }
 
-  @media (max-width: 650px){
-    .grid-content {
-      grid-template-rows: auto;
-      gap: 1.5rem;
-    }
-  }
 </style>
 
 <div class="main-grid">
+  {#if mounted}
   <div class="grid-content" in:fade>
     <div class="col-span-2 bg-white/[0.8] dark:bg-zinc-800/90 dark:border-2 dark:border-[#666666] dark:shadow-[0_0_0_2px_inset_rgb(48 54 61)] card  drop-shadow-[0_10px_8px_rgba(0,0,0,0.25)]" >
       <CardAbout/>
     </div>
     <div class=" bg-white/[0.8] dark:bg-zinc-800/90 dark:border-2 dark:border-[#666666] dark:shadow-[0_0_0_2px_inset_rgb(48 54 61)] card drop-shadow-[0_10px_8px_rgba(0,0,0,0.25)] ">
-      <DarkMode/>
+      <div class="darkMode-content">
+        <DarkMode/>
+      </div>
     </div>
     <div class="row-span-2  bg-white/[0.8] dark:bg-zinc-800/90 dark:border-2 dark:border-[#666666] dark:shadow-[0_0_0_2px_inset_rgb(48 54 61)] card drop-shadow-[0_10px_8px_rgba(0,0,0,0.25)] ">
       <ProjectCard/>
@@ -67,8 +82,6 @@
     <div class="card  bg-white/[0.8] dark:bg-zinc-800/90 dark:border-2 dark:border-[#666666] dark:shadow-[0_0_0_2px_inset_rgb(48 54 61)] drop-shadow-[0_10px_8px_rgba(0,0,0,0.25)] ">
       <ExperienceCard/>
     </div>
-    <!-- <div class=" col-span-2 card  bg-white/[0.8] dark:bg-zinc-800/90 dark:border-2 dark:border-[#666666] dark:shadow-[0_0_0_2px_inset_rgb(48 54 61)] drop-shadow-[0_10px_8px_rgba(0,0,0,0.25)] ">
-      <div>Ferramentas</div>
-    </div> -->
   </div>
+  {/if}
 </div>

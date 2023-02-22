@@ -32,13 +32,16 @@
   }
   .title{
     margin-bottom: 16px;
-    font-size: 2rem;
+    font-size: 2.2rem;
     line-height: 32px;
-    font-weight: 400;
+    font-weight: 700;
+    letter-spacing: 0.1rem;
   }
   .img-div{
     width: 75px;
     height: 75px;
+    min-width: 75px;
+    min-height: 75px;
   }
   .sub-title {
     font-size: 1.25rem;
@@ -57,10 +60,6 @@
     font-size: 1.15rem;
     margin-top: 0.5rem;
   }
-  p{
-    word-wrap: break-word;
-    width: 650px;
-  }    
 
 </style>
 

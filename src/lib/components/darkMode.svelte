@@ -1,29 +1,30 @@
-<style>
-    .darkMode-content{
-        width: 100%;
-        min-height: 200px;
-        height: 100%;
-        display: flex;
-        align-items: center;
-        justify-content: center;
-    }
+<style lang="postcss">
+
+:root {
+    --width-switch-back: 100%;
+    --width-btn: 42%;
+    --switch-left: 10%;
+}
 
     .switch-background-dark,.switch-background-light{
-        --widthSwitchBack: 100px;
-        width: 100px;
-        height: 52px;
+        width: var(--width-switch-back);
+        height: 100%;
         border-radius: 50px;
         cursor: pointer;
         transition-duration: 1.2s;
         filter: drop-shadow(0 8px 6px rgb(0 0 0 / 0.1)) drop-shadow(0 3px 2px rgb(0 0 0 / 0.1));
     }
     .switch-background-dark{
+        position: relative;
+        display: inline-block;
         background-color: rgb(63, 63, 63);
         border: solid 2px #666666;
 		box-shadow: rgb(48 54 61) 0px 0px 0px 2px inset;
     }
 
     .switch-background-light{
+        position: relative;
+        display: inline-block;
         background-color: rgb(201, 201, 201);
         border: solid 2px transparent;
         box-shadow: transparent 0px 0px 0px 2px inset;
@@ -32,87 +33,37 @@
     .toggle-dark{
         position: relative;
         display: inline-block;
-        left: 5px;
-        top: 5px;
-        width: 40px;
-        height: 40px;
+        left: var(--switch-left);
+        top: 9%;
+        width: 42%;
+        height: 82%;
         border-radius: 50px;
         transition-duration: 1s;
         background-color: rgb(10, 10, 10);
-        padding: 5px 5px 5px 5px;
+        padding: 5px 6px 5px 6px;
         filter: drop-shadow(0 3px 2px rgb(0 0 0 / 0.1)) drop-shadow(0 4px 3px rgb(0 0 0 / 0.1));
     }
 
     .dark-theme-transition{
-        transform: translateX(calc(var(--widthSwitchBack) - 52px));
+        transform: translateX(calc(var(--width-switch-back) - var(--switch-left)));
     }
 
     .position-sun-dark, .position-moon-dark{
-        padding: 4px 4px 4px 4px;
+        padding: 2px 2px 2px 2px;
     }
 
     .position-moon-dark{
         position:relative; 
-        bottom:3px; 
-        right:3px;
+        bottom:4px; 
+        right:2px;
     }
 
 
 </style>
 <script>
-    import {darkMode} from '$lib/stores/darkMode.js'
-    import { quadInOut } from 'svelte/easing';
-    import { fade } from 'svelte/transition';
-    // import { browser } from '$app/environment';
-    
-    // if (browser) {
-    //     if (
-    //         localStorage.theme === 'true' ||
-    //         (!('theme' in localStorage) && window.matchMedia('(prefers-color-scheme: dark)').matches)
-    //     ) {
-    //         document.documentElement.classList.add('dark');
-    //         $darkMode = true;
-    //     } else {
-    //         document.documentElement.classList.remove('dark');
-    //         $darkMode = false;
-    //     }
-    // }
+    import {darkMode, toggleDarkMode , spin} from '$lib/stores/darkMode.js';
 
-    function spin(node, { duration = 1000 }) {
-		return {
-			duration,
-			css: t => {
-				const eased = quadInOut(t);
-                const o = +getComputedStyle(node).opacity;
-
-				return `
-					transform: scale(${eased}) rotate(${eased* 1080}deg);
-                    opacity: ${t * o};`
-			}
-		};
-	}
-
-
-    if (typeof window !== 'undefined') {
-        $darkMode = (localStorage.getItem('theme')==='dark');
-        setTheme();
-    }
-
-    function toggleDarkMode(){
-        $darkMode = !$darkMode;
-
-        localStorage.setItem('theme', $darkMode ? 'dark' : 'light');
-        setTheme();
-       
-    }
-
-    function setTheme(){
-        $darkMode
-            ? document.documentElement.classList.add('dark')
-            : document.documentElement.classList.remove('dark');
-    }
 </script>
-<div class="darkMode-content">
     <!-- svelte-ignore a11y-click-events-have-key-events -->
     <div on:click={toggleDarkMode} class="{$darkMode ? 'switch-background-dark' : 'switch-background-light'}">   
         <div class="will-change-transform toggle-dark {$darkMode ? 'dark-theme-transition' : ''}">
@@ -123,4 +74,3 @@
             {/if} 
         </div>
     </div>
-</div>
