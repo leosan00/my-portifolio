@@ -1,8 +1,7 @@
 <script>
-
-    import { fade } from "svelte/transition";
-
+  import { fade } from "svelte/transition";
 </script>
+
 <style lang="postcss">
 
 .main-page{
@@ -17,8 +16,6 @@
     display: flex;
     padding: 8px 8px 8px 8px;
   }
-      
-
   .content-projects{
     border-radius: 40px;
     width: 75%;

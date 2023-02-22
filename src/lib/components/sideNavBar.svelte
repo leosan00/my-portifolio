@@ -6,7 +6,7 @@
     import {darkMode} from '$lib/stores/darkMode.js';
     import { clickOutside } from '$lib/scripts/clickOutside.js'
 	
-     let root = [
+     let navItems = [
 		{
             name: 'Início',
 			class: 'nav-item-side',
@@ -43,7 +43,6 @@
     .side-bar{
         padding: 20px 20px 20px 20px;
         position: absolute;
-        /* background-color: #F5F5F5; */
         width: 100%;
         top: 25px;
         left: 0px;
@@ -68,7 +67,7 @@
     <div class="side-bar  bg-[#F5F5F5] dark:bg-zinc-800 dark:border-2 dark:border-[#666666] dark:shadow-[0_0_0_2px_inset_rgb(48 54 61)] drop-shadow-[0_10px_8px_rgba(0,0,0,0.25)]" in:fly="{{ x: 200, duration: 800 }}" out:fly="{{ x: 100, duration: 800 }}">
             <div class="postion-nav flex-col items-center">
                 <ul class="flex flex-col items-center" >
-                    {#each root as navItem}
+                    {#each navItems as navItem}
                     <li>
                         <!-- svelte-ignore a11y-click-events-have-key-events -->
                         <div class="{navItem.class}" on:click={() => {$currentTab = navItem.tab; open = false}}>
