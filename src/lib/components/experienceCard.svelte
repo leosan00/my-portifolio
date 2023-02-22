@@ -44,7 +44,7 @@
     }
 }
 
-.teste{
+.position-text-xp{
   position: absolute;
   top: 42%;
   left: 40%;
@@ -60,7 +60,7 @@
     <circle class="bg" cx="57" cy="57" r="52" />
     <circle class="meter-1" cx="57" cy="57" r="52" />
   </svg>
-  <div class="text-5xl teste">
+  <div class="text-5xl position-text-xp">
     XP
   </div>
   <PageLink route = 'experience' tab ='active-experience' nameLegend = 'Experiência'/>
