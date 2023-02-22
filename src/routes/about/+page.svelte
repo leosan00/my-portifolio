@@ -1,7 +1,4 @@
 <script>
-    import { element } from "svelte/internal";
-
-
     import { fade } from "svelte/transition";
 
     let pkg = [
@@ -153,18 +150,22 @@
   }
   .title{
     margin-bottom: 16px;
-    font-size: 2rem;
+    font-size: 2.2rem;
     line-height: 32px;
-    font-weight: 400;
+    font-weight: 700;
+    letter-spacing: 0.1rem;
   }
   .teste-img{
     width: 65px;
     height: 100%;
+    min-width: 60px;
+    min-height: 60px;
   }
   .img-div{
     width: 65px;
     height: 100%;
-    object-fit: cover;
+    min-width: 60px;
+    min-height: 100%;
   }
   .sub-title {
     font-size: 1.25rem;
@@ -188,17 +189,21 @@
     align-items: center;
   }
 
-  @media (max-width: 850px) {
+  .custom-etec-logo{
+    min-width: 7rem;
+  }
+
+  @media (max-width: 1020px) {
     .grid-content {
-      grid-template-columns: repeat(3, minmax(0, 1fr));
+      grid-template-columns: repeat(3, minmax(0, 1fr));;
       grid-template-rows: auto;
       gap: 1.5rem;
     }
   }
 
-  @media (max-width: 650px){
+  @media (max-width: 850px){
     .grid-content {
-      grid-template-columns: repeat(1, minmax(0, 1fr));
+      grid-template-columns: auto;
       grid-template-rows: auto;
       gap: 1.5rem;
     }
@@ -221,8 +226,10 @@
       </div>
     </div>
     <div class="project">
-      <div class="img-div">
-        <img src="/images/logoAtento.jpg" class="rounded-xl" alt="Project 1">
+      <div class="w-28 custom-etec-logo">
+        <div class="dark:bg-white p-2 bg-gray-300 rounded-xl">
+          <img src="/images/etecSP.png" alt="Project 1">
+        </div>
       </div>
       <div class="pl-10">
         <h2 class="sub-title">Técnico em Eletrônica integrado com o Ensino Médio</h2>
@@ -233,8 +240,11 @@
       </div>
     </div>
     <h1 class="title">Idiomas</h1>
-    <div>
+    <div class="flex items-center space-x-12">
       <img src="/images/united-states.png" class="w-36 rounded-xl" alt="Project 1">
+      <div class="sub-title">
+        Avançado
+      </div>
     </div>
   </div>
   <!-- <h1 class="title">Ferramentas e linguagens de programação</h1> -->

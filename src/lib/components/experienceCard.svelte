@@ -20,8 +20,8 @@
     
     
     }
-    .projects:hover{
-        width: 135px;
+    :global(.card:hover .projects){
+        width: 128px;
         cursor: pointer;
         box-shadow: 0 0px 0px 4px rgb(255 255 255 / 50%);
     }
@@ -55,7 +55,11 @@
     }
 </style>
 
-<div class="content-xp">
+<script>
+    import {currentTab} from "$lib/stores/currentTab.js";
+  </script>
+
+<div class="content-xp" on:click={() => $currentTab = 'active-experience'}>
     <a href="/experience">
         <div class="projects">
           <p class="legend">

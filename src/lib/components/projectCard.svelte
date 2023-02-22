@@ -108,6 +108,11 @@
 
   }
 </style>
+
+<script>
+  import {currentTab} from "$lib/stores/currentTab.js";
+</script>
+
 <div class="content-projects">
     <div class="image-left">
       <img class="rounded-3xl test-position-left" src="/images/fiap.png" alt="ad"/>
@@ -122,13 +127,16 @@
       <img class="rounded-3xl test-position-right" src="/images/valor.png" alt="ad"/>
     </div>
 </div>
-    <a href="/projects">
-      <div class="projects">
-        <p class="legend">
-          Projetos
-        </p>
-      <div class="position-icon">
-        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512" width= 25 height=25 ><!--! Font Awesome Pro 6.3.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license (Commercial License) Copyright 2023 Fonticons, Inc. --><path d="M384 32c35.3 0 64 28.7 64 64V416c0 35.3-28.7 64-64 64H64c-35.3 0-64-28.7-64-64V96C0 60.7 28.7 32 64 32H384zM160 144c-13.3 0-24 10.7-24 24s10.7 24 24 24h94.1L119 327c-9.4 9.4-9.4 24.6 0 33.9s24.6 9.4 33.9 0l135-135V328c0 13.3 10.7 24 24 24s24-10.7 24-24V168c0-13.3-10.7-24-24-24H160z"/></svg>
-      </div>  
-    </div>
-  </a> 
+<!-- svelte-ignore a11y-click-events-have-key-events -->
+<div on:click={() => $currentTab = 'active-projects'}>
+  <a href="/projects">
+    <div class="projects">
+      <p class="legend">
+        Projetos
+      </p>
+    <div class="position-icon">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512" width= 25 height=25 ><!--! Font Awesome Pro 6.3.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license (Commercial License) Copyright 2023 Fonticons, Inc. --><path d="M384 32c35.3 0 64 28.7 64 64V416c0 35.3-28.7 64-64 64H64c-35.3 0-64-28.7-64-64V96C0 60.7 28.7 32 64 32H384zM160 144c-13.3 0-24 10.7-24 24s10.7 24 24 24h94.1L119 327c-9.4 9.4-9.4 24.6 0 33.9s24.6 9.4 33.9 0l135-135V328c0 13.3 10.7 24 24 24s24-10.7 24-24V168c0-13.3-10.7-24-24-24H160z"/></svg>
+    </div>  
+  </div>
+</a> 
+</div>
