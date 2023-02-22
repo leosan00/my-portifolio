@@ -4,8 +4,8 @@
   import CardAbout from "$lib/components/aboutCard.svelte";
   import ProjectCard from "$lib/components/projectCard.svelte";
   import { fade } from "svelte/transition";
-  import {onMount} from "svelte"
   import ExperienceCard from "$lib/components/experienceCard.svelte";
+  import {onMount} from "svelte"
 
   let mounted = false;
 
@@ -32,6 +32,7 @@
     border-radius: 40px;
     overflow: hidden;
     transition: all .2s ease-in-out;
+    will-change: auto;
   }
   .card:hover { 
     transform: scale(1.05); 
@@ -42,12 +43,12 @@
   }
 
   .darkMode-content{
-        width: 100px;
-        height: 52px;
-        display: flex;
-        align-items: center;
-        justify-content: center;
-    }
+    width: 100px;
+    height: 52px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
 
   @media (max-width: 850px) {
     .grid-content {
@@ -61,10 +62,10 @@
 
 <div class="main-grid">
   {#if mounted}
-  <div class="grid-content" in:fade>
-    <div class="col-span-2 bg-white/[0.8] dark:bg-zinc-800/90 dark:border-2 dark:border-[#666666] dark:shadow-[0_0_0_2px_inset_rgb(48 54 61)] card  drop-shadow-[0_10px_8px_rgba(0,0,0,0.25)]" >
-      <CardAbout/>
-    </div>
+    <div class="grid-content" in:fade>
+      <div class="col-span-2 bg-white/[0.8] dark:bg-zinc-800/90 dark:border-2 dark:border-[#666666] dark:shadow-[0_0_0_2px_inset_rgb(48 54 61)] card  drop-shadow-[0_10px_8px_rgba(0,0,0,0.25)]" >
+        <CardAbout/>
+      </div>
     <div class=" bg-white/[0.8] dark:bg-zinc-800/90 dark:border-2 dark:border-[#666666] dark:shadow-[0_0_0_2px_inset_rgb(48 54 61)] card drop-shadow-[0_10px_8px_rgba(0,0,0,0.25)] ">
       <div class="darkMode-content">
         <DarkMode/>
