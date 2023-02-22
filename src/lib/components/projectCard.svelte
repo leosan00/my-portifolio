@@ -1,19 +1,19 @@
 <style lang="postcss">
-  .test-position-left,.test-position-right{
+  .position-left,.position-right{
     opacity: 0;
-    width: 15rem;
+    width: 18rem;
     transition: all 1.2s ease-in-out;
   }
-  .test-position-left{
+  .position-left{
     transform: translateX(-80%) translateY(35%);
   }
-  .test-position-right{
+  .position-right{
     transform: translateX(85%) translateY(35%);
   }
-  :global(.card:hover .test-position-left, .card:hover .test-position-right){
+  :global(.card:hover .position-left, .card:hover .position-right){
     opacity: 1;
     transform: translateX(0%) translateY(0%);
-    width: 13rem;
+    width: 15rem;
   }
   .image-left, .image-right{
     display: flex;
@@ -21,20 +21,23 @@
     padding: 8px 4px 15px 4px;
   }
   .content-projects{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
     width: 100%;
     height: 100%;
     margin: 0 auto;
   }
 
   @media (max-width: 850px) {
-    .test-position-left,.test-position-right{
+    .position-left,.position-right{
       opacity: 0;
-      width: 19rem;
+      width: 18rem;
     }
-    .test-position-left{
+    .position-left{
       transform: translateX(-85%) translateY(35%);
     }
-    .test-position-right{
+    .position-right{
       transform: translateX(85%) translateY(35%);
     }
     .image-left, .image-right{
@@ -42,10 +45,10 @@
       padding: 18px 4px 25px 4px;
       display: flex;
     }
-    :global(.card:hover .test-position-left, .card:hover .test-position-right){
+    :global(.card:hover .position-left, .card:hover .position-right){
       opacity: 1;
       transform: translateX(0%) translateY(0%);
-      width:  19rem;
+      width:  15rem;
     }
   }
 </style>
@@ -56,16 +59,13 @@
 
 <div class="content-projects">
   <div class="image-left">
-    <img class="rounded-3xl test-position-left" src="/images/fiap.png" alt="ad"/>
+    <img class="rounded-3xl position-left" src="/images/fiap.png" alt="ad"/>
   </div>
   <div class="image-right">
-    <img class="rounded-3xl test-position-right" src="/images/startupInSchool.png" alt="ad"/>
+    <img class="rounded-3xl position-right" src="/images/startupInSchool.png" alt="ad"/>
   </div>
   <div class="image-left">
-    <img class="rounded-3xl test-position-left" src="/images/atento.png" alt="ad"/>
-  </div>
-  <div class="image-right">
-    <img class="rounded-3xl test-position-right" src="/images/valor.png" alt="ad"/>
+    <img class="rounded-3xl position-left" src="/images/logoHC.png" alt="ad"/>
   </div>
 </div>
 
