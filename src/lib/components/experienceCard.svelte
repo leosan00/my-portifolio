@@ -32,7 +32,7 @@
   stroke-dasharray: 360;
   stroke-dashoffset: 50;
   stroke: #A1C181;
-  animation: progress-1 2s ease-out;
+  animation: progress-1 1.5s ease-out;
 }
 
 @keyframes progress-1 {

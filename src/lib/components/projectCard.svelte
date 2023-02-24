@@ -57,7 +57,7 @@
   import PageLink from "$lib/components/pageLink.svelte";
 </script>
 
-<div class="content-projects">
+<div class="content-projects will-change-auto">
   <div class="image-left">
     <img class="rounded-3xl position-left" src="/images/fiap.png" alt="ad"/>
   </div>
