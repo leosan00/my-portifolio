@@ -1,6 +1,37 @@
 <script>
 
-    import { fade } from "svelte/transition";
+import { fade } from "svelte/transition";
+
+    var listProjects = [
+    {
+    imageSrc:'/images/logoFiap.png',
+    projectName: 'Startup One FIAP',
+    location:'FIAP',
+    date:'Jan/20 a Dez/20',
+    jobDescription: 'Desenvolvimento de um aplicativo para conectar tatuadores independentes a possíveis clientes'
+    },
+    {
+    imageSrc:'/images/logoFiap.png',
+    projectName: 'Challenge FIAP',
+    location:'FIAP',
+    date:'Jun/18 a Dez/18',
+    jobDescription: 'Finalista no projeto que tinha o propósito de desenvolver um protótipo para melhor motivação dos funcionários na empresa parceira (Atento).'
+    },
+    {
+    imageSrc:'/images/logoHC.png',
+    projectName: 'Hackathon HCFMUSP (InovaHC – Hospital das clínicas)',
+    location:'Hospital das clínicas',
+    date:'Set/2018',
+    jobDescription: 'Finalista no hackathon que tinha o propósito de desenvolver um protótipo para o acompanhamento pós-cirúrgico.'
+    },
+    {
+    imageSrc:'/images/logoStartUpInSchool.png',
+    projectName: 'Startup in School',
+    location:'ETEC São Paulo',
+    date:'Out/2016',
+    jobDescription: 'Finalista no projeto que tinha o propósito de criar uma Startup do zero de acordo com o tema escolhido pelo grupo, desenvolver um protótipo e apresentar para uma banca.'
+    },
+  ];
 
 </script>
 <style lang="postcss">
@@ -43,6 +74,10 @@
     min-width: 75px;
     min-height: 75px;
   }
+  .main-text-projects{
+    padding-left: 2.5rem;
+    width: 100%;
+  }
   .sub-title {
     font-size: 1.25rem;
     font-weight: 700;
@@ -52,7 +87,7 @@
     justify-content: space-between;
 
   }
-  .location-title{
+  .location-title, .date-title{
     font-size: 1.05rem;
     font-weight: 600;
   }
@@ -66,65 +101,22 @@
 <div class="container main-page" in:fade>
   <div class="content-projects bg-white/[0.8] dark:bg-zinc-800/90 dark:border-2 dark:border-[#666666] dark:shadow-[0_0_0_2px_inset_rgb(48 54 61)] drop-shadow-[0_10px_8px_rgba(0,0,0,0.25)] ">
     <h1 class="title">Projetos</h1>
+    {#each listProjects as item}
     <div class="project">
       <div class="img-div">
-        <img src="/images/logoFiap.png" class="rounded-xl" alt="Project 1">
+        <img src= {item.imageSrc} class="rounded-xl" alt="Project 1">
       </div>
-      <div class="pl-10">
-        <h2 class="sub-title">Startup One FIAP</h2>
+      <div class="main-text-projects">
+        <h2 class="sub-title">{item.projectName}</h2>
         <div class="content-location">
-          <h3 class="location-title">FIAP</h3>
-          <h3 class="location-title">Jan/20 a Dez/20</h3>
-        </div>
-        <p class="description-project">Desenvolvimento de um aplicativo para conectar tatuadores independentes a possíveis clientes</p>
-      </div>
-    </div>
-    <div class="project">
-      <div class="img-div">
-        <img src="/images/logoFiap.png" class="rounded-xl" alt="Project 1">
-      </div>
-      <div class="pl-10">
-        <h2 class="sub-title">Challenge FIAP</h2>
-        <div class="content-location">
-          <h3 class="location-title">FIAP</h3>
-          <h3 class="location-title">Jun/18 a Dez/18</h3>
+          <h3 class="location-title">{item.location}</h3>
+          <h3 class="date-title">{item.date}</h3>
         </div>
         <p class="description-project">
-          Finalista no projeto que tinha o propósito de desenvolver um protótipo para melhor motivação dos funcionários na empresa parceira (Atento).
+          {item.jobDescription}
         </p>
       </div>
     </div>
-    <div class="project">
-      <div class="img-div">
-        <img src="/images/logoHC.png" class="rounded-xl" alt="Project 1">
-      </div>
-      <div class="pl-10">
-        <h2 class="sub-title">Hackathon HCFMUSP (InovaHC – Hospital das clínicas)</h2>
-        <div class="content-location">
-          <h3 class="location-title">Hospital das clínicas</h3>
-          <h3 class="location-title">Set/2018</h3>
-        </div>
-        <p class="description-project">
-          Finalista no hackathon que tinha o propósito de desenvolver um protótipo para o 
-          acompanhamento pós-cirúrgico.
-        </p>
-      </div>
-    </div>
-    <div class="project">
-      <div class="img-div">
-        <img src="/images/logoStartUpInSchool.png" class="rounded-xl" alt="Project 1">
-      </div>
-      <div class="pl-10">
-        <h2 class="sub-title">Startup in School</h2>
-        <div class="content-location">
-          <h3 class="location-title">ETEC São Paulo</h3>
-          <h3 class="location-title">Out/2016</h3>
-        </div>
-        <p class="description-project">
-          Finalista no projeto que tinha o propósito de criar uma Startup do zero de acordo com o tema 
-          escolhido pelo grupo, desenvolver um protótipo e apresentar para uma banca.
-        </p>
-      </div>
-    </div>
+    {/each}
   </div>
 </div>

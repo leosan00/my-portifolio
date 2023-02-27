@@ -1,7 +1,7 @@
 <script>
     import { fade } from "svelte/transition";
 
-    let pkg = [
+    let listTools = [
       {
       name: 'Visual Studio',
       imageSrc: '/images/vsLogo.svg',
@@ -92,12 +92,12 @@
       },
       ];
 
-       var listOfTypes = pkg.map(x => x.type).
+       var listOfTypes = listTools.map(x => x.type).
       filter(function(elem, index, self) {
     return self.indexOf(elem) == index;});
 
 
-    var sortedList = pkg.sort(function(a, b) {
+    var sortedList = listTools.sort(function(a, b) {
   const nameA = a.type.toUpperCase(); // ignore upper and lowercase
   const nameB = b.type.toUpperCase(); // ignore upper and lowercase
   if (nameA > nameB) {
@@ -121,7 +121,7 @@
     margin-left: auto;
     margin-right: auto;
   }
-  .project {
+  .about {
     margin-top: 2rem;
     margin-bottom: 2rem;
     display: flex;
@@ -129,7 +129,7 @@
   }
       
 
-  .content-projects{
+  .content-about{
     border-radius: 40px;
     width: 75%;
     height: 100%;
@@ -155,17 +155,21 @@
     font-weight: 700;
     letter-spacing: 0.1rem;
   }
-  .teste-img{
-    width: 65px;
+  .img-grid-tools{
+    width: 60px;
     height: 100%;
     min-width: 60px;
     min-height: 60px;
   }
   .img-div{
-    width: 65px;
+    width: 75px;
     height: 100%;
-    min-width: 60px;
+    min-width: 75px;
     min-height: 100%;
+  }
+  .content-about-tools{
+    padding-left: 2.5rem;
+    width: 100%;
   }
   .sub-title {
     font-size: 1.25rem;
@@ -176,7 +180,7 @@
     justify-content: space-between;
 
   }
-  .location-title{
+  .location-title, .date-title{
     font-size: 1.05rem;
     font-weight: 600;
   }
@@ -191,6 +195,20 @@
 
   .custom-etec-logo{
     min-width: 7rem;
+    width: 7rem;
+    padding: 0.5rem;
+    border-radius: 0.75rem;
+  }
+  .main-content-tools-grid{
+    margin-top: 3rem;
+    margin-bottom: 6rem;
+    margin-left: auto;
+    margin-right: auto;
+  }
+
+  .content-language{
+    display: flex;
+    align-items: center;
   }
 
   @media (max-width: 1020px) {
@@ -211,36 +229,34 @@
 </style>
 
 <div class="container main-page" in:fade>
-  <div class="content-projects bg-white/[0.8] dark:bg-zinc-800/90 dark:border-2 dark:border-[#666666] dark:shadow-[0_0_0_2px_inset_rgb(48 54 61)] drop-shadow-[0_10px_8px_rgba(0,0,0,0.25)] ">
+  <div class="content-about bg-white/[0.8] dark:bg-zinc-800/90 dark:border-2 dark:border-[#666666] dark:shadow-[0_0_0_2px_inset_rgb(48 54 61)] drop-shadow-[0_10px_8px_rgba(0,0,0,0.25)] ">
     <h1 class="title">Formação</h1>
-    <div class="project">
+    <div class="about">
       <div class="img-div">
         <img src="/images/logoFiap.png" class="rounded-xl" alt="Project 1">
       </div>
-      <div class="pl-10">
+      <div class="content-about-tools">
         <h2 class="sub-title">Sistemas de Informação</h2>
         <div class="content-location">
           <h3 class="location-title">FIAP</h3>
-          <h3 class="location-title">Jan/17 a Dez/20</h3>
+          <h3 class="date-title">Jan/17 a Dez/20</h3>
         </div>
       </div>
     </div>
-    <div class="project">
-      <div class="w-28 custom-etec-logo">
-        <div class="dark:bg-white p-2 bg-gray-300 rounded-xl">
+    <div class="about">
+      <div class="custom-etec-logo dark:bg-white bg-gray-300">
           <img src="/images/etecSP.png" alt="Project 1">
-        </div>
       </div>
-      <div class="pl-10">
+      <div class="content-about-tools">
         <h2 class="sub-title">Técnico em Eletrônica integrado com o Ensino Médio</h2>
         <div class="content-location">
           <h3 class="location-title">ETEC São Paulo (ETESP)</h3>
-          <h3 class="location-title">Jan/14 a Dez/16</h3>
+          <h3 class="date-title">Jan/14 a Dez/16</h3>
         </div>
       </div>
     </div>
     <h1 class="title">Idiomas</h1>
-    <div class="flex items-center space-x-12">
+    <div class="content-language space-x-12">
       <img src="/images/united-states.png" class="w-36 rounded-xl" alt="Project 1">
       <div class="sub-title">
         Avançado
@@ -258,26 +274,23 @@
 	</p> -->
   <div>
     {#each listOfTypes as type}
-    <div class="mb-24 mt-12 container mx-auto">
+    <div class="main-content-tools-grid container">
       <h1 class="title">{type}</h1>
       <div class="grid-content">
-      {#each sortedList as item}
-      {#if item.type == type}
-        <div class="content-tools bg-white/[0.8] dark:bg-zinc-800/90 dark:border-2 dark:border-[#666666] dark:shadow-[0_0_0_2px_inset_rgb(48 54 61)] drop-shadow-[0_10px_8px_rgba(0,0,0,0.25)]">
-          <div>
-            <img src={item.imageSrc} class="teste-img" alt="Project 1">
-          </div>
-          <div class="pl-10">
-            <h2 class="sub-title">{item.name}</h2>
-            <!-- <div class="content-location">
-              <h3 class="location-title">{item.type}</h3>
-            </div> -->
-          </div>
-        </div>
-        {/if}
+        {#each sortedList as item}
+          {#if item.type == type}
+            <div class="content-tools bg-white/[0.8] dark:bg-zinc-800/90 dark:border-2 dark:border-[#666666] dark:shadow-[0_0_0_2px_inset_rgb(48 54 61)] drop-shadow-[0_10px_8px_rgba(0,0,0,0.25)]">
+              <div>
+              <img src={item.imageSrc} class="img-grid-tools" alt="Project 1">
+            </div>
+            <div class="content-about-tools">
+              <h2 class="sub-title">{item.name}</h2>
+            </div>
+            </div>
+          {/if}
         {/each}
       </div> 
     </div>
     {/each}
   </div>
-  </div>
+</div>

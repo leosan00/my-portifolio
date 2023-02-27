@@ -33,6 +33,9 @@ body{
     text-decoration: none;
   }
 
+  .home-link{
+    padding-left: 1rem;
+  }
   .nickname-title-word{
     font-family: "Nunito";
     font-weight: 700;
