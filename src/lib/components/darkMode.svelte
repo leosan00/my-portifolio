@@ -29,7 +29,6 @@
 
     .toggle-dark{
         position: relative;
-        display: inline-block;
         left: var(--switch-left);
         top: 9%;
         width: 42%;
@@ -37,7 +36,7 @@
         border-radius: 50px;
         transition-duration: 1s;
         background-color: rgb(10, 10, 10);
-        padding: 5px 6px 5px 6px;
+        padding: 7px 7px 7px 7px;
         filter: drop-shadow(0 3px 2px rgb(0 0 0 / 0.1)) drop-shadow(0 4px 3px rgb(0 0 0 / 0.1));
     }
 
