@@ -57,7 +57,7 @@
       gap: 1.5rem;
     }
   }
-  @media (max-width: 650px) {
+  @media (max-width: 640px) {
     .grid-content {
       grid-template-columns: auto;
       grid-template-rows: auto;
@@ -65,6 +65,9 @@
     }
     .card {
     min-height: 280px;
+    }
+    .card:hover { 
+    transform: none; 
     }
   }
 
