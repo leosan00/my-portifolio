@@ -51,6 +51,7 @@
 
     .position-sun-dark, .position-moon-dark{
         padding: 2px 2px 2px 2px;
+        position: relative;
     }
 
 
