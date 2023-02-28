@@ -27,6 +27,7 @@
     width: 100%;
     height: 100%;
     margin: 0 auto;
+    position: relative;
   }
 
   @media (max-width: 850px) {
@@ -78,6 +79,6 @@
   <div class="image-left">
     <img class="rounded-3xl position-left" src="/images/logoHC.png" alt="ad"/>
   </div>
+  <PageLink route = 'projects' tab ='active-projects' nameLegend = 'Projetos'/>
 </div>
 
-<PageLink route = 'projects' tab ='active-projects' nameLegend = 'Projetos'/>
