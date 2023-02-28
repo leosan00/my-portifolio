@@ -7,6 +7,7 @@
 }
 
     .switch-background-dark,.switch-background-light{
+        position: relative;
         width: var(--width-switch-back);
         height: 100%;
         border-radius: 50px;
@@ -15,16 +16,12 @@
         filter: drop-shadow(0 8px 6px rgb(0 0 0 / 0.1)) drop-shadow(0 3px 2px rgb(0 0 0 / 0.1));
     }
     .switch-background-dark{
-        position: relative;
-        display: inline-block;
         background-color: rgb(63, 63, 63);
         border: solid 2px #666666;
 		box-shadow: rgb(48 54 61) 0px 0px 0px 2px inset;
     }
 
     .switch-background-light{
-        position: relative;
-        display: inline-block;
         background-color: rgb(201, 201, 201);
         border: solid 2px transparent;
         box-shadow: transparent 0px 0px 0px 2px inset;

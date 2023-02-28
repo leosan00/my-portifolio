@@ -26,6 +26,10 @@ body{
       align-items: center;
       
     }
+    body{
+      font-family: 'Nunito';
+      letter-spacing: 0.4px;
+  }
   }
 
   a  {
@@ -40,7 +44,7 @@ body{
     font-family: "Nunito";
     font-weight: 700;
     font-size: 2.8rem;
-    letter-spacing: .1rem;
+    letter-spacing: 0.5px;
   }
 
   hr{
@@ -79,7 +83,7 @@ body{
     padding: 0px 10px 0px 16px;
     white-space: nowrap;
     cursor: pointer;
-    letter-spacing: .05rem;
+    letter-spacing: .04rem;
   }
 
   .font-style-nav{
@@ -104,7 +108,6 @@ body{
   .postion-nav{
     display: flex;
   }
-
 
   .dark-btn{
     width: 82px;
