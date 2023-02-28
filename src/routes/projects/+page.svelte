@@ -96,6 +96,36 @@ import { fade } from "svelte/transition";
     margin-top: 0.5rem;
   }
 
+  @media (max-width: 650px) {
+    .project {
+    margin-top: 2rem;
+    margin-bottom: 2rem;
+    display: flex;
+    flex-direction: column;
+    padding: 8px 8px 8px 8px;
+    }
+    .main-text-projects{
+    width: 100%;
+    padding-left: 0.5rem;
+    padding-top: 1rem;
+    }
+
+    .content-projects{
+    border-radius: 40px;
+    width: 95%;
+    height: 100%;
+    margin-left: auto;
+    margin-right: auto;
+    padding-left: 1.0rem;
+    padding-right: 1.0rem;
+    padding-top: 1.5rem;
+    padding-bottom: 1.5rem;
+  }
+  .content-location{
+    display: flex;
+    flex-direction: column;
+  }
+  }
 </style>
 
 <div class="container main-page" in:fade>

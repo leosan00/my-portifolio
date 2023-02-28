@@ -226,6 +226,48 @@
       gap: 1.5rem;
     }
   }
+
+  @media (max-width: 650px) {
+    .about {
+    margin-top: 2rem;
+    margin-bottom: 2rem;
+    display: flex;
+    flex-direction: column;
+    padding: 8px 8px 8px 8px;
+    }
+    .content-about-tools{
+    padding-left: 1.5rem;
+    }
+    .main-content-tools-grid{
+      padding-left: 0.4rem;
+      padding-right: 0.4rem;
+    }
+    .content-about{
+    border-radius: 40px;
+    width: 95%;
+    height: 100%;
+    margin-left: auto;
+    margin-right: auto;
+    padding-left: 1.0rem;
+    padding-right: 1.0rem;
+    padding-top: 1.5rem;
+    padding-bottom: 1.5rem;
+  }
+  .content-location{
+    display: flex;
+    flex-direction: column;
+  }
+  .img-div{
+    width: 75px;
+    height: 100%;
+    min-width: 75px;
+    min-height: 100%;
+    margin-bottom: 0.5rem;
+  }
+  .custom-etec-logo{
+    margin-bottom: 0.5rem;
+  }
+  }
 </style>
 
 <div class="container main-page" in:fade>
