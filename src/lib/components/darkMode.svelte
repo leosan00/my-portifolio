@@ -32,6 +32,8 @@
         display: flex;
         align-items: center;
         justify-content: center;
+        -webkit-box-align: center;
+        -webkit-box-pack: center;
         left: var(--switch-left);
         top: 9%;
         width: 42%;
