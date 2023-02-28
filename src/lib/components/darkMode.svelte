@@ -29,6 +29,9 @@
 
     .toggle-dark{
         position: absolute;
+        display: flex;
+        align-items: center;
+        justify-content: center;
         left: var(--switch-left);
         top: 9%;
         width: 42%;
@@ -48,11 +51,6 @@
         padding: 2px 2px 2px 2px;
     }
 
-    .position-moon-dark{
-        position:relative; 
-        bottom:4px; 
-        right:2px;
-    }
 
 
 </style>
