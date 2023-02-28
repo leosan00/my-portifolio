@@ -51,6 +51,17 @@
       width:  15rem;
     }
   }
+
+  @media (max-width: 650px) {
+    .position-left,.position-right{
+      opacity: 1;
+      width:  15rem;
+    }
+    .position-left, .position-right{
+      transform: translateX(0%) translateY(0%);
+    }
+  }
+
 </style>
 
 <script>

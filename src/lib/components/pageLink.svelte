@@ -52,7 +52,17 @@
         justify-content: center;
         position: absolute;
         right: 0px;
-    } 
+    }
+    
+    @media (max-width: 650px) {
+        .projects{
+        max-width: 100%;
+    }
+    .legend{
+        opacity: 1;
+        transform: translateX(0px) translateZ(0px);
+    }
+  }
 </style>
 
 <!-- svelte-ignore a11y-click-events-have-key-events -->

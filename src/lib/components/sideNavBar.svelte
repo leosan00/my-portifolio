@@ -64,7 +64,7 @@
     </button>
     
     {#if open}
-    <div class="side-bar  bg-[#F5F5F5] dark:bg-zinc-800 dark:border-2 dark:border-[#666666] dark:shadow-[0_0_0_2px_inset_rgb(48 54 61)] drop-shadow-[0_10px_8px_rgba(0,0,0,0.25)]" in:fly="{{ x: 200, duration: 800 }}" out:fly="{{ x: 100, duration: 800 }}">
+    <div class="side-bar bg-[#F5F5F5] dark:bg-zinc-800 dark:border-2 dark:border-[#666666] dark:shadow-[0_0_0_2px_inset_rgb(48 54 61)] drop-shadow-[0_10px_8px_rgba(0,0,0,0.25)]" in:fade out:fade>
             <div class="postion-nav flex-col items-center">
                 <ul class="flex flex-col items-center" >
                     {#each navItems as navItem}
