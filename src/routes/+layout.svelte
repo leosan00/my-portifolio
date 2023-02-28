@@ -61,7 +61,7 @@
     <div class="top-menu" in:fade>
         <a href="/" class="z-20">
             <!-- svelte-ignore a11y-click-events-have-key-events -->
-            <div class="home-link pl-4" on:click={() => $currentTab = 'active-home'}>
+            <div class="home-link" on:click={() => $currentTab = 'active-home'}>
                 <span class="nickname-title-word">Leo</span>
             </div>
         </a>
