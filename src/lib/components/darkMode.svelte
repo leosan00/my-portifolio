@@ -31,7 +31,7 @@
     }
 
     .toggle-dark{
-        position: absolute;
+        position: relative;
         display: flex;
         align-items: center;
         justify-content: center;
