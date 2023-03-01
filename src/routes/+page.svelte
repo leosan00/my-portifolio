@@ -22,7 +22,13 @@
     grid-template-columns: repeat(4, minmax(0, 1fr));
     grid-template-rows: 280px 280px;
     gap: 1rem;
+    clear: both;
   }
+  .mobile-view{
+      position: relative;
+      width: 100%;
+      height: 100%;
+    }
   .card {
     width: 100%;
     height: 100%;
@@ -30,12 +36,10 @@
     justify-content: center;
     align-items: center;
     border-radius: 40px;
-    overflow: hidden;
     transition: all .2s ease-in-out;
     will-change: auto;
     position: relative;
     overflow: hidden;
-    margin: 8px;
   }
   .card:hover { 
     transform: scale(1.05); 
@@ -72,6 +76,11 @@
     .card:hover { 
     transform: none; 
     }
+    .mobile-view{
+      padding-bottom: 20px;
+      padding-left: 20px;
+      padding-right: 20px;
+    }
   }
 
 </style>
@@ -79,25 +88,37 @@
 <div class="main-grid">
   {#if mounted}
     <div class="grid-content" in:fade>
-      <div class="md:col-span-2 bg-white/[0.8] dark:bg-zinc-800/90 dark:border-2 dark:border-[#666666] dark:shadow-[0_0_0_2px_inset_rgb(48 54 61)] card  drop-shadow-[0_10px_8px_rgba(0,0,0,0.25)]" >
-        <CardAbout/>
+      <div class="md:col-span-2 mobile-view">
+        <div class="bg-white/[0.8] dark:bg-zinc-800/90 dark:border-2 dark:border-[#666666] dark:shadow-[0_0_0_2px_inset_rgb(48 54 61)] card  drop-shadow-[0_10px_8px_rgba(0,0,0,0.25)]" >
+          <CardAbout/>
+        </div>
       </div>
-    <div class="bg-white/[0.8] dark:bg-zinc-800/90 dark:border-2 dark:border-[#666666] dark:shadow-[0_0_0_2px_inset_rgb(48 54 61)] card drop-shadow-[0_10px_8px_rgba(0,0,0,0.25)] ">
-      <div class="darkMode-content">
-        <DarkMode/>
+      <div class="mobile-view">
+        <div class="bg-white/[0.8] dark:bg-zinc-800/90 dark:border-2 dark:border-[#666666] dark:shadow-[0_0_0_2px_inset_rgb(48 54 61)] card drop-shadow-[0_10px_8px_rgba(0,0,0,0.25)] ">
+          <div class="darkMode-content">
+            <DarkMode/>
+          </div>
+        </div>
       </div>
-    </div>
+      <div class="mobile-view">
     <div class="md:row-span-2 bg-white/[0.8] dark:bg-zinc-800/90 dark:border-2 dark:border-[#666666] dark:shadow-[0_0_0_2px_inset_rgb(48 54 61)] card drop-shadow-[0_10px_8px_rgba(0,0,0,0.25)] ">
-      <ProjectCard/>
+        <ProjectCard/>
+      </div>
     </div>
-    <div class="h-[32rem] card bg-sky-600 dark:border-2 dark:border-sky-500/80 dark:shadow-[0_0_0_6px_inset_rgb(12 74 110)] drop-shadow-[0_10px_8px_rgba(0,0,0,0.25)] ">
-      <ExternalLinkCard imageSrc = 'Linkedin' hoveredSubtitle = 'Linkedin' link= 'https://www.linkedin.com/in/leonardo-sanger-297ab713a/'/>
+    <div class="mobile-view">
+    <div class="card bg-sky-600 dark:border-2 dark:border-sky-500/80 dark:shadow-[0_0_0_6px_inset_rgb(12 74 110)] drop-shadow-[0_10px_8px_rgba(0,0,0,0.25)] ">
+        <ExternalLinkCard imageSrc = 'Linkedin' hoveredSubtitle = 'Linkedin' link= 'https://www.linkedin.com/in/leonardo-sanger-297ab713a/'/>
+      </div>
     </div>
+    <div class="mobile-view">
     <div class="card bg-zinc-900/90 dark:border-2 dark:border-zinc-600 dark:shadow-[0_0_0_6px_inset_rgb(68 64 60)] drop-shadow-[0_10px_8px_rgba(0,0,0,0.25)] ">
-      <ExternalLinkCard imageSrc = 'GitHub' hoveredSubtitle = 'GitHub' link='https://github.com/leosan00/my-portifolio' />
+        <ExternalLinkCard imageSrc = 'GitHub' hoveredSubtitle = 'GitHub' link='https://github.com/leosan00/my-portifolio' />
+      </div>
     </div>
+    <div class="mobile-view">
     <div class="card bg-white/[0.8] dark:bg-zinc-800/90 dark:border-2 dark:border-[#666666] dark:shadow-[0_0_0_2px_inset_rgb(48 54 61)] drop-shadow-[0_10px_8px_rgba(0,0,0,0.25)] ">
-      <ExperienceCard/>
+        <ExperienceCard/>
+      </div>
     </div>
   </div>
   {/if}
