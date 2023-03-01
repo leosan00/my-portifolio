@@ -33,6 +33,7 @@
     overflow: hidden;
     transition: all .2s ease-in-out;
     will-change: auto;
+    position: relative;
   }
   .card:hover { 
     transform: scale(1.05); 

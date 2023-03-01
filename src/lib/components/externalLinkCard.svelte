@@ -57,5 +57,6 @@
         width: fit-content;
         background-color: white;
         color: black;
+        overflow: visible;
     }
 </style>
