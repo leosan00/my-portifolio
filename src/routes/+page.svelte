@@ -34,6 +34,7 @@
     transition: all .2s ease-in-out;
     will-change: auto;
     position: relative;
+    overflow: visible;
   }
   .card:hover { 
     transform: scale(1.05); 
