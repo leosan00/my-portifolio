@@ -24,10 +24,11 @@
     gap: 1rem;
   }
   .mobile-view{
-      position: relative;
-      width: 100%;
-      height: 100%;
-    }
+    position: relative;
+    width: 100%;
+    height: 100%;
+    z-index: 0;
+  }
   .card {
     width: 100%;
     height: 100%;
@@ -36,14 +37,13 @@
     align-items: center;
     border-radius: 40px;
     transition: all .2s ease-in-out;
-    will-change: auto;
     position: relative;
     overflow: hidden;
     -webkit-transform: translateZ(0);
-    z-index: 0;
+    z-index: 1;
   }
   .card:hover { 
-    transform: scale(1.05); 
+    transform: scale(0.98); 
   }
   .main-grid {
     width: 100%;
@@ -51,8 +51,8 @@
   }
 
   .darkMode-content{
-    width: 100px;
-    height: 52px;
+    width: 100%;
+    height: 100%;
     display: flex;
     align-items: center;
     justify-content: center;
@@ -78,7 +78,6 @@
       transform: none; 
     }
     .mobile-view{
-      margin-top: 12px;
       padding-bottom: 12px;
       padding-left: 12px;
       padding-right: 12px;
