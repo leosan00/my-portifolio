@@ -35,7 +35,6 @@
         display: flex;
         align-items: center;
         justify-content: center;
-        left: 8px;
         width: 36px;
         height: 36px;
         border-radius: 50px;
