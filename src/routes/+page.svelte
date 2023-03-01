@@ -16,12 +16,14 @@
 </script>
 <style lang="postcss">
   .grid-content {
+    position: relative;
     max-width: 1200px;
     margin: 0 auto;
     display: grid;
     grid-template-columns: repeat(4, minmax(0, 1fr));
     grid-template-rows: 280px 280px;
     gap: 1rem;
+    z-index: 0;
   }
   .mobile-view{
     position: relative;
