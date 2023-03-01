@@ -40,6 +40,8 @@
     will-change: auto;
     position: relative;
     overflow: hidden;
+    -webkit-transform: translateZ(0);
+    z-index: 0;
   }
   .card:hover { 
     transform: scale(1.05); 
@@ -77,9 +79,9 @@
     transform: none; 
     }
     .mobile-view{
-      padding-bottom: 20px;
-      padding-left: 20px;
-      padding-right: 20px;
+      padding-bottom: 12px;
+      padding-left: 12px;
+      padding-right: 12px;
     }
   }
 
@@ -100,8 +102,8 @@
           </div>
         </div>
       </div>
-      <div class="mobile-view">
-    <div class="md:row-span-2 bg-white/[0.8] dark:bg-zinc-800/90 dark:border-2 dark:border-[#666666] dark:shadow-[0_0_0_2px_inset_rgb(48 54 61)] card drop-shadow-[0_10px_8px_rgba(0,0,0,0.25)] ">
+      <div class="mobile-view md:row-span-2">
+    <div class=" bg-white/[0.8] dark:bg-zinc-800/90 dark:border-2 dark:border-[#666666] dark:shadow-[0_0_0_2px_inset_rgb(48 54 61)] card drop-shadow-[0_10px_8px_rgba(0,0,0,0.25)] ">
         <ProjectCard/>
       </div>
     </div>

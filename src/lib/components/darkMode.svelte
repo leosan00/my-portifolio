@@ -38,6 +38,7 @@
         background-color: rgb(10, 10, 10);
         padding: 7px 7px 7px 7px;
         filter: drop-shadow(0 3px 2px rgb(0 0 0 / 0.1)) drop-shadow(0 4px 3px rgb(0 0 0 / 0.1));
+        z-index: 0;
     }
 
     .dark-theme-transition{

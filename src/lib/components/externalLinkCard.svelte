@@ -51,13 +51,11 @@
         height: 100%;
         cursor: pointer;
         position: relative;
-        overflow: hidden;
     }
 
     .text-background {
         width: fit-content;
         background-color: white;
         color: black;
-        overflow: hidden;
     }
 </style>
