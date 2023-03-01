@@ -45,9 +45,11 @@
     z-index: 1;
   }
   .card:hover { 
-    transform: scale(0.98); 
+    transform: scale(1.03); 
   }
   .main-grid {
+    position: relative;
+    z-index: 0;
     width: 100%;
     padding: 40px 15px 80px 15px;
   }
