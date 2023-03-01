@@ -49,7 +49,7 @@
     font-size: 2.2rem;
     line-height: 32px;
     font-weight: 700;
-    letter-spacing: 0.1rem;
+    letter-spacing: 0.6px;
   }
   .img-div{
     width: 75px;

@@ -21,7 +21,6 @@
         max-width: 40px;
         box-shadow: 0 0px 0px 4px transparent;
         will-change: auto;
-        overflow: hidden;
     }
     :global(.card:hover .projects){
         max-width: 220px;
@@ -57,11 +56,13 @@
     @media (max-width: 650px) {
         .projects{
         max-width: 100%;
-    }
+        box-shadow: 0 0px 0px 4px rgb(255 255 255 / 50%);
+        }
     .legend{
         opacity: 1;
         transform: translateX(0px) translateZ(0px);
     }
+    
   }
 </style>
 

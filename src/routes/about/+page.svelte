@@ -153,7 +153,7 @@
     font-size: 2.2rem;
     line-height: 32px;
     font-weight: 700;
-    letter-spacing: 0.1rem;
+    letter-spacing: 0.6px;
   }
   .img-grid-tools{
     width: 60px;
@@ -209,6 +209,7 @@
   .content-language{
     display: flex;
     align-items: center;
+    padding-left: 0.5rem;
   }
 
   @media (max-width: 1020px) {
@@ -236,7 +237,7 @@
     padding: 8px 8px 8px 8px;
     }
     .content-about-tools{
-    padding-left: 1.5rem;
+    padding-left: 0.5rem;
     }
     .main-content-tools-grid{
       padding-left: 0.4rem;
