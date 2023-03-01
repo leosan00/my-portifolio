@@ -58,6 +58,6 @@
         width: fit-content;
         background-color: white;
         color: black;
-        border-bottom-right-radius: 40px;
+        overflow: hidden;
     }
 </style>
