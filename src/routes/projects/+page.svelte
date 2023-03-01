@@ -85,6 +85,7 @@ import { fade } from "svelte/transition";
   .content-location{
     display: flex;
     justify-content: space-between;
+    padding-left: 0.2rem;
 
   }
   .location-title, .date-title{
@@ -94,6 +95,7 @@ import { fade } from "svelte/transition";
   .description-project {
     font-size: 1.15rem;
     margin-top: 0.5rem;
+    margin-left: 0.4rem;
   }
 
   @media (max-width: 650px) {

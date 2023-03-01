@@ -11,8 +11,8 @@
         display: flex;
         align-items: center;
         justify-content: flex-start;
-        width: 90px;
-        height: 45px;
+        width: 100%;
+        height: 100%;
         border-radius: 50px;
         cursor: pointer;
         transition-duration: 1.2s;
@@ -39,8 +39,8 @@
         left: 8px;
         right: 0px;
         bottom: 0px;
-        width: 36px;
-        height: 36px;
+        width: 42%;
+        height: 82%;
         border-radius: 50px;
         transition-duration: 1s;
         background-color: rgb(10, 10, 10);
