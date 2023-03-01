@@ -22,7 +22,6 @@
     grid-template-columns: repeat(4, minmax(0, 1fr));
     grid-template-rows: 280px 280px;
     gap: 1rem;
-    padding: 2px;
   }
   .card {
     width: 100%;
@@ -36,7 +35,7 @@
     will-change: auto;
     position: relative;
     overflow: hidden;
-    margin: 2px;
+    margin: 8px;
   }
   .card:hover { 
     transform: scale(1.05); 
