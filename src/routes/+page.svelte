@@ -16,14 +16,12 @@
 </script>
 <style lang="postcss">
   .grid-content {
-    position: relative;
     max-width: 1200px;
     margin: 0 auto;
     display: grid;
     grid-template-columns: repeat(4, minmax(0, 1fr));
     grid-template-rows: 280px 280px;
     gap: 1rem;
-    z-index: 0;
   }
   .mobile-view{
     position: relative;
@@ -41,15 +39,12 @@
     transition: all .2s ease-in-out;
     position: relative;
     overflow: hidden;
-    -webkit-transform: translateZ(0);
     z-index: 1;
   }
   .card:hover { 
     transform: scale(1.03); 
   }
   .main-grid {
-    position: relative;
-    z-index: 0;
     width: 100%;
     padding: 40px 15px 80px 15px;
   }
@@ -98,8 +93,8 @@
           <CardAbout/>
         </div>
       </div>
-      <div class="mobile-view">
-        <div class="bg-white/[0.8] dark:bg-zinc-800/90 dark:border-2 dark:border-[#666666] dark:shadow-[0_0_0_2px_inset_rgb(48 54 61)] card drop-shadow-[0_10px_8px_rgba(0,0,0,0.25)] ">
+      <div tabindex="-1" class="mobile-view">
+        <div tabindex="-1" class="bg-white/[0.8] dark:bg-zinc-800/90 dark:border-2 dark:border-[#666666] dark:shadow-[0_0_0_2px_inset_rgb(48 54 61)] card drop-shadow-[0_10px_8px_rgba(0,0,0,0.25)] ">
           <div class="darkMode-content">
             <DarkMode/>
           </div>
