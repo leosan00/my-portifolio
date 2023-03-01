@@ -8,6 +8,9 @@
 
     .switch-background-dark,.switch-background-light{
         position: relative;
+        display: flex;
+        align-items: center;
+        justify-content: flex-start;
         width: 90px;
         height: 45px;
         border-radius: 50px;
@@ -29,8 +32,10 @@
 
     .toggle-dark{
         position: absolute;
+        display: flex;
+        align-items: center;
+        justify-content: center;
         left: 8px;
-        top: 3px;
         width: 36px;
         height: 36px;
         border-radius: 50px;
@@ -43,16 +48,6 @@
 
     .dark-theme-transition{
         transform: translateX(calc(var(--width-switch-back) - var(--switch-left)));
-    }
-
-    .position-sun-dark, .position-moon-dark{
-        padding: 2px 2px 2px 2px;
-    }
-
-    .position-moon-dark{
-        position:relative; 
-        bottom:4px; 
-        right:2px;
     }
 
 

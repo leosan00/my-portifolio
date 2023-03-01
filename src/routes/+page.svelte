@@ -22,7 +22,6 @@
     grid-template-columns: repeat(4, minmax(0, 1fr));
     grid-template-rows: 280px 280px;
     gap: 1rem;
-    clear: both;
   }
   .mobile-view{
       position: relative;
@@ -73,12 +72,13 @@
       gap: 1.5rem;
     }
     .card {
-    min-height: 280px;
+      min-height: 280px;
     }
     .card:hover { 
-    transform: none; 
+      transform: none; 
     }
     .mobile-view{
+      margin-top: 12px;
       padding-bottom: 12px;
       padding-left: 12px;
       padding-right: 12px;
