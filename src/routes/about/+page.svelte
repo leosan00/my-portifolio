@@ -178,6 +178,7 @@
   .content-location{
     display: flex;
     justify-content: space-between;
+    padding-left: 0.2rem;
 
   }
   .location-title, .date-title{

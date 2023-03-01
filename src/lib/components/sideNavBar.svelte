@@ -47,7 +47,7 @@
         top: 25px;
         left: 0px;
         right: 0px;
-        margin-left: 8px;
+        /* margin-left: 8px; */
         z-index: 10;
         border-top-left-radius: 25px;
         border-bottom-left-radius: 25px;
