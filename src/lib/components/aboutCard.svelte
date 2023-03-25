@@ -30,5 +30,5 @@
       Eu sou <span class="text-xl font-bold">Leonardo Pereira Sanger</span>, desenvolvedor do
       Brasil. Tenho interesse em aplicativos, startups, esportes e negócios
     </p>
-    <PageLink route = 'about' tab ='active-about' nameLegend = 'Sobre'/>
+    <PageLink route = '/about' tab ='active-about' nameLegend = 'Sobre'/>
 </div>
