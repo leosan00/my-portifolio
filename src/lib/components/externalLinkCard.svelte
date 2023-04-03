@@ -34,7 +34,7 @@
     {/if}
 
     {#if hover || innerWidth < 640}
-        <div class="text-background absolute -bottom-2 right-0 rounded-l-xl">
+        <div class="text-background absolute -bottom-2 right-0 rounded-l-xl" in:fly|local="{{ y: 100, duration: 800}}" out:fade|local>
             <p class="pl-2 pr-3 pb-4">
                 {hoveredSubtitle}
             </p>
