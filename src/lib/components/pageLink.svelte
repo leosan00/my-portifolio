@@ -68,7 +68,7 @@
 
 <!-- svelte-ignore a11y-click-events-have-key-events -->
 <div on:click={() => $currentTab = tab}>
-    <a href="/{route}">
+    <a href="{route}">
         <div class="projects">
             <p class="legend">
                 {nameLegend}

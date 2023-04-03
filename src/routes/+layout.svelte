@@ -58,7 +58,7 @@
   <svelte:window bind:innerWidth={innerWidth} />
 
 {#if mounted}
-    <div class="top-menu" in:fade>
+    <div class="top-menu" in:fade|local>
         <a href="/" class="z-20">
             <!-- svelte-ignore a11y-click-events-have-key-events -->
             <div class="home-link" on:click={() => $currentTab = 'active-home'}>

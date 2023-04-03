@@ -79,6 +79,6 @@
   <div class="image-left">
     <img class="rounded-3xl position-left" src="/images/logoHC.png" alt="ad"/>
   </div>
-  <PageLink route = 'projects' tab ='active-projects' nameLegend = 'Projetos'/>
+  <PageLink route = '/projects' tab ='active-projects' nameLegend = 'Projetos'/>
 </div>
 
