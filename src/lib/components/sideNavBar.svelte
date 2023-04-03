@@ -54,7 +54,7 @@
     }
 
 </style>
-<div use:clickOutside on:outclick={() => {open = false;}} class="will-change-auto" >
+<div use:clickOutside on:outclick={() => {open = false;}} class="will-change-auto">
     <button on:click={toggleSideBar} style="z-index: 20;position:relative;">
         {#if open}
         <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 384 512" fill=" {$darkMode ? 'white' : 'black' }" width= 20 in:fade><!--! Font Awesome Pro 6.3.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license (Commercial License) Copyright 2023 Fonticons, Inc. --><path d="M376.6 84.5c11.3-13.6 9.5-33.8-4.1-45.1s-33.8-9.5-45.1 4.1L192 206 56.6 43.5C45.3 29.9 25.1 28.1 11.5 39.4S-3.9 70.9 7.4 84.5L150.3 256 7.4 427.5c-11.3 13.6-9.5 33.8 4.1 45.1s33.8 9.5 45.1-4.1L192 306 327.4 468.5c11.3 13.6 31.5 15.4 45.1 4.1s15.4-31.5 4.1-45.1L233.7 256 376.6 84.5z"/></svg>
@@ -64,7 +64,7 @@
     </button>
     
     {#if open}
-    <div class="side-bar bg-[#F5F5F5] dark:bg-zinc-800 dark:border-2 dark:border-[#666666] dark:shadow-[0_0_0_2px_inset_rgb(48 54 61)] drop-shadow-[0_10px_8px_rgba(0,0,0,0.25)]">
+    <div class="side-bar bg-[#F5F5F5] dark:bg-zinc-800 dark:border-2 dark:border-[#666666] dark:shadow-[0_0_0_2px_inset_rgb(48 54 61)] drop-shadow-[0_10px_8px_rgba(0,0,0,0.25)]" in:fade|local out:fade|local>
             <div class="postion-nav flex-col items-center">
                 <ul class="flex flex-col items-center" >
                     {#each navItems as navItem}
