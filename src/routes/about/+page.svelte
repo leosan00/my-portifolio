@@ -1,5 +1,8 @@
 <script>
     import { fade } from "svelte/transition";
+    import {currentTab} from "$lib/stores/currentTab.js";
+  
+    $currentTab = 'active-about';
 
     let listTools = [
       {

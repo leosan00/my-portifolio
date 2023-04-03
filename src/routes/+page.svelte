@@ -6,13 +6,15 @@
   import { fade } from "svelte/transition";
   import ExperienceCard from "$lib/components/experienceCard.svelte";
   import {onMount} from "svelte"
-
+  import {currentTab} from "$lib/stores/currentTab.js";
+  
   let mounted = false;
-
-    onMount(() => {
-	    mounted = true;
-    });
-
+  
+  onMount(() => {
+    mounted = true;
+  });
+  $currentTab = 'active-home';
+  
 </script>
 <style lang="postcss">
   .grid-content {
