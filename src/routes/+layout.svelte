@@ -65,7 +65,7 @@
                 <span class="nickname-title-word">Leo</span>
             </div>
         </a>
-        {#if innerWidth < 680}
+        {#if innerWidth < 1024}
             <NavBar/>
         {:else}
             <div class="postion-nav">

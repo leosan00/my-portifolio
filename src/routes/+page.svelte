@@ -60,14 +60,14 @@
     justify-content: center;
   }
 
-  @media (max-width: 850px) {
+  @media (max-width: 1280px) {
     .grid-content {
       grid-template-columns: auto;
       grid-template-rows: repeat(4, 280px);
       gap: 1.5rem;
     }
   }
-  @media (max-width: 640px) {
+  @media (max-width: 1024px) {
     .grid-content {
       grid-template-columns: auto;
       grid-template-rows: auto;
