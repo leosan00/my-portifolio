@@ -75,6 +75,7 @@
     }
     .card {
       min-height: 280px;
+      min-width: 280px;
     }
     .card:hover { 
       transform: none; 
