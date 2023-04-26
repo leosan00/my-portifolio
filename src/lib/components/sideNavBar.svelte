@@ -43,14 +43,13 @@
     .side-bar{
         padding: 20px 20px 20px 20px;
         position: absolute;
-        width: 100%;
+        width: 98%;
+        margin: 0 auto;
         top: 25px;
         left: 0px;
         right: 0px;
-        /* margin-left: 8px; */
         z-index: 10;
-        border-top-left-radius: 25px;
-        border-bottom-left-radius: 25px;
+        border-radius: 25px;
     }
 
 </style>
