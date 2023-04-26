@@ -53,7 +53,7 @@
         right: 0px;
     }
     
-    @media (max-width: 650px) {
+    @media (max-width: 1024px) {
         .projects{
         max-width: 100%;
         box-shadow: 0 0px 0px 4px rgb(255 255 255 / 50%);

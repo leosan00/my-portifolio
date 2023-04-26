@@ -1,7 +1,7 @@
 <script>
   import { fade } from "svelte/transition";
   import {currentTab} from "$lib/stores/currentTab.js";
-  
+
   $currentTab = 'active-experience';
 
 
@@ -118,7 +118,7 @@
 </style>
 
 <div class="container main-page">
-  <div class="content-experiences bg-white/[0.8] dark:bg-zinc-800/90 dark:border-2 dark:border-[#666666] dark:shadow-[0_0_0_2px_inset_rgb(48 54 61)] drop-shadow-[0_10px_8px_rgba(0,0,0,0.25)] ">
+  <div class="content-experiences bg-white/[0.8] dark:bg-zinc-800/90 dark:border-2 dark:border-[#666666] dark:shadow-[0_0_0_2px_inset_rgb(48 54 61)] drop-shadow-[0_10px_8px_rgba(0,0,0,0.25)]" in:fade|local>
     <h1 class="title">Experiências</h1>
     {#each listOfXp as xpItem }
       <div class="experience">

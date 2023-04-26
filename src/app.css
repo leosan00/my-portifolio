@@ -10,6 +10,11 @@ body{
     font-family: 'Nunito';
     letter-spacing: 0.8px;
 }
+a  {
+  @apply text-black dark:text-white;
+  text-decoration: none;
+}
+
 
 
 .top-menu {
@@ -17,26 +22,9 @@ body{
     display: flex;
     justify-content: space-between;
     align-items: center;
-    
-  }
-
-  @media (max-width: 640px) {
-    .top-menu {
-      padding: 1rem;
-      align-items: center;
-      
-    }
-    body{
-      font-family: 'Nunito';
-      letter-spacing: 0.4px;
-  }
-  }
-
-  a  {
-    @apply text-black dark:text-white;
-    text-decoration: none;
-  }
-
+    position: relative;
+}
+ 
   .home-link{
     padding-left: 0.4rem;
   }
@@ -113,7 +101,4 @@ body{
     width: 82px;
     height: 40px;
     margin-left: 16px;
-}
-.content-nav{
-  width: 30px;
 }

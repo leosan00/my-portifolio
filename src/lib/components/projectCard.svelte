@@ -30,7 +30,7 @@
     position: relative;
   }
 
-  @media (max-width: 850px) {
+  @media (max-width: 1280px) {
     .position-left,.position-right{
       opacity: 0;
       width: 18rem;
@@ -53,7 +53,7 @@
     }
   }
 
-  @media (max-width: 650px) {
+  @media (max-width: 1024px) {
     .position-left,.position-right{
       opacity: 1;
       width:  15rem;
