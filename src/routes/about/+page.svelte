@@ -80,7 +80,6 @@
       {
       name: 'Svelte',
       imageSrc: '/images/svelteLogo.png',
-    
       type: 'Framework'
       },
       {
@@ -130,8 +129,6 @@
     display: flex;
     padding: 8px 8px 8px 8px;
   }
-      
-
   .content-about{
     border-radius: 40px;
     width: 75%;
@@ -181,6 +178,7 @@
   .content-location{
     display: flex;
     justify-content: space-between;
+    flex-direction: column;
     padding-left: 0.2rem;
 
   }
@@ -234,44 +232,28 @@
 
   @media (max-width: 650px) {
     .about {
-    margin-top: 2rem;
-    margin-bottom: 2rem;
-    display: flex;
-    flex-direction: column;
-    padding: 8px 8px 8px 8px;
+      flex-direction: column;
     }
     .content-about-tools{
-    padding-left: 0.5rem;
+      padding-left: 0.5rem;
     }
     .main-content-tools-grid{
       padding-left: 0.4rem;
       padding-right: 0.4rem;
     }
     .content-about{
-    border-radius: 40px;
-    width: 95%;
-    height: 100%;
-    margin-left: auto;
-    margin-right: auto;
-    padding-left: 1.0rem;
-    padding-right: 1.0rem;
-    padding-top: 1.5rem;
-    padding-bottom: 1.5rem;
-  }
-  .content-location{
-    display: flex;
-    flex-direction: column;
-  }
-  .img-div{
-    width: 75px;
-    height: 100%;
-    min-width: 75px;
-    min-height: 100%;
-    margin-bottom: 0.5rem;
-  }
-  .custom-etec-logo{
-    margin-bottom: 0.5rem;
-  }
+      width: 95%;
+      padding-left: 1.0rem;
+      padding-right: 1.0rem;
+      padding-top: 1.5rem;
+      padding-bottom: 1.5rem;
+    }
+    .img-div{
+      margin-bottom: 0.5rem;
+    }
+    .custom-etec-logo{
+      margin-bottom: 0.5rem;
+    }
   }
 </style>
 
@@ -328,7 +310,7 @@
           {#if item.type == type}
             <div class="content-tools bg-white/[0.8] dark:bg-zinc-800/90 dark:border-2 dark:border-[#666666] dark:shadow-[0_0_0_2px_inset_rgb(48 54 61)] drop-shadow-[0_10px_8px_rgba(0,0,0,0.25)]">
               <div>
-              <img src={item.imageSrc} class="img-grid-tools" alt="Project 1">
+              <img src={item.imageSrc} class="img-grid-tools" alt={item.name}>
             </div>
             <div class="content-about-tools">
               <h2 class="sub-title">{item.name}</h2>

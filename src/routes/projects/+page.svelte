@@ -51,8 +51,6 @@ import {currentTab} from "$lib/stores/currentTab.js";
     display: flex;
     padding: 8px 8px 8px 8px;
   }
-      
-
   .content-projects{
     border-radius: 40px;
     width: 75%;
@@ -88,6 +86,7 @@ import {currentTab} from "$lib/stores/currentTab.js";
   .content-location{
     display: flex;
     justify-content: space-between;
+    flex-direction: column;
     padding-left: 0.2rem;
 
   }
@@ -103,33 +102,20 @@ import {currentTab} from "$lib/stores/currentTab.js";
 
   @media (max-width: 650px) {
     .project {
-    margin-top: 2rem;
-    margin-bottom: 2rem;
-    display: flex;
-    flex-direction: column;
-    padding: 8px 8px 8px 8px;
+      display: flex;
+      flex-direction: column;
     }
     .main-text-projects{
-    width: 100%;
-    padding-left: 0.5rem;
-    padding-top: 1rem;
+      padding-left: 0.5rem;
+      padding-top: 1rem;
     }
-
     .content-projects{
-    border-radius: 40px;
-    width: 95%;
-    height: 100%;
-    margin-left: auto;
-    margin-right: auto;
-    padding-left: 1.0rem;
-    padding-right: 1.0rem;
-    padding-top: 1.5rem;
-    padding-bottom: 1.5rem;
-  }
-  .content-location{
-    display: flex;
-    flex-direction: column;
-  }
+      width: 95%;
+      padding-left: 1.0rem;
+      padding-right: 1.0rem;
+      padding-top: 1.5rem;
+      padding-bottom: 1.5rem;
+    }
   }
 </style>
 
@@ -139,7 +125,7 @@ import {currentTab} from "$lib/stores/currentTab.js";
     {#each listProjects as item}
     <div class="project">
       <div class="img-div">
-        <img src= {item.imageSrc} class="rounded-xl" alt="Project 1">
+        <img src= {item.imageSrc} class="rounded-xl" alt={item.location}>
       </div>
       <div class="main-text-projects">
         <h2 class="sub-title">{item.projectName}</h2>

@@ -72,6 +72,7 @@
   .content-location{
     display: flex;
     justify-content: space-between;
+    flex-direction: column;
     padding-left: 0.2rem;
 
   }
@@ -87,33 +88,19 @@
 
   @media (max-width: 650px) {
     .experience {
-    margin-top: 2rem;
-    margin-bottom: 2rem;
-    display: flex;
-    flex-direction: column;
-    padding: 8px 8px 8px 8px;
+      flex-direction: column;
     }
     .main-text-experience{
-    width: 100%;
-    padding-left: 0.5rem;
-    padding-top: 1rem;
+      padding-left: 0.5rem;
+      padding-top: 1rem;
     }
-
     .content-experiences{
-    border-radius: 40px;
-    width: 95%;
-    height: 100%;
-    margin-left: auto;
-    margin-right: auto;
-    padding-left: 1.0rem;
-    padding-right: 1.0rem;
-    padding-top: 1.5rem;
-    padding-bottom: 1.5rem;
-  }
-  .content-location{
-    display: flex;
-    flex-direction: column;
-  }
+      width: 95%;
+      padding-left: 1.0rem;
+      padding-right: 1.0rem;
+      padding-top: 1.5rem;
+      padding-bottom: 1.5rem;
+    }
   }
 </style>
 

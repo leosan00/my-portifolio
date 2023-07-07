@@ -1,3 +1,21 @@
+
+<style>
+    .content-external-link {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        width: 100%;
+        height: 100%;
+        cursor: pointer;
+        position: relative;
+    }
+
+    .text-background {
+        width: fit-content;
+        background-color: white;
+        color: black;
+    }
+</style>
 <script>
     import { fade, fly } from "svelte/transition";
 
@@ -41,21 +59,3 @@
         </div>
     {/if}
 </div>
-
-<style>
-    .content-external-link {
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        width: 100%;
-        height: 100%;
-        cursor: pointer;
-        position: relative;
-    }
-
-    .text-background {
-        width: fit-content;
-        background-color: white;
-        color: black;
-    }
-</style>
