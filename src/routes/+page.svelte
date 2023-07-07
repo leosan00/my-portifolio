@@ -17,6 +17,11 @@
   
 </script>
 <style lang="postcss">
+  
+  .main-grid {
+    width: 100%;
+    padding: 40px 15px 80px 15px;
+  }
   .grid-content {
     max-width: 1200px;
     margin: 0 auto;
@@ -46,10 +51,6 @@
   .card:hover { 
     transform: scale(1.03); 
     filter: drop-shadow(0 25px 25px rgb(0 0 0 / 0.15));
-  }
-  .main-grid {
-    width: 100%;
-    padding: 40px 15px 80px 15px;
   }
 
   .darkMode-content{

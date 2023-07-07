@@ -43,7 +43,6 @@ a  {
     transition: all .2s ease-in-out;
     will-change: auto;
   }
-
   .nav-item:hover hr{
     border: 2px solid #5E78E8;
     transform: scale(1.2);
@@ -92,11 +91,7 @@ a  {
     cursor: pointer;
     letter-spacing: .05rem;
   }
-
-  .postion-nav{
-    display: flex;
-  }
-
+  
   .dark-btn{
     width: 82px;
     height: 40px;
