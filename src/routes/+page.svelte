@@ -48,8 +48,14 @@
     overflow: hidden;
     z-index: 1;
   }
+
+  .card--blur{
+    transform: translateZ(0);
+    backface-visibility: hidden;
+    -webkit-font-smoothing: subpixel-antialiased;
+  }
   .card:hover { 
-    transform: scale(1.03); 
+    transform: perspective(1px) scale(1.03); 
     filter: drop-shadow(0 25px 25px rgb(0 0 0 / 0.15));
   }
 
@@ -95,7 +101,7 @@
   {#if mounted}
     <div class="grid-content" in:fade|local>
       <div class="md:col-span-2 mobile-view">
-        <div class="card bg-white/[0.8] dark:bg-zinc-800/90 dark:border-2 dark:border-[#666666] dark:shadow-[0_0_0_2px_inset_rgb(48 54 61)] " >
+        <div class="card card--blur bg-white/[0.8] dark:bg-zinc-800/90 dark:border-2 dark:border-[#666666] dark:shadow-[0_0_0_2px_inset_rgb(48 54 61)] " >
           <CardAbout/>
         </div>
       </div>
