@@ -1,21 +1,3 @@
-<script>
-  import DarkMode from "$lib/components/darkMode.svelte";
-  import ExternalLinkCard from "$lib/components/externalLinkCard.svelte";
-  import CardAbout from "$lib/components/aboutCard.svelte";
-  import ProjectCard from "$lib/components/projectCard.svelte";
-  import { fade } from "svelte/transition";
-  import ExperienceCard from "$lib/components/experienceCard.svelte";
-  import {onMount} from "svelte"
-  import {currentTab} from "$lib/stores/currentTab.js";
-  
-  let mounted = false;
-  
-  onMount(() => {
-    mounted = true;
-  });
-  $currentTab = 'active-home';
-  
-</script>
 <style lang="postcss">
   
   .main-grid {
@@ -49,13 +31,8 @@
     z-index: 1;
   }
 
-  .card--blur{
-    transform: translateZ(0);
-    backface-visibility: hidden;
-    -webkit-font-smoothing: subpixel-antialiased;
-  }
   .card:hover { 
-    transform: perspective(1px) scale(1.03); 
+    /* transform: perspective(1px) scale(1.03);  */
     filter: drop-shadow(0 25px 25px rgb(0 0 0 / 0.15));
   }
 
@@ -94,15 +71,61 @@
       padding-right: 12px;
     }
   }
-
 </style>
 
+<script>
+  import DarkMode from "$lib/components/darkMode.svelte";
+  import ExternalLinkCard from "$lib/components/externalLinkCard.svelte";
+  import CardAbout from "$lib/components/aboutCard.svelte";
+  import ProjectCard from "$lib/components/projectCard.svelte";
+  import { fade,fly } from "svelte/transition";
+  import ExperienceCard from "$lib/components/experienceCard.svelte";
+  import {onMount} from "svelte"
+  import {currentTab} from "$lib/stores/currentTab.js";
+  import anime from "animejs";
+
+  
+  let mounted = false;
+  let animationLetters;
+  let animation;
+  let animationDivIn;
+  let animationDivOut;
+  let divAnimationStarted =false;
+
+  let isHovered = false;
+  let x;
+	let y;
+  
+  onMount(() => {
+    mounted = true;
+  });
+
+  function handleMessage(event){
+    // console.log(event.detail);
+    if(event.detail.isHovered == 'true'){
+      isHovered =true;
+      x=event.detail.positionX;
+      y=event.detail.positionY;
+    }else{
+      isHovered =false;
+    }
+  }
+
+  $currentTab = 'active-home';
+  let innerWidth = 0;
+</script>
+<svelte:window bind:innerWidth={innerWidth} />
 <div class="main-grid">
   {#if mounted}
+    {#if isHovered && innerWidth > 1024}
+	    <div style="top: {y}px; left: {x}px; position:absolute; z-index: 5;" in:fly={{ y: 50, duration: 800 }} out:fade = {{duration:500}}>
+        Click me!
+      </div>
+    {/if}
     <div class="grid-content" in:fade|local>
       <div class="md:col-span-2 mobile-view">
         <div class="card card--blur bg-white/[0.8] dark:bg-zinc-800/90 dark:border-2 dark:border-[#666666] dark:shadow-[0_0_0_2px_inset_rgb(48 54 61)] " >
-          <CardAbout/>
+          <CardAbout on:message = {handleMessage}/>
         </div>
       </div>
       <div class="mobile-view">
