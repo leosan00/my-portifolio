@@ -1,6 +1,14 @@
 <script>
     import { fade } from "svelte/transition";
     import {currentTab} from "$lib/stores/currentTab.js";
+    import {onMount} from "svelte";
+   
+
+    let mounted = false;
+
+    onMount(() => {
+	    mounted = true;
+    });
   
     $currentTab = 'active-about';
 
@@ -16,7 +24,7 @@
       type: 'Ferramentas'
       },
       {
-      name: 'Sql server management',
+      name: 'Sql Server Management',
       imageSrc: '/images/sql-server.png',
       type: 'Ferramentas'
       },
@@ -26,7 +34,7 @@
       type: 'Ferramentas'
       },
       {
-      name: 'Oracle sql Developer',
+      name: 'Oracle Sql Developer',
       imageSrc: '/images/OracleSqlLogo.png',
       type: 'Ferramentas'
       },
@@ -43,7 +51,6 @@
       {
       name: 'Flutter',
       imageSrc: '/images/flutterLogo.png',
-    
       type:'Framework'
       },
       {
@@ -62,20 +69,24 @@
       type: 'Linguagens de programação'
       },
       {
+      name: 'SQL',
+      imageSrc: '/images/sql-server.png',
+      type: 'Linguagens de programação'
+      },
+      {
       name: 'Jquery',
       imageSrc: '/images/jqueryLogo.png',
-    
       type:'Framework'
       },
       {
       name: 'HTML',
       imageSrc: '/images/HTML5Logo.png',
-      type: 'Linguagens de programação'
+      type: 'Outros'
       },
       {
       name: 'CSS',
       imageSrc: '/images/css-3.png',
-      type: 'Linguagens de programação'
+      type: 'Outros'
       },
       {
       name: 'Svelte',
@@ -85,11 +96,6 @@
       {
       name: 'Notion',
       imageSrc: '/images/notionLogo.png',
-      type: 'Ferramentas'
-      },
-      {
-      name: 'Quabro Kanban',
-      imageSrc: '/images/table.png',
       type: 'Ferramentas'
       },
       ];
@@ -256,70 +262,62 @@
     }
   }
 </style>
-
-<div class="container main-page">
-  <div class="content-about bg-white/[0.8] dark:bg-zinc-800/90 dark:border-2 dark:border-[#666666] dark:shadow-[0_0_0_2px_inset_rgb(48 54 61)] drop-shadow-[0_10px_8px_rgba(0,0,0,0.25)] " in:fade|local>
-    <h1 class="title">Formação</h1>
-    <div class="about">
-      <div class="img-div">
-        <img src="/images/logoFiap.png" class="rounded-xl" alt="Project 1">
+{#if mounted}
+  <div class="container main-page">
+    <div class="content-about bg-white/[0.8] dark:bg-zinc-800/90 dark:border-2 dark:border-[#666666] dark:shadow-[0_0_0_2px_inset_rgb(48 54 61)] drop-shadow-[0_10px_8px_rgba(0,0,0,0.25)] " in:fade|local>
+      <h1 class="title">Formação</h1>
+      <div class="about">
+        <div class="img-div">
+          <img src="/images/logoFiap.png" class="rounded-xl" alt="Project 1">
+        </div>
+        <div class="content-about-tools">
+          <h2 class="sub-title">Sistemas de Informação</h2>
+          <div class="content-location">
+            <h3 class="location-title">FIAP</h3>
+            <h3 class="date-title">Jan/17 a Dez/20</h3>
+          </div>
+        </div>
       </div>
-      <div class="content-about-tools">
-        <h2 class="sub-title">Sistemas de Informação</h2>
-        <div class="content-location">
-          <h3 class="location-title">FIAP</h3>
-          <h3 class="date-title">Jan/17 a Dez/20</h3>
+      <div class="about">
+        <div class="custom-etec-logo dark:bg-white bg-gray-300">
+            <img src="/images/etecSP.png" alt="Project 1">
+        </div>
+        <div class="content-about-tools">
+          <h2 class="sub-title">Técnico em Eletrônica integrado com o Ensino Médio</h2>
+          <div class="content-location">
+            <h3 class="location-title">ETEC São Paulo (ETESP)</h3>
+            <h3 class="date-title">Jan/14 a Dez/16</h3>
+          </div>
+        </div>
+      </div>
+      <h1 class="title">Idiomas</h1>
+      <div class="content-language space-x-12">
+        <img src="/images/united-states.png" class="w-36 rounded-xl" alt="Project 1">
+        <div class="sub-title">
+          Avançado
         </div>
       </div>
     </div>
-    <div class="about">
-      <div class="custom-etec-logo dark:bg-white bg-gray-300">
-          <img src="/images/etecSP.png" alt="Project 1">
+    <div>
+      {#each listOfTypes as type}
+      <div class="main-content-tools-grid container">
+        <h1 class="title">{type}</h1>
+        <div class="grid-content">
+          {#each sortedList as item}
+            {#if item.type == type}
+              <div class="content-tools bg-white/[0.8] dark:bg-zinc-800/90 dark:border-2 dark:border-[#666666] dark:shadow-[0_0_0_2px_inset_rgb(48 54 61)] drop-shadow-[0_10px_8px_rgba(0,0,0,0.25)]">
+                <div>
+                <img src={item.imageSrc} class="img-grid-tools" alt={item.name}>
+              </div>
+              <div class="content-about-tools">
+                <h2 class="sub-title">{item.name}</h2>
+              </div>
+              </div>
+            {/if}
+          {/each}
+        </div> 
       </div>
-      <div class="content-about-tools">
-        <h2 class="sub-title">Técnico em Eletrônica integrado com o Ensino Médio</h2>
-        <div class="content-location">
-          <h3 class="location-title">ETEC São Paulo (ETESP)</h3>
-          <h3 class="date-title">Jan/14 a Dez/16</h3>
-        </div>
-      </div>
-    </div>
-    <h1 class="title">Idiomas</h1>
-    <div class="content-language space-x-12">
-      <img src="/images/united-states.png" class="w-36 rounded-xl" alt="Project 1">
-      <div class="sub-title">
-        Avançado
-      </div>
+      {/each}
     </div>
   </div>
-  <!-- <h1 class="title">Ferramentas e linguagens de programação</h1> -->
-    <!-- <h1 class="title">Conhecimentos</h1>
-	<p class="pl-4 pb-10">
-		Domínio do Pacote Office – Word, Power Point e Excel <br>
-		Conhecimento das linguagens de desenvolvimento C#, HTML, CSS, JavaScript <br>
-		Requisições AJAX (Json) <br>
-		Conhecimento em frameworks Bootstrap, Jquery, Jquery UI<br>
-		Conhecimento em Oracle SQL, SQL Server e banco não relacional (Firebase)
-	</p> -->
-  <div>
-    {#each listOfTypes as type}
-    <div class="main-content-tools-grid container">
-      <h1 class="title">{type}</h1>
-      <div class="grid-content">
-        {#each sortedList as item}
-          {#if item.type == type}
-            <div class="content-tools bg-white/[0.8] dark:bg-zinc-800/90 dark:border-2 dark:border-[#666666] dark:shadow-[0_0_0_2px_inset_rgb(48 54 61)] drop-shadow-[0_10px_8px_rgba(0,0,0,0.25)]">
-              <div>
-              <img src={item.imageSrc} class="img-grid-tools" alt={item.name}>
-            </div>
-            <div class="content-about-tools">
-              <h2 class="sub-title">{item.name}</h2>
-            </div>
-            </div>
-          {/if}
-        {/each}
-      </div> 
-    </div>
-    {/each}
-  </div>
-</div>
+{/if}

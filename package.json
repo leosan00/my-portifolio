@@ -22,6 +22,8 @@
 	},
 	"type": "module",
 	"dependencies": {
-		"@fontsource/nunito": "^4.5.12"
+		"@fontsource/nunito": "^4.5.12",
+		"@rive-app/canvas": "^1.2.1",
+		"animejs": "^3.2.1"
 	}
 }
