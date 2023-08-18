@@ -11,7 +11,7 @@
     location: 'Editora Globo (Valor Econômico)',
     role:'Desenvolvedor Júnior',
     date:'Mar/21 a atual',
-    jobDescription: 'Desenvolvimento de sistema para controle de produtos e serviços da plataforma Valor Pro (controle de acesso, vigências, faturamento). <br>Atuação no serviço responsável pela liberação de acesso de usuários nos serviços e produtos do Valor Pro. <br>TFS e Jira (Repositório, quadro Kanban)'
+    jobDescription: 'Desenvolvimento de sistema para controle de produtos e serviços da plataforma Valor PRO (controle de acesso, vigências, faturamento) <br>Atuação no serviço responsável pela liberação de acesso de usuários nos serviços e produtos do Valor PRO <br>TFS e Jira (Repositório, quadro Kanban)'
     },
     {
     imageSrc:'/images/logoAtento.jpg',

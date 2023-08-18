@@ -2,12 +2,10 @@
   .my-image-container {
     margin-top: 4px;
     margin-bottom: 4px;
-    width: 5.75rem;
-    height: 6.0rem;
+    width: 5.3rem;
+    height: 6.8rem;
     border-radius: 30px;
     border: solid 1px black;
-    background-size: cover;
-    background-image: URL('/images/foto.jpg');
   }
   .card-about {
     padding: 25px 42px;
@@ -224,7 +222,7 @@
 
 <div class="card-about">
   <div class="content-about">
-    <div class="my-image-container" />
+    <img class="my-image-container object-fill" src="/images/leo_foto_perto_2.jpg" alt= "foto" />
     <div class="inline-flex">
       <div class="self-center reset-pc-counter flex justify-end">
         <svg aria-hidden="true" class="object-contain img-undo-reset" fill=" {$darkMode ? 'white' : 'black' }" xmlns="http://www.w3.org/2000/svg" width="32" viewBox="0 0 512 512" on:click={handleOnClickPCControl}><!--! Font Awesome Free 6.4.2 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license (Commercial License) Copyright 2023 Fonticons, Inc. --><path d="M125.7 160H176c17.7 0 32 14.3 32 32s-14.3 32-32 32H48c-17.7 0-32-14.3-32-32V64c0-17.7 14.3-32 32-32s32 14.3 32 32v51.2L97.6 97.6c87.5-87.5 229.3-87.5 316.8 0s87.5 229.3 0 316.8s-229.3 87.5-316.8 0c-12.5-12.5-12.5-32.8 0-45.3s32.8-12.5 45.3 0c62.5 62.5 163.8 62.5 226.3 0s62.5-163.8 0-226.3s-163.8-62.5-226.3 0L125.7 160z"/></svg>

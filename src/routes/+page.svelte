@@ -82,15 +82,9 @@
   import ExperienceCard from "$lib/components/experienceCard.svelte";
   import {onMount} from "svelte"
   import {currentTab} from "$lib/stores/currentTab.js";
-  import anime from "animejs";
 
   
   let mounted = false;
-  let animationLetters;
-  let animation;
-  let animationDivIn;
-  let animationDivOut;
-  let divAnimationStarted =false;
 
   let isHovered = false;
   let x;

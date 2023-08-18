@@ -69,6 +69,11 @@
       type: 'Linguagens de programação'
       },
       {
+      name: 'SQL',
+      imageSrc: '/images/sql-server.png',
+      type: 'Linguagens de programação'
+      },
+      {
       name: 'Jquery',
       imageSrc: '/images/jqueryLogo.png',
       type:'Framework'
@@ -76,12 +81,12 @@
       {
       name: 'HTML',
       imageSrc: '/images/HTML5Logo.png',
-      type: 'Linguagens de programação'
+      type: 'Outros'
       },
       {
       name: 'CSS',
       imageSrc: '/images/css-3.png',
-      type: 'Linguagens de programação'
+      type: 'Outros'
       },
       {
       name: 'Svelte',
