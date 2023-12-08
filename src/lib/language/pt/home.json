@@ -1,0 +1,20 @@
+{
+  "nav":{
+    "home": "Início",
+    "about": "Sobre mim",
+    "projects": "Projetos",
+    "experience": "Experiências"
+  },
+  "animatedText":{
+    "text": "Clique aqui!"
+  },
+  "aboutCard":{
+    "firstText":"Eu sou <span class='text-xl font-bold'>Leonardo Pereira Sanger</span>, desenvolvedor do Brasil. Estou no mercado de tecnologia a {{xpYears}} anos com experiência em front-end e back-end.",
+    "secondText": "Gosto de fazer trabalhos criativos, escaláveis e com uma boa experiência de usuário."
+  },
+  "pagesLink":{
+    "about": "Sobre",
+    "experience": "Experiências",
+    "projects": "Projetos"
+  }
+}

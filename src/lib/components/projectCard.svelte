@@ -67,6 +67,7 @@
 
 <script>
   import PageLink from "$lib/components/pageLink.svelte";
+  import { t } from '$lib/language/translations';
 </script>
 
 <div class="content-projects will-change-auto">
@@ -79,6 +80,6 @@
   <div class="image-left">
     <img class="rounded-3xl position-left" src="/images/logoHC.png" alt="ad"/>
   </div>
-  <PageLink route = '/projects' tab ='active-projects' nameLegend = 'Projetos'/>
+  <PageLink route = '/projects' tab ='active-projects' nameLegend = {$t("home.pagesLink.projects")}/>
 </div>
 
