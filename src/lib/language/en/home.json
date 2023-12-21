@@ -1,9 +1,9 @@
 {
   "nav":{
     "home": "Home",
-    "about": "About",
+    "about": "About me",
     "projects": "Projects",
-    "experience": "Skills"
+    "experience": "Experience"
   },
   "animatedText":{
     "text": "Click me!"

@@ -1,0 +1,21 @@
+{
+    "title": "Experiência",
+    "companies": [
+        {
+            "companyName": "Editora Globo",
+            "job":{
+                "role": "Desenvolvedor Júnior",
+                "date": "Mar/21 a atual",
+                "description": "Desenvolvimento de sistema para controle de produtos e serviços da plataforma Valor PRO (controle de acesso, vigências, faturamento) <br> Atuação no serviço responsável pela liberação de acesso de usuários nos serviços e produtos do Valor PRO <br> TFS e Jira (Repositório, quadro Kanban)"    
+            }
+        },
+        {
+            "companyName": "Atento",
+            "job":{
+                "role": "Estágio em Sistemas de Informação",
+                "date": "Fev/19 a Fev/21",
+                "description": "Desenvolvimento de sistema interno para controle de URAs <br> Desenvolvimento de sistema para leitura de arquivos .csv <br> Treinamentos Git, Kanban, SQL, C#, ASP.NET MVC 4 <br> Metodologia Ágil"    
+            }
+        }
+    ]
+}

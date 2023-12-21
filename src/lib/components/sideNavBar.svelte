@@ -2,35 +2,36 @@
 
     import DarkMode from "$lib/components/darkMode.svelte";
     import {currentTab} from "$lib/stores/currentTab.js";
-    import { fade, fly } from "svelte/transition";
+    import { fade } from "svelte/transition";
     import {darkMode} from '$lib/stores/darkMode.js';
     import { clickOutside } from '$lib/scripts/clickOutside.js'
     import LanguageSwitcher from "./languageSwitcher.svelte";
+    import { t,locale } from '$lib/language/translations';
 	
      let navItems = [
 		{
             name: 'Início',
 			class: 'nav-item-side',
             tab: 'active-home',
-            link:'/'
+            link:''
 		},
 		{
             name: 'Sobre mim',
 			class: 'nav-item-side',
             tab: 'active-about',
-            link:'/about'
+            link:'about'
 		},
 		{
             name: 'Projetos',
 			class: 'nav-item-side',
             tab: 'active-projects',
-            link:'/projects'
+            link:'projects'
 		},
 		{
             name: 'Experiências',
 			class: 'nav-item-side',
             tab: 'active-experience',
-            link:'/experience'
+            link:'experience'
 		},
 	];
     
@@ -82,8 +83,8 @@
                     <li>
                         <!-- svelte-ignore a11y-click-events-have-key-events -->
                         <div class="{navItem.class}" on:click={() => {$currentTab = navItem.tab; open = false}}>
-                            <a href="{navItem.link}" class="font-style-nav flex flex-col items-center">
-                                {navItem.name}
+                            <a href="/{navItem.link}" class="font-style-nav flex flex-col items-center">
+                                {$locale == 'pt' ? navItem.name : $t(`home.nav.${navItem.link == '' ? 'home' : navItem.link}`)}
                                 <hr class:selected="{$currentTab === navItem.tab}"/>
                             </a>
                         </div> 

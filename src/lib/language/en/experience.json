@@ -1,0 +1,21 @@
+{
+    "title": "Experience",
+    "companies": [
+        {
+            "companyName": "Editora Globo",
+            "job":{
+                "role": "Junior Developer",
+                "date": "March 2021 - Present",
+                "description": "Improve the internal system that manages access to all products on the Valor PRO plataform. Program new rules for user access, billing accounts and product access time. <br> Support the service manager to provide new user access. <br> Develop and build APIs to boost sales of the company's investment program. "    
+            }
+        },
+        {
+            "companyName": "Atento",
+            "job":{
+                "role": "IT Intern",
+                "date": "February 2019 - February 2021",
+                "description": "Developed internal systems to control URAs <br> Developed a program to read .csv files <br> Agile software development"    
+            }
+        }
+    ]
+}

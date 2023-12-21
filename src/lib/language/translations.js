@@ -3,8 +3,8 @@ import lang from './lang.json';
 
 /** @type {import('sveltekit-i18n').Config} */
 const config = ({
-  initLocale: 'pt',
-  fallbackLocale: 'pt',
+  initLocale: 'en',
+  fallbackLocale: 'en',
   translations: {
     en: { lang },
     pt: { lang },
@@ -13,50 +13,65 @@ const config = ({
     {
       locale: 'pt',
       key: 'home',
-      routes: ['/'],
       loader: async () => (
         await import('./pt/home.json')
       ).default,
     },
     {
+      locale: 'pt',
+      key: 'about',
+      routes: ['/about'],
+      loader: async () => (
+        await import('./pt/about.json')
+      ).default,
+    },
+    {
+      locale: 'pt',
+      key: 'projects',
+      routes: ['/projects'],
+      loader: async () => (
+        await import('./pt/projects.json')
+      ).default,
+    },
+    {
+      locale: 'pt',
+      key: 'experience',
+      routes: ['/experience'],
+      loader: async () => (
+        await import('./pt/experience.json')
+      ).default,
+    },
+    {
       locale: 'en',
       key: 'home',
-      routes: ['/'],
       loader: async () => (
         await import('./en/home.json')
       ).default,
     },
-    // {
-    //   locale: 'en',
-    //   key: 'about',
-    //   routes: ['/about'],
-    //   loader: async () => (
-    //     await import('./en/about.json')
-    //   ).default,
-    // },
-    // {
-    //   locale: 'cs',
-    //   key: 'common',
-    //   loader: async () => (
-    //     await import('./cs/common.json')
-    //   ).default,
-    // },
-    // {
-    //   locale: 'cs',
-    //   key: 'home',
-    //   routes: ['/'],
-    //   loader: async () => (
-    //     await import('./cs/home.json')
-    //   ).default,
-    // },
-    // {
-    //   locale: 'cs',
-    //   key: 'about',
-    //   routes: ['/about'],
-    //   loader: async () => (
-    //     await import('./cs/about.json')
-    //   ).default,
-    // },
+    {
+      locale: 'en',
+      key: 'about',
+      routes: ['/about'],
+      loader: async () => (
+        await import('./en/about.json')
+      ).default,
+    },
+    {
+      locale: 'en',
+      key: 'projects',
+      routes: ['/projects'],
+      loader: async () => (
+        await import('./en/projects.json')
+      ).default,
+    },
+    {
+      locale: 'en',
+      key: 'experience',
+      routes: ['/experience'],
+      loader: async () => (
+        await import('./en/experience.json')
+      ).default,
+    }
   ],
 });
 

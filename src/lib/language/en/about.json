@@ -1,0 +1,22 @@
+{
+    "education": {
+        "title":"Education",
+        "fiapDescription": "Information Systems",
+        "fiapDate": "December 2020",
+        "etecDescription": "Integrated electronics high school",
+        "etecDate": "December 2016"
+    },
+    "language":{
+        "title":"Language",
+        "englishLanguage": "Advanced"
+    },
+    "tools":{
+        "title": "Tools"
+    },
+    "programmingLanguage":{
+        "title": "Programming languages"
+    },
+    "others":{
+        "title": "Others"
+    }
+}
