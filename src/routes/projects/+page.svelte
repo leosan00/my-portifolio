@@ -3,6 +3,15 @@
 import { fade } from "svelte/transition";
 import {currentTab} from "$lib/stores/currentTab.js";
 import { t } from '$lib/language/translations';
+import anime from "animejs";
+import { onMount } from "svelte";
+
+  let animation;
+
+  onMount(() => {
+
+
+  });
   
     $currentTab = 'active-projects';
 
@@ -37,8 +46,47 @@ import { t } from '$lib/language/translations';
     },
   ];
 
+  /**
+ * Sua descrição da função.
+ * @param {string} html - A descrição do parâmetro 'html'.
+ */
+  function addClassToLi(html) {
+    return html.replace(/<a(.*?)>/g, '<a class="animated-hover-link"$1>').replace(/<span>/g, '<span class="background-link">');
+  }
+
 </script>
 <style lang="postcss">
+
+@keyframes colorChange {
+      0% {
+        background-position: 0% 0%;
+      }
+      100% {
+        background-position: 100% 0%;
+      }
+    }
+
+:global(.background-link){
+  padding: 0.2rem;
+  border-radius: 8px;
+  
+}
+:global(.background-link):hover{
+  background: linear-gradient(to left , rgb(54, 165, 240), transparent);
+  background-size: 400% 25%;
+  animation: colorChange 0.5s linear forwards;
+}
+
+:global(.animated-hover-link){
+  text-decoration: underline;
+  display: inline-block;
+  transition: all 0.2s;
+}
+
+:global(.animated-hover-link):hover{
+  transform: scale(1.02);
+  border-radius: 10px;
+}
 
 .main-page{
     padding: 40px 0px 80px 0px;
@@ -135,7 +183,7 @@ import { t } from '$lib/language/translations';
           <h3 class="date-title">{item.date}</h3>
         </div>
         <p class="description-project">
-          {item.jobDescription}
+          {@html addClassToLi(item.jobDescription)}
         </p>
       </div>
     </div>

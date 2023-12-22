@@ -70,7 +70,7 @@
             <NavBar/>
         {:else}
             <div class="postion-nav items-center">
-                <ul class="flex items-center">
+                <ul class="flex items-center list-none">
                     {#each navItems as navItem}
                     <li>
                     <!-- svelte-ignore a11y-click-events-have-key-events -->

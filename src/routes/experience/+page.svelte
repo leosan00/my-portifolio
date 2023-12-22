@@ -26,6 +26,10 @@
 
 <style lang="postcss">
 
+  ul :global(.spacing-topics){
+    margin-bottom: 0.5rem;
+  }
+
 .main-page{
     padding: 40px 0px 80px 0px;
     max-width: 1200px;
@@ -83,8 +87,8 @@
   }
   .description-project {
     font-size: 1.15rem;
-    margin-top: 0.5rem;
-    margin-left: 0.4rem;
+    margin-top: 0.8rem;
+    margin-left: 1.8rem;
   }
 
   @media (max-width: 650px) {
@@ -119,9 +123,11 @@
             <h3 class="location-title">{xpItem.role}</h3>
             <h3 class="date-title">{xpItem.date}</h3>
           </div>
-          <p class="description-project">
-            {@html xpItem.jobDescription}
-          </p>
+          <div class="description-project">
+            <ul class="list-disc">
+              {@html xpItem.jobDescription}
+            </ul>
+          </div>
         </div>
       </div>      
     {/each}

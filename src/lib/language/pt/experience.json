@@ -6,7 +6,7 @@
             "job":{
                 "role": "Desenvolvedor Júnior",
                 "date": "Mar/21 a atual",
-                "description": "Desenvolvimento de sistema para controle de produtos e serviços da plataforma Valor PRO (controle de acesso, vigências, faturamento) <br> Atuação no serviço responsável pela liberação de acesso de usuários nos serviços e produtos do Valor PRO <br> TFS e Jira (Repositório, quadro Kanban)"    
+                "description": "<li class='spacing-topics'>Desenvolvimento de sistema para controle de produtos e serviços da plataforma Valor PRO (controle de acesso, vigências, faturamento) </li><li class='spacing-topics'> Atuação no serviço responsável pela liberação de acesso de usuários nos serviços e produtos do Valor PRO </li><li class='spacing-topics'>Desenvolvimento de APIs para acelerar as vendas do produto Valor PRO pelo site </li><li class='spacing-topics'> TFS e Jira (Repositório, quadro Kanban)</li>"    
             }
         },
         {
@@ -14,7 +14,7 @@
             "job":{
                 "role": "Estágio em Sistemas de Informação",
                 "date": "Fev/19 a Fev/21",
-                "description": "Desenvolvimento de sistema interno para controle de URAs <br> Desenvolvimento de sistema para leitura de arquivos .csv <br> Treinamentos Git, Kanban, SQL, C#, ASP.NET MVC 4 <br> Metodologia Ágil"    
+                "description": "<li class='spacing-topics'>Desenvolvimento de sistema interno para controle de URAs </li><li class='spacing-topics'> Desenvolvimento de sistema para ler arquivos .csv e salvar dados em banco de dados, agilizando o tempo de respostas dos atendentes </li><li class='spacing-topics'> Treinamentos Git, Kanban, SQL, C#, .NET MVC 4 </li><li> Metodologia Ágil</li>"    
             }
         }
     ]

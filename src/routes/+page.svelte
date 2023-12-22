@@ -88,13 +88,14 @@
   let mounted = false;
 
   let isHovered = false;
-  let x;
-	let y;
+  let x = 0;
+	let y = 0;
   
   onMount(() => {
     mounted = true;
   });
 
+  
   function handleMessage(event){
     // console.log(event.detail);
     if(event.detail.isHovered == 'true'){

@@ -9,7 +9,7 @@
     "text": "Click me!"
   },
   "aboutCard":{
-    "firstText":"I am <span class='text-xl font-bold'>Leonardo Pereira Sanger</span>, a developer from Brazil with 4 years of experience in both front-end and back-end technology.",
+    "firstText":"I am <span class='text-xl font-bold'>Leonardo Pereira Sanger</span>, a developer from Brazil with {{xpYears}} years of experience in both front-end and back-end technology.",
     "secondText": "I thrive on creating scalable products with great user experiences."
   },
   "pagesLink":{
