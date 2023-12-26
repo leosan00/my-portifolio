@@ -13,6 +13,7 @@ const config = ({
     {
       locale: 'pt',
       key: 'home',
+      routes: ['/'],
       loader: async () => (
         await import('./pt/home.json')
       ).default,
@@ -44,6 +45,7 @@ const config = ({
     {
       locale: 'en',
       key: 'home',
+      routes: ['/'],
       loader: async () => (
         await import('./en/home.json')
       ).default,
