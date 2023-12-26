@@ -1,10 +1,11 @@
 import i18n from 'sveltekit-i18n';
 import lang from './lang.json';
 
+
+export const defaultLocale = 'en';
+
 /** @type {import('sveltekit-i18n').Config} */
 const config = ({
-  initLocale: 'en',
-  fallbackLocale: 'pt',
   translations: {
     en: { lang },
     pt: { lang },
@@ -91,5 +92,5 @@ const config = ({
   ],
 });
 
-export const { t, locale, locales, loading, translations, loadTranslations } = new i18n(config);
+export const { t, locale, locales, loading, translations, loadTranslations, addTranslations, setLocale, setRoute } = new i18n(config);
 loading.subscribe(($loading) => $loading && console.log('Loading translations...'));
