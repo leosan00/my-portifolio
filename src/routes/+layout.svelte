@@ -28,27 +28,27 @@
 	    mounted = true;
     });
 
-    let navItems = [
+    $: navItems = [
 		{
-            name: 'Início',
+            name: $t('menu.nav.home'),
 			class: 'nav-item',
             tab: 'active-home',
             link:''
 		},
 		{
-            name: 'Sobre mim',
+            name: $t('menu.nav.about'),
 			class: 'nav-item',
             tab: 'active-about',
             link:'about'
 		},
 		{
-            name: 'Projetos',
+            name: $t('menu.nav.projects'),
 			class: 'nav-item',
             tab: 'active-projects',
             link:'projects'
 		},
 		{
-            name: 'Experiências',
+            name: $t('menu.nav.experience'),
 			class: 'nav-item',
             tab: 'active-experience',
             link:'experience'
@@ -76,7 +76,7 @@
                     <!-- svelte-ignore a11y-click-events-have-key-events -->
                         <div class="{navItem.class}" on:click={() => $currentTab = navItem.tab}>
                             <a href="/{navItem.link}" class="font-style-nav">
-                                {$locale == 'pt' ? navItem.name : $t(`home.nav.${navItem.link == '' ? 'home' : navItem.link}`)}
+                                {navItem.name}
                                 <hr class:selected="{$currentTab === navItem.tab}"/>
                             </a>
                         </div> 

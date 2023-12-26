@@ -12,6 +12,13 @@ const config = ({
   loaders: [
     {
       locale: 'pt',
+      key: 'menu',
+      loader: async () => (
+        await import('./pt/menu.json')
+      ).default,
+    },
+    {
+      locale: 'pt',
       key: 'home',
       routes: ['/'],
       loader: async () => (
@@ -40,6 +47,13 @@ const config = ({
       routes: ['/experience'],
       loader: async () => (
         await import('./pt/experience.json')
+      ).default,
+    },
+    {
+      locale: 'en',
+      key: 'menu',
+      loader: async () => (
+        await import('./en/menu.json')
       ).default,
     },
     {
