@@ -1,4 +1,4 @@
-import { loadTranslations, locale } from '$lib/language/translations';
+import { loadTranslations } from '$lib/language/translations';
 
 /** @type {import('@sveltejs/kit').Load} */
 export const load = async ({ url }) => {
