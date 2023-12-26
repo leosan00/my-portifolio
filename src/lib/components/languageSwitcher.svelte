@@ -48,9 +48,7 @@
     function selectLanguage(languageCode) {
         $locale = languageCode;
         document.cookie = `lang=${languageCode} ;`;
-
-        console.log('cookie setted' + document.cookie);
-        console.log('locale' + $locale);
+        
         toggleOptions();
     }
 
