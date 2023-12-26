@@ -36,6 +36,7 @@
   import anime from "animejs";
   import { createEventDispatcher } from 'svelte';
   import {darkMode} from '$lib/stores/darkMode.js';
+  import { t } from '$lib/language/translations';
 
   let animationBall;
   let animationResetIn;
@@ -232,9 +233,13 @@
     </div>
   </div>
     <p class="my-1 mx-1">
-      Eu sou <span class="text-xl font-bold">Leonardo Pereira Sanger</span>, desenvolvedor do
-      Brasil. Estou no mercado de tecnologia a {xpYears} anos com experiência em front-end e back-end.
+      {@html $t('home.aboutCard.firstText', {xpYears : xpYears})}
+      <!-- Eu sou <span class="text-xl font-bold">Leonardo Pereira Sanger</span>, desenvolvedor do
+      Brasil. Estou no mercado de tecnologia a {xpYears} anos com experiência em front-end e back-end. -->
     </p>
-    <p class="my-1 mx-1">Gosto de fazer trabalhos criativos, escaláveis e com uma boa experiência de usuário.</p>
-    <PageLink route = '/about' tab ='active-about' nameLegend = 'Sobre'/>
+    <p class="my-1 mx-1">
+      <!-- Gosto de fazer trabalhos criativos, escaláveis e com uma boa experiência de usuário. -->
+      {@html $t('home.aboutCard.secondText')}
+    </p>
+    <PageLink route = '/about' tab ='active-about' nameLegend = {$t("home.pagesLink.about")}/>
 </div>

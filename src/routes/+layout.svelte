@@ -15,11 +15,12 @@
     import "@fontsource/nunito";
     import '../app.css';
     import DarkMode from "$lib/components/darkMode.svelte";
+    import LanguageSwitcher from "$lib/components/languageSwitcher.svelte";
     import {currentTab} from "$lib/stores/currentTab.js";
     import {onMount} from "svelte"
     import { fade } from "svelte/transition";
     import NavBar from "$lib/components/sideNavBar.svelte";
-   
+    import { t,locale } from '$lib/language/translations';
 
     let mounted = false;
 
@@ -27,30 +28,30 @@
 	    mounted = true;
     });
 
-    let navItems = [
+    $: navItems = [
 		{
-            name: 'Início',
+            name: $t('menu.nav.home'),
 			class: 'nav-item',
             tab: 'active-home',
-            link:'/'
+            link:''
 		},
 		{
-            name: 'Sobre mim',
+            name: $t('menu.nav.about'),
 			class: 'nav-item',
             tab: 'active-about',
-            link:'/about'
+            link:'about'
 		},
 		{
-            name: 'Projetos',
+            name: $t('menu.nav.projects'),
 			class: 'nav-item',
             tab: 'active-projects',
-            link:'/projects'
+            link:'projects'
 		},
 		{
-            name: 'Experiências',
+            name: $t('menu.nav.experience'),
 			class: 'nav-item',
             tab: 'active-experience',
-            link:'/experience'
+            link:'experience'
 		},
 	];
     let innerWidth = 0;
@@ -68,13 +69,13 @@
         {#if innerWidth < 1024}
             <NavBar/>
         {:else}
-            <div class="postion-nav">
-                <ul class="flex items-center">
+            <div class="postion-nav items-center">
+                <ul class="flex items-center list-none">
                     {#each navItems as navItem}
                     <li>
                     <!-- svelte-ignore a11y-click-events-have-key-events -->
                         <div class="{navItem.class}" on:click={() => $currentTab = navItem.tab}>
-                            <a href="{navItem.link}" class="font-style-nav">
+                            <a href="/{navItem.link}" class="font-style-nav">
                                 {navItem.name}
                                 <hr class:selected="{$currentTab === navItem.tab}"/>
                             </a>
@@ -84,6 +85,9 @@
                 </ul>
                 <div class="dark-btn">
                     <DarkMode/>
+                </div>
+                <div class="flex items-center pl-4">
+                    <LanguageSwitcher/>
                 </div>
             </div>
         {/if}

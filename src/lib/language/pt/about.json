@@ -1,0 +1,22 @@
+{
+    "education": {
+        "title":"Formação",
+        "fiapDescription": "Sistemas de Informação",
+        "fiapDate": "Jan/17 a Dez/20",
+        "etecDescription": "Técnico em Eletrônica integrado com o Ensino Médio",
+        "etecDate": "Jan/14 a Dez/16"
+    },
+    "language":{
+        "title":"Idiomas",
+        "englishLanguage": "Avançado"
+    },
+    "tools":{
+        "title": "Ferramentas"
+    },
+    "programmingLanguage":{
+        "title": "Linguagens de programação"
+    },
+    "others":{
+        "title": "Outros"
+    }
+}

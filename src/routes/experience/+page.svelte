@@ -1,29 +1,34 @@
 <script>
   import { fade } from "svelte/transition";
   import {currentTab} from "$lib/stores/currentTab.js";
+  import { t } from '$lib/language/translations';
 
   $currentTab = 'active-experience';
 
 
-  var listOfXp = [
+  $: listOfXp = [
     {
     imageSrc:'/images/logoValor.png',
-    location: 'Editora Globo (Valor Econômico)',
-    role:'Desenvolvedor Júnior',
-    date:'Mar/21 a atual',
-    jobDescription: 'Desenvolvimento de sistema para controle de produtos e serviços da plataforma Valor PRO (controle de acesso, vigências, faturamento) <br>Atuação no serviço responsável pela liberação de acesso de usuários nos serviços e produtos do Valor PRO <br>TFS e Jira (Repositório, quadro Kanban)'
+    location: `${$t("experience.companies.0.companyName")} (Valor Econômico)`,
+    role:$t("experience.companies.0.job.role"),
+    date:$t("experience.companies.0.job.date"),
+    jobDescription: $t("experience.companies.0.job.description")
     },
     {
     imageSrc:'/images/logoAtento.jpg',
-    location: 'Atento',
-    role:'Estágio em Sistemas de Informação',
-    date:'Fev/19 a Fev/21',
-    jobDescription: 'Desenvolvimento de sistema interno para controle de URAs <br> Desenvolvimento de sistema para leitura de arquivos .csv <br>Treinamentos Git, Kanban, SQL, C#, ASP.NET MVC 4 <br>Metodologia Ágil'
+    location: $t("experience.companies.1.companyName"),
+    role: $t("experience.companies.1.job.role"),
+    date:$t("experience.companies.1.job.date"),
+    jobDescription: $t("experience.companies.1.job.description")
     }
   ];
 </script>
 
 <style lang="postcss">
+
+  ul :global(.spacing-topics){
+    margin-bottom: 0.5rem;
+  }
 
 .main-page{
     padding: 40px 0px 80px 0px;
@@ -82,8 +87,8 @@
   }
   .description-project {
     font-size: 1.15rem;
-    margin-top: 0.5rem;
-    margin-left: 0.4rem;
+    margin-top: 0.8rem;
+    margin-left: 1.8rem;
   }
 
   @media (max-width: 650px) {
@@ -106,7 +111,7 @@
 
 <div class="container main-page">
   <div class="content-experiences bg-white/[0.8] dark:bg-zinc-800/90 dark:border-2 dark:border-[#666666] dark:shadow-[0_0_0_2px_inset_rgb(48 54 61)] drop-shadow-[0_10px_8px_rgba(0,0,0,0.25)]" in:fade|local>
-    <h1 class="title">Experiências</h1>
+    <h1 class="title">{$t("experience.title")}</h1>
     {#each listOfXp as xpItem }
       <div class="experience">
         <div class="img-div">
@@ -118,9 +123,11 @@
             <h3 class="location-title">{xpItem.role}</h3>
             <h3 class="date-title">{xpItem.date}</h3>
           </div>
-          <p class="description-project">
-            {@html xpItem.jobDescription}
-          </p>
+          <div class="description-project">
+            <ul class="list-disc">
+              {@html xpItem.jobDescription}
+            </ul>
+          </div>
         </div>
       </div>      
     {/each}

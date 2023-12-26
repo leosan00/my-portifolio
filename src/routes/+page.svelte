@@ -82,18 +82,20 @@
   import ExperienceCard from "$lib/components/experienceCard.svelte";
   import {onMount} from "svelte"
   import {currentTab} from "$lib/stores/currentTab.js";
+  import { t } from '$lib/language/translations';
 
   
   let mounted = false;
 
   let isHovered = false;
-  let x;
-	let y;
+  let x = 0;
+	let y = 0;
   
   onMount(() => {
     mounted = true;
   });
 
+  
   function handleMessage(event){
     // console.log(event.detail);
     if(event.detail.isHovered == 'true'){
@@ -113,7 +115,7 @@
   {#if mounted}
     {#if isHovered && innerWidth > 1024}
 	    <div style="top: {y}px; left: {x}px; position:absolute; z-index: 5;" in:fly={{ y: 50, duration: 800 }} out:fade = {{duration:500}}>
-        Click me!
+        {$t('home.animatedText.text')}
       </div>
     {/if}
     <div class="grid-content" in:fade|local>

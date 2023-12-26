@@ -2,42 +2,91 @@
 
 import { fade } from "svelte/transition";
 import {currentTab} from "$lib/stores/currentTab.js";
+import { t } from '$lib/language/translations';
+import anime from "animejs";
+import { onMount } from "svelte";
+
+  let animation;
+
+  onMount(() => {
+
+
+  });
   
     $currentTab = 'active-projects';
 
-    var listProjects = [
+    $: listProjects = [
     {
     imageSrc:'/images/logoFiap.png',
     projectName: 'Startup One FIAP',
     location:'FIAP',
-    date:'Jan/20 a Dez/20',
-    jobDescription: 'Desenvolvimento de um aplicativo para conectar tatuadores independentes a possíveis clientes'
+    date:$t('projects.startupOneFiapDate'),
+    jobDescription: $t('projects.startupOneFiapDescripiton')
     },
     {
     imageSrc:'/images/logoFiap.png',
     projectName: 'Challenge FIAP',
     location:'FIAP',
-    date:'Jun/18 a Dez/18',
-    jobDescription: 'Finalista no projeto que tinha o propósito de desenvolver um protótipo para melhor motivação dos funcionários na empresa parceira (Atento).'
+    date:$t('projects.challengeFiapDate'),
+    jobDescription: $t('projects.challengeFiapDescrition')
     },
     {
     imageSrc:'/images/logoHC.png',
     projectName: 'Hackathon HCFMUSP (InovaHC – Hospital das clínicas)',
     location:'Hospital das clínicas',
-    date:'Set/2018',
-    jobDescription: 'Finalista no hackathon que tinha o propósito de desenvolver um protótipo para o acompanhamento pós-cirúrgico.'
+    date:$t('projects.hackathonHcDate'),
+    jobDescription: $t('projects.hackathonHc')
     },
     {
     imageSrc:'/images/logoStartUpInSchool.png',
     projectName: 'Startup in School',
     location:'ETEC São Paulo',
-    date:'Out/2016',
-    jobDescription: 'Finalista no projeto que tinha o propósito de criar uma Startup do zero de acordo com o tema escolhido pelo grupo, desenvolver um protótipo e apresentar para uma banca.'
+    date:$t('projects.startUpInSchoolDescriptionDate'),
+    jobDescription: $t('projects.startUpInSchoolDescription')
     },
   ];
 
+  /**
+ * Sua descrição da função.
+ * @param {string} html - A descrição do parâmetro 'html'.
+ */
+  function addClassToLi(html) {
+    return html.replace(/<a(.*?)>/g, '<a class="animated-hover-link"$1>').replace(/<span>/g, '<span class="background-link">');
+  }
+
 </script>
 <style lang="postcss">
+
+@keyframes colorChange {
+      0% {
+        background-position: 0% 0%;
+      }
+      100% {
+        background-position: 100% 0%;
+      }
+    }
+
+:global(.background-link){
+  padding: 0.2rem;
+  border-radius: 8px;
+  
+}
+:global(.background-link):hover{
+  background: linear-gradient(to left , rgb(54, 165, 240), transparent);
+  background-size: 400% 25%;
+  animation: colorChange 0.5s linear forwards;
+}
+
+:global(.animated-hover-link){
+  text-decoration: underline;
+  display: inline-block;
+  transition: all 0.2s;
+}
+
+:global(.animated-hover-link):hover{
+  transform: scale(1.02);
+  border-radius: 10px;
+}
 
 .main-page{
     padding: 40px 0px 80px 0px;
@@ -121,7 +170,7 @@ import {currentTab} from "$lib/stores/currentTab.js";
 
 <div class="container main-page">
   <div class="content-projects bg-white/[0.8] dark:bg-zinc-800/90 dark:border-2 dark:border-[#666666] dark:shadow-[0_0_0_2px_inset_rgb(48 54 61)] drop-shadow-[0_10px_8px_rgba(0,0,0,0.25)]" in:fade|local>
-    <h1 class="title">Projetos</h1>
+    <h1 class="title">{$t('projects.title')}</h1>
     {#each listProjects as item}
     <div class="project">
       <div class="img-div">
@@ -134,7 +183,7 @@ import {currentTab} from "$lib/stores/currentTab.js";
           <h3 class="date-title">{item.date}</h3>
         </div>
         <p class="description-project">
-          {item.jobDescription}
+          {@html addClassToLi(item.jobDescription)}
         </p>
       </div>
     </div>
