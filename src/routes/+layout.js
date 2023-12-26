@@ -4,7 +4,7 @@ import { loadTranslations, locale } from '$lib/language/translations';
 export const load = async ({ url }) => {
   const { pathname } = url;
 
-  await loadTranslations(locale.get(), pathname); // keep this just before the `return`
+  await loadTranslations('en', pathname); // keep this just before the `return`
 
   return {};
 }
