@@ -3,6 +3,7 @@ import lang from './lang.json';
 
 /** @type {import('sveltekit-i18n').Config} */
 const config = ({
+  initLocale: 'en',
   fallbackLocale: 'pt',
   translations: {
     en: { lang },
