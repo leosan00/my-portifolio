@@ -1,6 +1,5 @@
 <script>
     import { fade } from "svelte/transition";
-    import {currentTab} from "$lib/stores/currentTab.js";
     import {onMount} from "svelte";
     import { t } from '$lib/language/translations';
    
@@ -11,8 +10,6 @@
     onMount(() => {
 	    mounted = true;
     });
-  
-    //$currentTab = 'active-about';
 
      $: listTools = [
       {

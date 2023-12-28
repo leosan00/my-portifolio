@@ -1,7 +1,6 @@
 <script>
 
 import { fade } from "svelte/transition";
-import {currentTab} from "$lib/stores/currentTab.js";
 import { t } from '$lib/language/translations';
 import anime from "animejs";
 import { onMount } from "svelte";
@@ -13,7 +12,6 @@ import { onMount } from "svelte";
 
   });
   
-    // $currentTab = 'active-projects';
 
     $: listProjects = [
     {
@@ -72,7 +70,7 @@ import { onMount } from "svelte";
   
 }
 :global(.background-link):hover{
-  background: linear-gradient(to left , rgb(54, 165, 240), transparent);
+  background: linear-gradient(to left , rgb(67,129,193), transparent);
   background-size: 400% 25%;
   animation: colorChange 0.5s linear forwards;
 }

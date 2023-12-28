@@ -1,36 +1,32 @@
 <script>
 
     import DarkMode from "$lib/components/darkMode.svelte";
-    import {currentTab} from "$lib/stores/currentTab.js";
     import { fade } from "svelte/transition";
     import {darkMode} from '$lib/stores/darkMode.js';
     import { clickOutside } from '$lib/scripts/clickOutside.js'
     import LanguageSwitcher from "./languageSwitcher.svelte";
-    import { t,locale } from '$lib/language/translations';
+    import { t } from '$lib/language/translations';
+    import { page } from '$app/stores';
 	
-     let navItems = [
+     $: navItems = [
 		{
-            name: 'Início',
+            name: $t('menu.nav.home'),
 			class: 'nav-item-side',
-            tab: 'active-home',
             link:''
 		},
 		{
-            name: 'Sobre mim',
+            name: $t('menu.nav.about'),
 			class: 'nav-item-side',
-            tab: 'active-about',
             link:'about'
 		},
 		{
-            name: 'Projetos',
+            name: $t('menu.nav.projects'),
 			class: 'nav-item-side',
-            tab: 'active-projects',
             link:'projects'
 		},
 		{
-            name: 'Experiências',
+            name: $t('menu.nav.experience'),
 			class: 'nav-item-side',
-            tab: 'active-experience',
             link:'experience'
 		},
 	];
@@ -82,10 +78,10 @@
                     {#each navItems as navItem}
                     <li>
                         <!-- svelte-ignore a11y-click-events-have-key-events -->
-                        <div class="{navItem.class}" on:click={() => {$currentTab = navItem.tab; open = false}}>
+                        <div class="{navItem.class}" on:click={() => {open = false}} aria-current={$page.url.pathname === `/${navItem.link}`}>
                             <a href="/{navItem.link}" class="font-style-nav flex flex-col items-center">
-                                {$locale == 'pt' ? navItem.name : $t(`home.nav.${navItem.link == '' ? 'home' : navItem.link}`)}
-                                <hr class:selected="{$currentTab === navItem.tab}"/>
+                                {navItem.name}
+                                <hr class:selected="{$page.url.pathname === `/${navItem.link}`}"/>
                             </a>
                         </div> 
                     </li>

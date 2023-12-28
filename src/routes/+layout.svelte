@@ -16,7 +16,6 @@
     import '../app.css';
     import DarkMode from "$lib/components/darkMode.svelte";
     import LanguageSwitcher from "$lib/components/languageSwitcher.svelte";
-    import {currentTab} from "$lib/stores/currentTab.js";
     import {onMount} from "svelte"
     import { fade } from "svelte/transition";
     import NavBar from "$lib/components/sideNavBar.svelte";
@@ -33,25 +32,21 @@
 		{
             name: $t('menu.nav.home'),
 			class: 'nav-item',
-            tab: 'active-home',
             link:''
 		},
 		{
             name: $t('menu.nav.about'),
 			class: 'nav-item',
-            tab: 'active-about',
             link:'about'
 		},
 		{
             name: $t('menu.nav.projects'),
 			class: 'nav-item',
-            tab: 'active-projects',
             link:'projects'
 		},
 		{
             name: $t('menu.nav.experience'),
 			class: 'nav-item',
-            tab: 'active-experience',
             link:'experience'
 		},
 	];
@@ -62,8 +57,7 @@
 {#if mounted}
     <div class="top-menu" in:fade|local>
         <a href="/" class="z-20">
-            <!-- svelte-ignore a11y-click-events-have-key-events -->
-            <div class="home-link" on:click={() => $currentTab = 'active-home'}>
+            <div class="home-link">
                 <span class="nickname-title-word">Leo</span>
             </div>
         </a>
@@ -74,7 +68,6 @@
                 <ul class="flex items-center list-none">
                     {#each navItems as navItem}
                     <li>
-                    <!-- svelte-ignore a11y-click-events-have-key-events -->
                         <div class="{navItem.class}" aria-current={$page.url.pathname === `/${navItem.link}`}>
                             <a href="/{navItem.link}" class="font-style-nav">
                                 {navItem.name}

@@ -110,7 +110,7 @@
         margin-right: 10px;
     }
     .selected-language {
-        background-color: rgba(67,129,193, 0.9);
+        background-color: rgb(67,129,193);
     }
 
 </style>
