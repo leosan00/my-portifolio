@@ -1,4 +1,4 @@
-<!-- <svelte:head>
+<svelte:head>
     <script>
         if (
             localStorage.theme === 'dark' ||
@@ -10,7 +10,7 @@
         }
 
     </script>
-</svelte:head> -->
+</svelte:head>
 <script>
     import "@fontsource/nunito";
     import '../app.css';

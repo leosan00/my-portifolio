@@ -1,4 +1,5 @@
 import { locales, loadTranslations, translations, defaultLocale } from '$lib/language/translations';
+import {darkMode, toggleDarkMode} from '$lib/stores/darkMode.js';
 
 /** @type {import('@sveltejs/kit').ServerLoad} */
 export const load = async ({ url, cookies, request }) => {
