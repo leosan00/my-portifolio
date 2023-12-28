@@ -238,8 +238,7 @@
       Brasil. Estou no mercado de tecnologia a {xpYears} anos com experiência em front-end e back-end. -->
     </p>
     <p class="my-1 mx-1">
-      <!-- Gosto de fazer trabalhos criativos, escaláveis e com uma boa experiência de usuário. -->
       {@html $t('home.aboutCard.secondText')}
     </p>
-    <PageLink route = '/about' tab ='active-about' nameLegend = {$t("home.pagesLink.about")}/>
+    <PageLink route = '/about' nameLegend = {$t("home.pagesLink.about")}/>
 </div>

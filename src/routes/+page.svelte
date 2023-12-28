@@ -81,7 +81,6 @@
   import { fade,fly } from "svelte/transition";
   import ExperienceCard from "$lib/components/experienceCard.svelte";
   import {onMount} from "svelte"
-  import {currentTab} from "$lib/stores/currentTab.js";
   import { t } from '$lib/language/translations';
 
   
@@ -107,7 +106,6 @@
     }
   }
 
-  $currentTab = 'active-home';
   let innerWidth = 0;
 </script>
 <svelte:window bind:innerWidth={innerWidth} />

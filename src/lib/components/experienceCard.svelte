@@ -12,5 +12,5 @@
 </script>
 <div class="h-full w-full relative">
   <img class="img-postion" src="/images/xp.jpg" alt="teste1"/>
-  <PageLink route = '/experience' tab ='active-experience' nameLegend = {$t("home.pagesLink.experience")}/>
+  <PageLink route = '/experience' nameLegend = {$t("home.pagesLink.experience")}/>
 </div>

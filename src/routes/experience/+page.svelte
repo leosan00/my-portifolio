@@ -1,10 +1,6 @@
 <script>
   import { fade } from "svelte/transition";
-  import {currentTab} from "$lib/stores/currentTab.js";
   import { t } from '$lib/language/translations';
-
-  $currentTab = 'active-experience';
-
 
   $: listOfXp = [
     {

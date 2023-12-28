@@ -1,8 +1,6 @@
 <script>
-  import {currentTab} from "$lib/stores/currentTab.js";
   
   export let route = '';
-  export let tab= '';
   export let nameLegend = '';
 </script>
 
@@ -66,8 +64,7 @@
   }
 </style>
 
-<!-- svelte-ignore a11y-click-events-have-key-events -->
-<div on:click={() => $currentTab = tab}>
+<div>
     <a href="{route}">
         <div class="projects">
             <p class="legend">

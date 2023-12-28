@@ -3,7 +3,6 @@ import { locales, loadTranslations, translations, defaultLocale } from '$lib/lan
 /** @type {import('@sveltejs/kit').ServerLoad} */
 export const load = async ({ url, cookies, request }) => {
   const { pathname } = url;
-
   
   // Try to get the locale from cookie
   let locale = (cookies.get('lang') || '').toLowerCase();
