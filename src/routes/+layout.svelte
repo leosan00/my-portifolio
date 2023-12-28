@@ -20,7 +20,8 @@
     import {onMount} from "svelte"
     import { fade } from "svelte/transition";
     import NavBar from "$lib/components/sideNavBar.svelte";
-    import { t,locale } from '$lib/language/translations';
+    import { t } from '$lib/language/translations';
+    import { page } from '$app/stores';
 
     let mounted = false;
 
@@ -74,10 +75,10 @@
                     {#each navItems as navItem}
                     <li>
                     <!-- svelte-ignore a11y-click-events-have-key-events -->
-                        <div class="{navItem.class}" on:click={() => $currentTab = navItem.tab}>
+                        <div class="{navItem.class}" aria-current={$page.url.pathname === `/${navItem.link}`}>
                             <a href="/{navItem.link}" class="font-style-nav">
                                 {navItem.name}
-                                <hr class:selected="{$currentTab === navItem.tab}"/>
+                                <hr class:selected="{$page.url.pathname === `/${navItem.link}`}"/>
                             </a>
                         </div> 
                     </li>

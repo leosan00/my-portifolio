@@ -107,7 +107,7 @@
     }
   }
 
-  $currentTab = 'active-home';
+  // $currentTab = 'active-home';
   let innerWidth = 0;
 </script>
 <svelte:window bind:innerWidth={innerWidth} />

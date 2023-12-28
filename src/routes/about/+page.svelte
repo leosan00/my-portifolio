@@ -12,7 +12,7 @@
 	    mounted = true;
     });
   
-    $currentTab = 'active-about';
+    //$currentTab = 'active-about';
 
      $: listTools = [
       {

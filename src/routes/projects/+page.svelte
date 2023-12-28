@@ -13,7 +13,7 @@ import { onMount } from "svelte";
 
   });
   
-    $currentTab = 'active-projects';
+    // $currentTab = 'active-projects';
 
     $: listProjects = [
     {

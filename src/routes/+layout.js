@@ -1,4 +1,4 @@
-import { loadTranslations,locale, addTranslations, setLocale, setRoute } from '$lib/language/translations';
+import {addTranslations, setLocale, setRoute } from '$lib/language/translations';
 import { dev } from '$app/environment';
 import { inject } from '@vercel/analytics';
  

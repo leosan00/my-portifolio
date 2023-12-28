@@ -7,31 +7,25 @@
     import { clickOutside } from '$lib/scripts/clickOutside.js'
     
     let isOpen = false;
-    let pointerLanguageEnable = true;
     let animationUp;
     let animationDown;
 
     onMount(() =>{
 
         animationDown = anime({
-        autoplay: false,
-        targets: '.arrow-languague',
-        rotateX: [180,0],
-        duration: 1200,
-        changeBegin: function(anim) {
-            pointerLanguageEnable = false;
-        },
-        changeComplete: function(anim) {
-            pointerLanguageEnable = true;
-        }
+            autoplay: false,
+            targets: '.arrow-languague',
+            rotateX: [180,0],
+            duration: 1200
         });
 
         animationUp = anime({
-        autoplay: false,
-        targets: '.arrow-languague',
-        rotateX: [0,180],
-        duration: 1200,
+            autoplay: false,
+            targets: '.arrow-languague',
+            rotateX: [0,180],
+            duration: 1200,
         });
+
     });
 
 
@@ -45,11 +39,23 @@
         }
     }
 
+/**
+ * @param {string} languageCode - language type selected.
+ */
     function selectLanguage(languageCode) {
         $locale = languageCode;
         document.cookie = `lang=${languageCode} ;`;
         
         toggleOptions();
+    }
+
+    function handleOutClick(){
+
+        if(isOpen){
+            animationDown.play();
+        }
+
+        isOpen = false;
     }
 
 
@@ -95,7 +101,7 @@
     }
 
     .option:hover {
-        background-color: rgba(67,129,193, 0.5);
+        background-color: rgba(67,129,193, 0.7);
     }
 
     .option img {
@@ -108,7 +114,7 @@
     }
 
 </style>
-<div use:clickOutside on:outclick={() => {isOpen = false;}} class="custom-select">
+<div use:clickOutside on:outclick={handleOutClick} class="custom-select">
     <!-- svelte-ignore a11y-click-events-have-key-events -->
     <div class="selected-option bg-white/30 border-2 border-slate-500 dark:border-slate-300" on:click={() => toggleOptions()}>
         <img src= {$locale == 'pt' ? "/images/brazil-flag.png" : "/images/usa-flag.png"} width="32" height="30" alt="ad"/>
