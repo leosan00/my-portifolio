@@ -41,6 +41,7 @@
   let animationBall;
   let animationResetIn;
   let animationResetOut;
+  let animationImgUndo;
 
   let animationPcResetCompletedIn = false;
   let animationPcResetCompletedOut = false;
@@ -233,6 +234,8 @@
   </div>
     <p class="my-1 mx-1">
       {@html $t('home.aboutCard.firstText', {xpYears : xpYears})}
+      <!-- Eu sou <span class="text-xl font-bold">Leonardo Pereira Sanger</span>, desenvolvedor do
+      Brasil. Estou no mercado de tecnologia a {xpYears} anos com experiência em front-end e back-end. -->
     </p>
     <p class="my-1 mx-1">
       {@html $t('home.aboutCard.secondText')}
