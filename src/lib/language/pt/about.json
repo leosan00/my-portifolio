@@ -1,7 +1,9 @@
 {
     "education": {
         "title":"Formação",
-        "fiapDescription": "Sistemas de Informação",
+        "mbaDescription": "Gestão estratégica de negócios, MBA",
+        "mbaDate": "Mar/2022 a Jun/2023",
+        "fiapDescription": "Sistemas de Informação, Graduação",
         "fiapDate": "Jan/17 a Dez/20",
         "etecDescription": "Técnico em Eletrônica integrado com o Ensino Médio",
         "etecDate": "Jan/14 a Dez/16"

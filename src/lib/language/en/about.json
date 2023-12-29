@@ -1,7 +1,9 @@
 {
     "education": {
         "title":"Education",
-        "fiapDescription": "Information Systems",
+        "mbaDescription": "Strategic business management, MBA",
+        "mbaDate": "June 2023",
+        "fiapDescription": "Information Systems, Undergraduate degree",
         "fiapDate": "December 2020",
         "etecDescription": "Integrated electronics high school",
         "etecDate": "December 2016"

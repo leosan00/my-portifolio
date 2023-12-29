@@ -201,10 +201,14 @@
   }
 
   .custom-etec-logo{
-    min-width: 7rem;
-    width: 7rem;
-    padding: 0.5rem;
+    width: 75px;
+    min-width: 75px;
+    padding-top: 0.2rem;
+    padding-right: 0.5rem;
     border-radius: 0.75rem;
+    display: flex;
+    align-items: center;
+    justify-items: center;
   }
   .main-content-tools-grid{
     margin-top: 3rem;
@@ -267,7 +271,19 @@
       <h1 class="title">{$t('about.education.title')}</h1>
       <div class="about">
         <div class="img-div">
-          <img src="/images/logoFiap.png" class="rounded-xl" alt="Project 1">
+          <img src="/images/logoFiap.png" class="rounded-xl" alt="logoFiap">
+        </div>
+        <div class="content-about-tools">
+          <h2 class="sub-title">{$t('about.education.mbaDescription')}</h2>
+          <div class="content-location">
+            <h3 class="location-title">FIAP</h3>
+            <h3 class="date-title">{$t('about.education.mbaDate')}</h3>
+          </div>
+        </div>
+      </div>
+      <div class="about">
+        <div class="img-div">
+          <img src="/images/logoFiap.png" class="rounded-xl" alt="logoFiap">
         </div>
         <div class="content-about-tools">
           <h2 class="sub-title">{$t('about.education.fiapDescription')}</h2>
@@ -279,7 +295,7 @@
       </div>
       <div class="about">
         <div class="custom-etec-logo dark:bg-white bg-gray-300">
-            <img src="/images/etecSP.png" alt="Project 1">
+            <img src="/images/etecSP.png" alt="etecSP">
         </div>
         <div class="content-about-tools">
           <h2 class="sub-title">{$t('about.education.etecDescription')}</h2>
