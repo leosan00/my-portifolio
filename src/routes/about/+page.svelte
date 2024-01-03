@@ -97,6 +97,16 @@
       imageSrc: '/images/notionLogo.png',
       type: $t('about.tools.title')
       },
+      {
+      name: 'ASP.NET Core',
+      imageSrc: '/images/NET-Core.png',
+      type: 'Framework'
+      },
+      {
+      name: 'Entity Framework Core',
+      imageSrc: '/images/entity-framework.png',
+      type: 'Others'
+      },
       ];
 
       $: listOfTypes = listTools?.map(x => x.type).
@@ -165,6 +175,7 @@
     height: 100%;
     min-width: 60px;
     min-height: 60px;
+    border-radius: 8px;
   }
   .img-div{
     width: 75px;
