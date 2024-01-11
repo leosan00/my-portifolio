@@ -103,7 +103,12 @@
     {
       name: "Entity Framework Core",
       imageSrc: "/images/entity-framework.png",
-      type: "Others",
+      type: $t("about.others.title"),
+    },
+    {
+      name: "Bootstrap",
+      imageSrc: "/images/bootstrap-logo.svg",
+      type: "Framework",
     },
   ];
 
@@ -127,91 +132,6 @@
     return 0;
   });
 </script>
-
-{#if mounted}
-  <div class="container main-page">
-    <div
-      class="content-about bg-white/[0.8] dark:bg-zinc-800/90 dark:border-2 dark:border-[#666666] dark:shadow-[0_0_0_2px_inset_rgb(48 54 61)] drop-shadow-[0_10px_8px_rgba(0,0,0,0.25)]"
-      in:fade|local
-    >
-      <h1 class="title">{$t("about.education.title")}</h1>
-      <div class="about">
-        <div class="img-div">
-          <img src="/images/logoFiap.png" class="rounded-xl" alt="logoFiap" />
-        </div>
-        <div class="content-about-tools">
-          <h2 class="sub-title">{$t("about.education.mbaDescription")}</h2>
-          <div class="content-location">
-            <h3 class="location-title">FIAP</h3>
-            <h3 class="date-title">{$t("about.education.mbaDate")}</h3>
-          </div>
-        </div>
-      </div>
-      <div class="about">
-        <div class="img-div">
-          <img src="/images/logoFiap.png" class="rounded-xl" alt="logoFiap" />
-        </div>
-        <div class="content-about-tools">
-          <h2 class="sub-title">{$t("about.education.fiapDescription")}</h2>
-          <div class="content-location">
-            <h3 class="location-title">FIAP</h3>
-            <h3 class="date-title">{$t("about.education.fiapDate")}</h3>
-          </div>
-        </div>
-      </div>
-      <div class="about">
-        <div class="custom-etec-logo dark:bg-white bg-gray-300">
-          <img src="/images/etecSP.png" alt="etecSP" />
-        </div>
-        <div class="content-about-tools">
-          <h2 class="sub-title">{$t("about.education.etecDescription")}</h2>
-          <div class="content-location">
-            <h3 class="location-title">ETEC São Paulo (ETESP)</h3>
-            <h3 class="date-title">{$t("about.education.etecDate")}</h3>
-          </div>
-        </div>
-      </div>
-      <h1 class="title">{$t("about.language.title")}</h1>
-      <div class="content-language space-x-12">
-        <img
-          src="/images/united-states.png"
-          class="w-36 rounded-xl"
-          alt="Project 1"
-        />
-        <div class="sub-title">
-          {$t("about.language.englishLanguage")}
-        </div>
-      </div>
-    </div>
-    <div>
-      {#each listOfTypes as type}
-        <div class="main-content-tools-grid container">
-          <h1 class="title">{type}</h1>
-          <div class="grid-content">
-            {#each sortedList as item}
-              {#if item.type == type}
-                <div
-                  class="content-tools bg-white/[0.8] dark:bg-zinc-800/90 dark:border-2 dark:border-[#666666] dark:shadow-[0_0_0_2px_inset_rgb(48 54 61)] drop-shadow-[0_10px_8px_rgba(0,0,0,0.25)]"
-                >
-                  <div>
-                    <img
-                      src={item.imageSrc}
-                      class="img-grid-tools"
-                      alt={item.name}
-                    />
-                  </div>
-                  <div class="content-about-tools">
-                    <h2 class="sub-title">{item.name}</h2>
-                  </div>
-                </div>
-              {/if}
-            {/each}
-          </div>
-        </div>
-      {/each}
-    </div>
-  </div>
-{/if}
 
 <style lang="postcss">
   .main-page {
@@ -358,3 +278,76 @@
     }
   }
 </style>
+
+
+{#if mounted}
+  <div class="container main-page">
+    <div class="content-about bg-white/[0.8] dark:bg-zinc-800/90 dark:border-2 dark:border-[#666666] dark:shadow-[0_0_0_2px_inset_rgb(48 54 61)] drop-shadow-[0_10px_8px_rgba(0,0,0,0.25)]" in:fade|local>
+      <h1 class="title">{$t("about.education.title")}</h1>
+      <div class="about">
+        <div class="img-div">
+          <img src="/images/logoFiap.png" class="rounded-xl" alt="logoFiap" />
+        </div>
+        <div class="content-about-tools">
+          <h2 class="sub-title">{$t("about.education.mbaDescription")}</h2>
+          <div class="content-location">
+            <h3 class="location-title">FIAP</h3>
+            <h3 class="date-title">{$t("about.education.mbaDate")}</h3>
+          </div>
+        </div>
+      </div>
+      <div class="about">
+        <div class="img-div">
+          <img src="/images/logoFiap.png" class="rounded-xl" alt="logoFiap" />
+        </div>
+        <div class="content-about-tools">
+          <h2 class="sub-title">{$t("about.education.fiapDescription")}</h2>
+          <div class="content-location">
+            <h3 class="location-title">FIAP</h3>
+            <h3 class="date-title">{$t("about.education.fiapDate")}</h3>
+          </div>
+        </div>
+      </div>
+      <div class="about">
+        <div class="custom-etec-logo dark:bg-white bg-gray-300">
+          <img src="/images/etecSP.png" alt="etecSP" />
+        </div>
+        <div class="content-about-tools">
+          <h2 class="sub-title">{$t("about.education.etecDescription")}</h2>
+          <div class="content-location">
+            <h3 class="location-title">ETEC São Paulo (ETESP)</h3>
+            <h3 class="date-title">{$t("about.education.etecDate")}</h3>
+          </div>
+        </div>
+      </div>
+      <h1 class="title">{$t("about.language.title")}</h1>
+      <div class="content-language space-x-12">
+        <img src="/images/united-states.png" class="w-32 rounded-xl" alt="unites-states-flag"/>
+        <div class="sub-title">
+          {$t("about.language.englishLanguage")}
+        </div>
+      </div>
+    </div>
+    <div>
+      {#each listOfTypes as type}
+        <div class="main-content-tools-grid container">
+          <h1 class="title">{type}</h1>
+          <div class="grid-content">
+            {#each sortedList as item}
+              {#if item.type == type}
+                <div class="content-tools bg-white/[0.8] dark:bg-zinc-800/90 dark:border-2 dark:border-[#666666] dark:shadow-[0_0_0_2px_inset_rgb(48 54 61)] drop-shadow-[0_10px_8px_rgba(0,0,0,0.25)]">
+                  <div>
+                    <img src={item.imageSrc} class="img-grid-tools" alt={item.name}/>
+                  </div>
+                  <div class="content-about-tools">
+                    <h2 class="sub-title">{item.name}</h2>
+                  </div>
+                </div>
+              {/if}
+            {/each}
+          </div>
+        </div>
+      {/each}
+    </div>
+  </div>
+{/if}
