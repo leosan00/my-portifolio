@@ -1,138 +1,220 @@
 <script>
-    import { fade } from "svelte/transition";
-    import {onMount} from "svelte";
-    import { t } from '$lib/language/translations';
-   
+  import { fade } from "svelte/transition";
+  import { onMount } from "svelte";
+  import { t } from "$lib/language/translations";
 
-    let mounted = false;
+  let mounted = false;
 
+  onMount(() => {
+    mounted = true;
+  });
 
-    onMount(() => {
-	    mounted = true;
+  $: listTools = [
+    {
+      name: "Visual Studio",
+      imageSrc: "/images/vsLogo.svg",
+      type: $t("about.tools.title"),
+    },
+    {
+      name: "Visual Studio Code",
+      imageSrc: "/images/vsCodeLogo.png",
+      type: $t("about.tools.title"),
+    },
+    {
+      name: "Sql Server Management",
+      imageSrc: "/images/sql-server.png",
+      type: $t("about.tools.title"),
+    },
+    {
+      name: "Firebase",
+      imageSrc: "/images/firebaseLogo.png",
+      type: $t("about.tools.title"),
+    },
+    {
+      name: "Oracle Sql Developer",
+      imageSrc: "/images/OracleSqlLogo.png",
+      type: $t("about.tools.title"),
+    },
+    {
+      name: "Postman",
+      imageSrc: "/images/postmanLogo.svg",
+      type: $t("about.tools.title"),
+    },
+    {
+      name: "Android Studio",
+      imageSrc: "/images/androidStudioLogo.png",
+      type: $t("about.tools.title"),
+    },
+    {
+      name: "Flutter",
+      imageSrc: "/images/flutterLogo.png",
+      type: "Framework",
+    },
+    {
+      name: "Dart",
+      imageSrc: "/images/dartLogo.png",
+      type: $t("about.programmingLanguage.title"),
+    },
+    {
+      name: "C#",
+      imageSrc: "/images/c-sharp.png",
+      type: $t("about.programmingLanguage.title"),
+    },
+    {
+      name: "JavaScript",
+      imageSrc: "/images/jsLogo.png",
+      type: $t("about.programmingLanguage.title"),
+    },
+    {
+      name: "SQL",
+      imageSrc: "/images/sql-server.png",
+      type: $t("about.programmingLanguage.title"),
+    },
+    {
+      name: "Jquery",
+      imageSrc: "/images/jqueryLogo.png",
+      type: "Framework",
+    },
+    {
+      name: "HTML",
+      imageSrc: "/images/HTML5Logo.png",
+      type: $t("about.others.title"),
+    },
+    {
+      name: "CSS",
+      imageSrc: "/images/css-3.png",
+      type: $t("about.others.title"),
+    },
+    {
+      name: "Svelte",
+      imageSrc: "/images/svelteLogo.png",
+      type: "Framework",
+    },
+    {
+      name: "Notion",
+      imageSrc: "/images/notionLogo.png",
+      type: $t("about.tools.title"),
+    },
+    {
+      name: "ASP.NET Core",
+      imageSrc: "/images/NET-Core.png",
+      type: "Framework",
+    },
+    {
+      name: "Entity Framework Core",
+      imageSrc: "/images/entity-framework.png",
+      type: "Others",
+    },
+  ];
+
+  $: listOfTypes = listTools
+    ?.map((x) => x.type)
+    .filter(function (elem, index, self) {
+      return self.indexOf(elem) == index;
     });
 
-     $: listTools = [
-      {
-      name: 'Visual Studio',
-      imageSrc: '/images/vsLogo.svg',
-      type: $t('about.tools.title')
-      },
-      {
-      name: 'Visual Studio Code',
-      imageSrc: '/images/vsCodeLogo.png',
-      type: $t('about.tools.title')
-      },
-      {
-      name: 'Sql Server Management',
-      imageSrc: '/images/sql-server.png',
-      type: $t('about.tools.title')
-      },
-      {
-      name: 'Firebase',
-      imageSrc: '/images/firebaseLogo.png',
-      type: $t('about.tools.title')
-      },
-      {
-      name: 'Oracle Sql Developer',
-      imageSrc: '/images/OracleSqlLogo.png',
-      type: $t('about.tools.title')
-      },
-      {
-      name: 'Postman',
-      imageSrc: '/images/postmanLogo.svg',
-      type: $t('about.tools.title')
-      },
-      {
-      name: 'Android Studio',
-      imageSrc: '/images/androidStudioLogo.png',
-      type: $t('about.tools.title')
-      },
-      {
-      name: 'Flutter',
-      imageSrc: '/images/flutterLogo.png',
-      type:'Framework'
-      },
-      {
-      name: 'Dart',
-      imageSrc: '/images/dartLogo.png',
-      type: $t('about.programmingLanguage.title')
-      },
-      {
-      name: 'C#',
-      imageSrc: '/images/c-sharp.png',
-      type: $t('about.programmingLanguage.title')
-      },
-      {
-      name: 'JavaScript',
-      imageSrc: '/images/jsLogo.png',
-      type: $t('about.programmingLanguage.title')
-      },
-      {
-      name: 'SQL',
-      imageSrc: '/images/sql-server.png',
-      type: $t('about.programmingLanguage.title')
-      },
-      {
-      name: 'Jquery',
-      imageSrc: '/images/jqueryLogo.png',
-      type:'Framework'
-      },
-      {
-      name: 'HTML',
-      imageSrc: '/images/HTML5Logo.png',
-      type: $t('about.others.title')
-      },
-      {
-      name: 'CSS',
-      imageSrc: '/images/css-3.png',
-      type: $t('about.others.title')
-      },
-      {
-      name: 'Svelte',
-      imageSrc: '/images/svelteLogo.png',
-      type: 'Framework'
-      },
-      {
-      name: 'Notion',
-      imageSrc: '/images/notionLogo.png',
-      type: $t('about.tools.title')
-      },
-      {
-      name: 'ASP.NET Core',
-      imageSrc: '/images/NET-Core.png',
-      type: 'Framework'
-      },
-      {
-      name: 'Entity Framework Core',
-      imageSrc: '/images/entity-framework.png',
-      type: 'Others'
-      },
-      ];
+  $: sortedList = listTools?.sort(function (a, b) {
+    const nameA = a.type.toUpperCase(); // ignore upper and lowercase
+    const nameB = b.type.toUpperCase(); // ignore upper and lowercase
+    if (nameA > nameB) {
+      return -1;
+    }
+    if (nameA < nameB) {
+      return 1;
+    }
 
-      $: listOfTypes = listTools?.map(x => x.type).
-      filter(function(elem, index, self) {
-        return self.indexOf(elem) == index;
-      });
-
-    $: sortedList = listTools?.sort(function(a, b) {
-      const nameA = a.type.toUpperCase(); // ignore upper and lowercase
-      const nameB = b.type.toUpperCase(); // ignore upper and lowercase
-      if (nameA > nameB) {
-        return -1;
-      }
-      if (nameA < nameB) {
-        return 1;
-      }
-
-      // names must be equal
-      return 0;
-    });
-
-
+    // names must be equal
+    return 0;
+  });
 </script>
-<style lang="postcss">
 
-.main-page{
+{#if mounted}
+  <div class="container main-page">
+    <div
+      class="content-about bg-white/[0.8] dark:bg-zinc-800/90 dark:border-2 dark:border-[#666666] dark:shadow-[0_0_0_2px_inset_rgb(48 54 61)] drop-shadow-[0_10px_8px_rgba(0,0,0,0.25)]"
+      in:fade|local
+    >
+      <h1 class="title">{$t("about.education.title")}</h1>
+      <div class="about">
+        <div class="img-div">
+          <img src="/images/logoFiap.png" class="rounded-xl" alt="logoFiap" />
+        </div>
+        <div class="content-about-tools">
+          <h2 class="sub-title">{$t("about.education.mbaDescription")}</h2>
+          <div class="content-location">
+            <h3 class="location-title">FIAP</h3>
+            <h3 class="date-title">{$t("about.education.mbaDate")}</h3>
+          </div>
+        </div>
+      </div>
+      <div class="about">
+        <div class="img-div">
+          <img src="/images/logoFiap.png" class="rounded-xl" alt="logoFiap" />
+        </div>
+        <div class="content-about-tools">
+          <h2 class="sub-title">{$t("about.education.fiapDescription")}</h2>
+          <div class="content-location">
+            <h3 class="location-title">FIAP</h3>
+            <h3 class="date-title">{$t("about.education.fiapDate")}</h3>
+          </div>
+        </div>
+      </div>
+      <div class="about">
+        <div class="custom-etec-logo dark:bg-white bg-gray-300">
+          <img src="/images/etecSP.png" alt="etecSP" />
+        </div>
+        <div class="content-about-tools">
+          <h2 class="sub-title">{$t("about.education.etecDescription")}</h2>
+          <div class="content-location">
+            <h3 class="location-title">ETEC São Paulo (ETESP)</h3>
+            <h3 class="date-title">{$t("about.education.etecDate")}</h3>
+          </div>
+        </div>
+      </div>
+      <h1 class="title">{$t("about.language.title")}</h1>
+      <div class="content-language space-x-12">
+        <img
+          src="/images/united-states.png"
+          class="w-36 rounded-xl"
+          alt="Project 1"
+        />
+        <div class="sub-title">
+          {$t("about.language.englishLanguage")}
+        </div>
+      </div>
+    </div>
+    <div>
+      {#each listOfTypes as type}
+        <div class="main-content-tools-grid container">
+          <h1 class="title">{type}</h1>
+          <div class="grid-content">
+            {#each sortedList as item}
+              {#if item.type == type}
+                <div
+                  class="content-tools bg-white/[0.8] dark:bg-zinc-800/90 dark:border-2 dark:border-[#666666] dark:shadow-[0_0_0_2px_inset_rgb(48 54 61)] drop-shadow-[0_10px_8px_rgba(0,0,0,0.25)]"
+                >
+                  <div>
+                    <img
+                      src={item.imageSrc}
+                      class="img-grid-tools"
+                      alt={item.name}
+                    />
+                  </div>
+                  <div class="content-about-tools">
+                    <h2 class="sub-title">{item.name}</h2>
+                  </div>
+                </div>
+              {/if}
+            {/each}
+          </div>
+        </div>
+      {/each}
+    </div>
+  </div>
+{/if}
+
+<style lang="postcss">
+  .main-page {
     padding: 40px 0px 80px 0px;
     max-width: 1200px;
     margin-left: auto;
@@ -144,7 +226,7 @@
     display: flex;
     padding: 8px 8px 8px 8px;
   }
-  .content-about{
+  .content-about {
     border-radius: 40px;
     width: 75%;
     height: 100%;
@@ -155,7 +237,7 @@
     padding-top: 2.75rem;
     padding-bottom: 2.75rem;
   }
-  .grid-content{
+  .grid-content {
     max-width: 1200px;
     margin: 0 auto;
     display: grid;
@@ -163,27 +245,27 @@
     gap: 1rem;
     padding: 4px 4px 4px 4px;
   }
-  .title{
+  .title {
     margin-bottom: 16px;
     font-size: 2.2rem;
     line-height: 32px;
     font-weight: 700;
     letter-spacing: 0.6px;
   }
-  .img-grid-tools{
+  .img-grid-tools {
     width: 60px;
     height: 100%;
     min-width: 60px;
     min-height: 60px;
     border-radius: 8px;
   }
-  .img-div{
+  .img-div {
     width: 75px;
     height: 100%;
     min-width: 75px;
     min-height: 100%;
   }
-  .content-about-tools{
+  .content-about-tools {
     padding-left: 2.5rem;
     width: 100%;
   }
@@ -191,14 +273,14 @@
     font-size: 1.25rem;
     font-weight: 700;
   }
-  .content-location{
+  .content-location {
     display: flex;
     justify-content: space-between;
     flex-direction: column;
     padding-left: 0.2rem;
-
   }
-  .location-title, .date-title{
+  .location-title,
+  .date-title {
     font-size: 1.05rem;
     font-weight: 600;
   }
@@ -211,7 +293,7 @@
     align-items: center;
   }
 
-  .custom-etec-logo{
+  .custom-etec-logo {
     width: 75px;
     min-width: 75px;
     padding-top: 0.2rem;
@@ -221,14 +303,14 @@
     align-items: center;
     justify-items: center;
   }
-  .main-content-tools-grid{
+  .main-content-tools-grid {
     margin-top: 3rem;
     margin-bottom: 6rem;
     margin-left: auto;
     margin-right: auto;
   }
 
-  .content-language{
+  .content-language {
     display: flex;
     align-items: center;
     padding-left: 0.5rem;
@@ -236,13 +318,13 @@
 
   @media (max-width: 1020px) {
     .grid-content {
-      grid-template-columns: repeat(3, minmax(0, 1fr));;
+      grid-template-columns: repeat(3, minmax(0, 1fr));
       grid-template-rows: auto;
       gap: 1.5rem;
     }
   }
 
-  @media (max-width: 850px){
+  @media (max-width: 850px) {
     .grid-content {
       grid-template-columns: auto;
       grid-template-rows: auto;
@@ -254,96 +336,25 @@
     .about {
       flex-direction: column;
     }
-    .content-about-tools{
+    .content-about-tools {
       padding-left: 0.5rem;
     }
-    .main-content-tools-grid{
+    .main-content-tools-grid {
       padding-left: 0.4rem;
       padding-right: 0.4rem;
     }
-    .content-about{
+    .content-about {
       width: 95%;
-      padding-left: 1.0rem;
-      padding-right: 1.0rem;
+      padding-left: 1rem;
+      padding-right: 1rem;
       padding-top: 1.5rem;
       padding-bottom: 1.5rem;
     }
-    .img-div{
+    .img-div {
       margin-bottom: 0.5rem;
     }
-    .custom-etec-logo{
+    .custom-etec-logo {
       margin-bottom: 0.5rem;
     }
   }
 </style>
-{#if mounted}
-  <div class="container main-page">
-    <div class="content-about bg-white/[0.8] dark:bg-zinc-800/90 dark:border-2 dark:border-[#666666] dark:shadow-[0_0_0_2px_inset_rgb(48 54 61)] drop-shadow-[0_10px_8px_rgba(0,0,0,0.25)] " in:fade|local>
-      <h1 class="title">{$t('about.education.title')}</h1>
-      <div class="about">
-        <div class="img-div">
-          <img src="/images/logoFiap.png" class="rounded-xl" alt="logoFiap">
-        </div>
-        <div class="content-about-tools">
-          <h2 class="sub-title">{$t('about.education.mbaDescription')}</h2>
-          <div class="content-location">
-            <h3 class="location-title">FIAP</h3>
-            <h3 class="date-title">{$t('about.education.mbaDate')}</h3>
-          </div>
-        </div>
-      </div>
-      <div class="about">
-        <div class="img-div">
-          <img src="/images/logoFiap.png" class="rounded-xl" alt="logoFiap">
-        </div>
-        <div class="content-about-tools">
-          <h2 class="sub-title">{$t('about.education.fiapDescription')}</h2>
-          <div class="content-location">
-            <h3 class="location-title">FIAP</h3>
-            <h3 class="date-title">{$t('about.education.fiapDate')}</h3>
-          </div>
-        </div>
-      </div>
-      <div class="about">
-        <div class="custom-etec-logo dark:bg-white bg-gray-300">
-            <img src="/images/etecSP.png" alt="etecSP">
-        </div>
-        <div class="content-about-tools">
-          <h2 class="sub-title">{$t('about.education.etecDescription')}</h2>
-          <div class="content-location">
-            <h3 class="location-title">ETEC São Paulo (ETESP)</h3>
-            <h3 class="date-title">{$t('about.education.etecDate')}</h3>
-          </div>
-        </div>
-      </div>
-      <h1 class="title">{$t('about.language.title')}</h1>
-      <div class="content-language space-x-12">
-        <img src="/images/united-states.png" class="w-36 rounded-xl" alt="Project 1">
-        <div class="sub-title">
-          {$t('about.language.englishLanguage')}
-        </div>
-      </div>
-    </div>
-    <div>
-      {#each listOfTypes as type}
-      <div class="main-content-tools-grid container">
-        <h1 class="title">{type}</h1>
-        <div class="grid-content">
-          {#each sortedList as item}
-            {#if item.type == type}
-              <div class="content-tools bg-white/[0.8] dark:bg-zinc-800/90 dark:border-2 dark:border-[#666666] dark:shadow-[0_0_0_2px_inset_rgb(48 54 61)] drop-shadow-[0_10px_8px_rgba(0,0,0,0.25)]">
-                <div>
-                <img src={item.imageSrc} class="img-grid-tools" alt={item.name}>
-              </div>
-              <div class="content-about-tools">
-                <h2 class="sub-title">{item.name}</h2>
-              </div>
-              </div>
-            {/if}
-          {/each}
-        </div> 
-      </div>
-      {/each}
-    </div>
-  </div>
-{/if}
