@@ -83,6 +83,10 @@
     padding-bottom: 2rem;
   }
 
+  .project-description:last-child {
+    padding-bottom: 0;
+  }
+
   @media (min-width: 640px) {
 
     .main-text-experience{

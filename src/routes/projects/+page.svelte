@@ -100,6 +100,9 @@ import { onMount } from "svelte";
     padding: 0.5rem;
     justify-content: flex-end;
   }
+  .project-header:last-child .project-description{
+      padding-bottom: 0;
+  }
   .content-projects{
     width: 95%;
     height: 100%;
@@ -161,10 +164,6 @@ import { onMount } from "svelte";
 
     .project-description{
       padding-left: 1rem;
-    }
-
-    .project-header:last-child .project-description{
-      padding-bottom: 0;
     }
   }
 </style>
