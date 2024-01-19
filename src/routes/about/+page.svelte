@@ -170,7 +170,7 @@
     margin-bottom: 1.2rem;
     font-size: 2.2rem;
     line-height: 32px;
-    font-weight: 700;
+    font-weight: 800;
   }
   .img-grid-tools {
     width: 60px;
@@ -229,8 +229,10 @@
   .main-content-tools-grid {
     margin-top: 3rem;
     margin-bottom: 6rem;
-    margin-left: auto;
-    margin-right: auto;
+  }
+
+  .main-content-tools-grid:last-child {
+    margin-bottom: 0rem;
   }
 
   .content-language {
@@ -245,8 +247,8 @@
       padding-left: 2.5rem;
     }
     .main-content-tools-grid {
-      padding-left: 0.4rem;
-      padding-right: 0.4rem;
+      padding-left: 0.8rem;
+      padding-right: 0.8rem;
     }
     .content-about {
       width: 75%;
