@@ -331,7 +331,7 @@
     </div>
   <div>
       {#each listOfTypes as type}
-        <div class="main-content-tools-grid container">
+        <div class="main-content-tools-grid container px-5 md:px-2">
           <h1 class="title">{type}</h1>
           <div class="grid-content">
             {#each sortedList as item}

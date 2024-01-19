@@ -18,6 +18,7 @@
     width: 100%;
     height: 100%;
     z-index: 1;
+    filter: drop-shadow(0 25px 25px rgb(0 0 0 / 0.15));
   }
 
   .card {
@@ -33,11 +34,10 @@
     position: relative;
     overflow: hidden;
     z-index: 1;
-    filter: drop-shadow(0 25px 25px rgb(0 0 0 / 0.15));
   }
 
   .darkMode-content{
-    width: 30%;
+    width: 35%;
     height: 22%;
     display: flex;
     align-items: center;
