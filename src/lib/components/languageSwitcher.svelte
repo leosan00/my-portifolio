@@ -79,7 +79,7 @@
     }
 
     .selected-option img {
-        margin-right: 10px;
+        margin-right: 0.5rem;
     }
 
     .options {
@@ -95,7 +95,7 @@
     .option {
         display: flex;
         align-items: center;
-        padding: 10px;
+        padding: 0.7rem;
         box-sizing: border-box;
         transition: background-color 0.3s ease;
     }
@@ -107,7 +107,7 @@
     .option img {
         width: 32px;
         height: 30px;
-        margin-right: 10px;
+        margin-right: 0.8rem;
     }
     .selected-language {
         background-color: rgb(67,129,193);

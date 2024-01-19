@@ -1,11 +1,5 @@
 <style lang="postcss">
 
-:root {
-    --width-switch-back: 100%;
-    --width-btn: 42%;
-    --switch-left: 10%;
-}
-
     .switch-background-dark,.switch-background-light{
         position: relative;
         display: flex;
@@ -49,7 +43,7 @@
     }
 
     .dark-theme-transition{
-        transform: translateX(calc(var(--width-switch-back) - var(--switch-left)));
+        transform: translateX(100%);
     }
 
 

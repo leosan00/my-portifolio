@@ -6,6 +6,8 @@
 
 <style lang="postcss">
     .projects{
+        max-width: 100%;
+        box-shadow: 0 0px 0px 4px rgb(255 255 255 / 50%);
         height: 40px;
         border-radius: 22px;
         position: absolute;
@@ -16,8 +18,6 @@
         background: rgb(255, 255, 255);
         border: none;
         bottom: 16px;
-        max-width: 40px;
-        box-shadow: 0 0px 0px 4px transparent;
         will-change: auto;
     }
     :global(.card:hover .projects){
@@ -31,9 +31,9 @@
         transform: none;
     }
     .legend{
-        opacity: 0;
-        transform: translateX(-12px) translateZ(0px);
-        font-size: 15px;
+        opacity: 1;
+        transform: translateX(0px) translateZ(0px);
+        font-size: 0.9rem;
         font-weight: 500;
         white-space: nowrap;
         color: rgb(13, 17, 23);
@@ -51,15 +51,15 @@
         right: 0px;
     }
     
-    @media (max-width: 1024px) {
+    @media (min-width: 1024px) {
         .projects{
-        max-width: 100%;
-        box-shadow: 0 0px 0px 4px rgb(255 255 255 / 50%);
+            max-width: 40px;
+            box-shadow: 0 0px 0px 4px transparent;
         }
-    .legend{
-        opacity: 1;
-        transform: translateX(0px) translateZ(0px);
-    }
+        .legend{
+            opacity: 0;
+            transform: translateX(-12px) translateZ(0px);
+        }
     
   }
 </style>

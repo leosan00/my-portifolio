@@ -64,12 +64,13 @@
         {#if innerWidth < 1024}
             <NavBar/>
         {:else}
-            <div class="postion-nav items-center">
+        <nav>
+            <div class="flex items-center">
                 <ul class="flex items-center list-none">
                     {#each navItems as navItem}
                     <li>
                         <div class="{navItem.class}" aria-current={$page.url.pathname === `/${navItem.link}`}>
-                            <a href="/{navItem.link}" class="font-style-nav">
+                            <a href="/{navItem.link}" class="font-semibold">
                                 {navItem.name}
                                 <hr class:selected="{$page.url.pathname === `/${navItem.link}`}"/>
                             </a>
@@ -77,13 +78,14 @@
                     </li>
                     {/each}
                 </ul>
-                <div class="dark-btn">
+                <div class="mx-5 dark-btn">
                     <DarkMode/>
                 </div>
-                <div class="flex items-center pl-4">
+                <div class="flex items-center ml-2">
                     <LanguageSwitcher/>
                 </div>
             </div>
+        </nav>
         {/if}
     </div>
 {/if}
