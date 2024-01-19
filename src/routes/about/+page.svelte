@@ -151,7 +151,7 @@
   .content-about {
     border-radius: 40px;
     width: 95%;
-    padding: 1.5rem 1rem 1.5rem 1rem;
+    padding: 2.5rem 1.5rem;
     height: 100%;
     margin-left: auto;
     margin-right: auto;
@@ -229,6 +229,8 @@
   .main-content-tools-grid {
     margin-top: 3rem;
     margin-bottom: 6rem;
+    margin-left: auto;
+    margin-right: auto;
   }
 
   .main-content-tools-grid:last-child {

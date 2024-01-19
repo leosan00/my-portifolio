@@ -105,7 +105,7 @@ import { onMount } from "svelte";
     height: 100%;
     margin-left: auto;
     margin-right: auto;
-    padding: 1.5rem 1rem 1.5rem 1rem;
+    padding: 2.5rem 1.5rem;
     border-radius: 40px;
   }
   .title{
