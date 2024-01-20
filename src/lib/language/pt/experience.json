@@ -12,8 +12,16 @@
         {
             "companyName": "Atento",
             "job":{
+                "role": "Desenvolvedor Júnior",
+                "date": "Jan/21 a Mar/21",
+                "description": "<li class='spacing-topics'>Desenvolvimento de sistema interno para controle de URAs </li><li class='spacing-topics'> Desenvolvimento de sistema para ler arquivos .csv e salvar dados em banco de dados, agilizando o tempo de respostas dos atendentes </li><li> Metodologia Ágil</li>"    
+            }
+        },
+        {
+            "companyName": "Atento",
+            "job":{
                 "role": "Estágio em Sistemas de Informação",
-                "date": "Fev/19 a Fev/21",
+                "date": "Fev/19 a Dez/20",
                 "description": "<li class='spacing-topics'>Desenvolvimento de sistema interno para controle de URAs </li><li class='spacing-topics'> Desenvolvimento de sistema para ler arquivos .csv e salvar dados em banco de dados, agilizando o tempo de respostas dos atendentes </li><li class='spacing-topics'> Treinamentos Git, Kanban, SQL, C#, .NET MVC 4 </li><li> Metodologia Ágil</li>"    
             }
         }

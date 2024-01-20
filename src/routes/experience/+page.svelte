@@ -16,6 +16,13 @@
     role: $t("experience.companies.1.job.role"),
     date:$t("experience.companies.1.job.date"),
     jobDescription: $t("experience.companies.1.job.description")
+    },
+    {
+    imageSrc:'/images/logoAtento.jpg',
+    location: $t("experience.companies.2.companyName"),
+    role: $t("experience.companies.2.job.role"),
+    date:$t("experience.companies.2.job.date"),
+    jobDescription: $t("experience.companies.2.job.description")
     }
   ];
 </script>
