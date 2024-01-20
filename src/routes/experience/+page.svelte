@@ -33,11 +33,17 @@
     margin-right: auto;
   }
   .experience-header {
-    margin-top: 2rem;
-    margin-bottom: 2rem;
+    margin-top: 1.5rem;
+    margin-bottom: 1.5rem;
     display: flex;
+    flex-wrap: wrap;
     padding: 0.5rem;
+    justify-content: flex-end;
   }
+  .experience-header:last-child .experience-description{
+      padding-bottom: 0;
+  }
+
   .content-experiences{
     width: 95%;
     height: 100%;
@@ -60,7 +66,6 @@
   }
   .main-text-experience{
     padding-left: 1.5rem;
-    width: 100%;
   }
   .sub-title {
     font-size: 1.25rem;
@@ -77,14 +82,11 @@
     font-size: 1.05rem;
     font-weight: 600;
   }
-  .project-description {
+  .experience-description {
     font-size: 1.15rem;
     padding-left: 1.2rem;
     padding-bottom: 2rem;
-  }
-
-  .project-description:last-child {
-    padding-bottom: 0;
+    padding-top: 1.8rem;
   }
 
   @media (min-width: 640px) {
@@ -99,6 +101,9 @@
       padding-top: 2.75rem;
       padding-bottom: 2.75rem;
     }
+    .experience-description{
+      padding-left: 1rem;
+    }
   }
 </style>
 
@@ -107,22 +112,24 @@
     <h1 class="title">{$t("experience.title")}</h1>
     {#each listOfXp as xpItem }
       <div class="experience-header">
-        <div class="img-div">
-          <img src= {xpItem.imageSrc} class="rounded-xl" alt="Project 1">
-        </div>
-        <div class="main-text-experience">
-          <h2 class="sub-title">{xpItem.location}</h2>
-          <div class="content-location">
-            <h3 class="location-title">{xpItem.role}</h3>
-            <h3 class="date-title">{xpItem.date}</h3>
+        <div class="flex w-full justify-between items-center">
+          <div class="img-div">
+            <img src= {xpItem.imageSrc} class="rounded-xl" alt="Project 1">
+          </div>
+          <div class="main-text-experience w-full md:w-5/6">
+            <h2 class="sub-title">{xpItem.location}</h2>
+            <div class="content-location">
+              <h3 class="location-title">{xpItem.role}</h3>
+              <h3 class="date-title">{xpItem.date}</h3>
+            </div>
           </div>
         </div>
-      </div>  
-      <div class="project-description">
-        <ul class="list-disc pl-7">
-          {@html xpItem.jobDescription}
-        </ul>
-      </div>    
+        <div class="experience-description w-full md:w-5/6">
+          <ul class="list-disc pl-11">
+            {@html xpItem.jobDescription}
+          </ul>
+        </div>      
+      </div>
     {/each}
   </div>
 </div>

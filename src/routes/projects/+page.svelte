@@ -178,7 +178,7 @@ import { onMount } from "svelte";
           <div class="img-div">
             <img src= {item.imageSrc} class="rounded-xl" alt={item.location}>
           </div>
-          <div class="main-text-projects w-full md:w-5/6 ">
+          <div class="main-text-projects w-full md:w-5/6">
             <h2 class="sub-title">{item.projectName}</h2>
             <div class="content-location">
               <h3 class="location-title">{item.location}</h3>
