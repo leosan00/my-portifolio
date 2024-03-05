@@ -6,11 +6,6 @@ import anime from "animejs";
 import { onMount } from "svelte";
 
   let animation;
-
-  onMount(() => {
-
-
-  });
   
 
     $: listProjects = [

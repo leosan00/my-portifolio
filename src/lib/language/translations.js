@@ -6,6 +6,7 @@ export const defaultLocale = 'en';
 
 /** @type {import('sveltekit-i18n').Config} */
 const config = ({
+  fallbackLocale: defaultLocale,
   translations: {
     en: { lang },
     pt: { lang },
@@ -16,6 +17,13 @@ const config = ({
       key: 'menu',
       loader: async () => (
         await import('./pt/menu.json')
+      ).default,
+    },
+    {
+      locale: 'pt',
+      key: 'cookies',
+      loader: async () => (
+        await import('./pt/cookies.json')
       ).default,
     },
     {
@@ -59,6 +67,13 @@ const config = ({
     },
     {
       locale: 'en',
+      key: 'cookies',
+      loader: async () => (
+        await import('./en/cookies.json')
+      ).default,
+    },
+    {
+      locale: 'en',
       key: 'home',
       routes: ['/'],
       loader: async () => (
@@ -88,7 +103,7 @@ const config = ({
       loader: async () => (
         await import('./en/experience.json')
       ).default,
-    }
+    },
   ],
 });
 

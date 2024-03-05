@@ -11,6 +11,7 @@ body{
     letter-spacing: 0.8px;
     font-size: 1rem;
 }
+
 a  {
   @apply text-black dark:text-white;
   text-decoration: none;
