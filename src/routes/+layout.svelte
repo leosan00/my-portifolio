@@ -21,6 +21,9 @@
     import NavBar from "$lib/components/sideNavBar.svelte";
     import { t } from '$lib/language/translations';
     import { page } from '$app/stores';
+    import { acceptedCookies } from '$lib/stores/cookieStore';
+    import CookiesPopup from '$lib/components/cookiePopup.svelte';
+    
 
     let mounted = false;
 
@@ -88,6 +91,9 @@
         </nav>
         {/if}
     </div>
+    {#if !$acceptedCookies}
+  <CookiesPopup />
+    {/if}
 {/if}
   
 <slot />

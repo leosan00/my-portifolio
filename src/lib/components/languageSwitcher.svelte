@@ -4,7 +4,9 @@
     import anime from "animejs";
     import { onMount } from 'svelte';
     import { darkMode } from '$lib/stores/darkMode';
-    import { clickOutside } from '$lib/scripts/clickOutside.js'
+    import { clickOutside } from '$lib/scripts/clickOutside.js';
+    import { acceptedCookies } from '$lib/stores/cookieStore';
+    import { selectedLanguage } from '$lib/stores/selectedLanguage';
     
     let isOpen = false;
     let animationUp;
@@ -28,7 +30,6 @@
 
     });
 
-
     function toggleOptions(){
         isOpen = !isOpen;
 
@@ -43,8 +44,11 @@
  * @param {string} languageCode - language type selected.
  */
     function selectLanguage(languageCode) {
-        $locale = languageCode;
-        document.cookie = `lang=${languageCode} ;`;
+        console.log('switcher value' + $selectedLanguage);
+        $selectedLanguage = $locale = languageCode;
+        if($acceptedCookies){
+            document.cookie = `lang=${languageCode} ;`;
+        }
         
         toggleOptions();
     }
