@@ -4,7 +4,7 @@
         {
             "companyName": "Editora Globo",
             "job":{
-                "role": "Junior Software Developer",
+                "role": "Software Engineer",
                 "date": "March 2021 - Present",
                 "description": "<li class='spacing-topics'> Improve the internal system that manages access to all products on the Valor PRO platform. Add new rules for user access, billing accounts and product access time </li><li class='spacing-topics'> Support the service manager to provide new user access </li><li class='spacing-topics'> Develop and build APIs to boost sales of the company's investment program (Valor PRO)</li>"    
             }
@@ -12,7 +12,7 @@
         {
             "companyName": "Atento",
             "job":{
-                "role": "Junior Software Developer",
+                "role": "Junior Software Engineer",
                 "date": "January 2021 - March 2021",
                 "description": "<li class='spacing-topics'> Assisted in creating internal systems to control URAs </li><li class='spacing-topics'> Developed a program to read .csv files and save information coming from URAs, accelerating the response time for the callers </li><li class='spacing-topics'> Agile software development </li>"    
             }

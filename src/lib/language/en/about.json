@@ -15,6 +15,9 @@
     "tools":{
         "title": "Tools"
     },
+    "databases":{
+        "title": "Databases"
+    },
     "programmingLanguage":{
         "title": "Programming languages"
     },
