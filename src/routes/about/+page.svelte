@@ -11,105 +11,101 @@
 
   $: listTools = [
     {
-      name: "Visual Studio",
-      imageSrc: "/images/vsLogo.svg",
-      type: $t("about.tools.title"),
-    },
-    {
-      name: "Visual Studio Code",
-      imageSrc: "/images/vsCodeLogo.png",
-      type: $t("about.tools.title"),
-    },
-    {
-      name: "Sql Server Management",
-      imageSrc: "/images/sql-server.png",
-      type: $t("about.tools.title"),
-    },
-    {
-      name: "Firebase",
-      imageSrc: "/images/firebaseLogo.png",
-      type: $t("about.tools.title"),
-    },
-    {
-      name: "Oracle Sql Developer",
-      imageSrc: "/images/OracleSqlLogo.png",
-      type: $t("about.tools.title"),
-    },
-    {
-      name: "Postman",
-      imageSrc: "/images/postmanLogo.svg",
-      type: $t("about.tools.title"),
-    },
-    {
-      name: "Android Studio",
-      imageSrc: "/images/androidStudioLogo.png",
-      type: $t("about.tools.title"),
-    },
-    {
-      name: "Flutter",
-      imageSrc: "/images/flutterLogo.png",
-      type: "Framework",
-    },
-    {
-      name: "Dart",
-      imageSrc: "/images/dartLogo.png",
-      type: $t("about.programmingLanguage.title"),
-    },
-    {
       name: "C#",
-      imageSrc: "/images/c-sharp.png",
       type: $t("about.programmingLanguage.title"),
     },
     {
       name: "JavaScript",
-      imageSrc: "/images/jsLogo.png",
       type: $t("about.programmingLanguage.title"),
     },
     {
       name: "SQL",
-      imageSrc: "/images/sql-server.png",
       type: $t("about.programmingLanguage.title"),
     },
     {
+      name: "NodeJS",
+      type: $t("about.programmingLanguage.title"),
+    },
+    {
+      name: "SQL Server Management",
+      type: $t("about.databases.title"),
+    },
+    {
+      name: "Firebase",
+      type: $t("about.databases.title"),
+    },
+    {
+      name: "Oracle SQL Developer",
+      type: $t("about.databases.title"),
+    },
+    {
+      name: "MongoDB",
+      type: $t("about.databases.title"),
+    },
+    {
       name: "Jquery",
-      imageSrc: "/images/jqueryLogo.png",
-      type: "Framework",
+      type: "Frameworks",
+    },
+    {
+      name: "ExpressJs",
+      type: "Frameworks",
+    },
+    {
+      name: "ReactJS",
+      type: "Frameworks",
+    },
+    {
+      name: "Svelte",
+      type: "Frameworks",
+    },
+    {
+      name: ".NET Core",
+      type: "Frameworks",
+    },
+    {
+      name: "Bootstrap",
+      type: "Frameworks",
+    },
+    {
+      name: "Visual Studio",
+      type: $t("about.tools.title"),
+    },
+    {
+      name: "Visual Studio Code",
+      type: $t("about.tools.title"),
+    },
+    {
+      name: "Postman",
+      type: $t("about.tools.title"),
+    },
+    {
+      name: "GitHub",
+      type: $t("about.tools.title"),
+    },
+    {
+      name: "Jira",
+      type: $t("about.tools.title"),
+    },
+    {
+      name: "Notion",
+      type: $t("about.tools.title"),
     },
     {
       name: "HTML",
-      imageSrc: "/images/HTML5Logo.png",
       type: $t("about.others.title"),
     },
     {
       name: "CSS",
-      imageSrc: "/images/css-3.png",
       type: $t("about.others.title"),
-    },
-    {
-      name: "Svelte",
-      imageSrc: "/images/svelteLogo.png",
-      type: "Framework",
-    },
-    {
-      name: "Notion",
-      imageSrc: "/images/notionLogo.png",
-      type: $t("about.tools.title"),
-    },
-    {
-      name: "ASP.NET Core",
-      imageSrc: "/images/NET-Core.png",
-      type: "Framework",
     },
     {
       name: "Entity Framework Core",
-      imageSrc: "/images/entity-framework.png",
       type: $t("about.others.title"),
     },
     {
-      name: "Bootstrap",
-      imageSrc: "/images/bootstrap-logo.svg",
-      type: "Framework",
-    },
+      name: "WPF",
+      type: $t("about.others.title"),
+    }
   ];
 
   $: listOfTypes = listTools
@@ -119,16 +115,24 @@
     });
 
   $: sortedList = listTools?.sort(function (a, b) {
-    const nameA = a.type.toUpperCase(); // ignore upper and lowercase
-    const nameB = b.type.toUpperCase(); // ignore upper and lowercase
-    if (nameA > nameB) {
-      return -1;
-    }
-    if (nameA < nameB) {
+    const typeA = a.type.toUpperCase();
+    const typeB = b.type.toUpperCase();
+    if (typeA > typeB) {
       return 1;
     }
+    if (typeA < typeB) {
+      return -1;
+    }
 
-    // names must be equal
+    const nameA = a.name.toUpperCase();
+    const nameB = b.name.toUpperCase();
+
+    if (nameA > nameB) {
+        return 1;
+    }
+    if (nameA < nameB) {
+        return -1;
+    }
     return 0;
   });
 </script>
@@ -212,6 +216,7 @@
     padding: 20px 20px 20px 20px;
     border-radius: 18px;
     align-items: center;
+    justify-content: center;
   }
 
   .custom-etec-logo {
@@ -342,9 +347,6 @@
               {#if item.type == type}
                 <div class="content-tools bg-white/[0.8] dark:bg-zinc-800/90 dark:border-2 dark:border-[#666666] dark:shadow-[0_0_0_2px_inset_rgb(48 54 61)] drop-shadow-[0_10px_8px_rgba(0,0,0,0.25)]">
                   <div>
-                    <img src={item.imageSrc} class="img-grid-tools" alt={item.name}/>
-                  </div>
-                  <div class="content-about-tools">
                     <h2 class="sub-title">{item.name}</h2>
                   </div>
                 </div>

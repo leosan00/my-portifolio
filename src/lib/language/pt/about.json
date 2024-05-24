@@ -15,6 +15,9 @@
     "tools":{
         "title": "Ferramentas"
     },
+    "databases":{
+        "title": "Banco de dados"
+    },
     "programmingLanguage":{
         "title": "Linguagens de programação"
     },

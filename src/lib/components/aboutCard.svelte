@@ -11,7 +11,6 @@
     padding: 25px 42px;
     display: flex;
     width: 100%;
-    height: 100%;
     flex-direction: column;
     align-items: flex-start;
     justify-content: space-evenly;
@@ -240,5 +239,5 @@
     <p class="my-1 mx-1">
       {@html $t('home.aboutCard.secondText')}
     </p>
-    <PageLink route = '/about' nameLegend = {$t("home.pagesLink.about")}/>
 </div>
+<PageLink route = '/about' nameLegend = {$t("home.pagesLink.about")}/>
