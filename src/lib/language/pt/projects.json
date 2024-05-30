@@ -8,6 +8,7 @@
     "hackathonHcDate":"Set/2018",
     "hackathonHc":"Finalista no hackathon que tinha o propósito de desenvolver um protótipo para o acompanhamento pós-cirúrgico.",
     "startUpInSchoolDescriptionDate": "Out/2016",
-    "startUpInSchoolDescription": "Finalista no projeto que tinha o propósito de criar uma Startup do zero de acordo com o tema escolhido pelo grupo, desenvolver um protótipo e apresentar para uma banca.<span><a target='_blank' href = 'https://www.youtube.com/watch?v=mz7mEwR92vA'> Clique aqui</a></span> para ver o vídeo de apresentação."
+    "startUpInSchoolDescription": "Finalista no projeto que tinha o propósito de criar uma Startup do zero de acordo com o tema escolhido pelo grupo, desenvolver um protótipo e apresentar para uma banca.<span><a target='_blank' href = 'https://www.youtube.com/watch?v=mz7mEwR92vA'> Clique aqui</a></span> para ver o vídeo de apresentação.",
+    "yelpcamp": "Desenvolvimento de um projeto para cadastro e atualização de locais para acampamentos ao redor do mundo. Integração com <a target= '_blank' href = 'https://www.mapbox.com/' >MapBox</a> na qual mostra mapa com localização. A aplicação foi desenvolvida utilizando NodeJS, expressJS, JSX e MongoDB Atlas. <span><a target='_blank' href = 'https://github.com/leosan00/yelp-camp'>Clique aqui</a></span> para ver o repositório no GitHub."
 
 }

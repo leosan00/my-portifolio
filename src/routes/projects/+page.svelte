@@ -37,6 +37,13 @@ import { onMount } from "svelte";
     date:$t('projects.startUpInSchoolDescriptionDate'),
     jobDescription: $t('projects.startUpInSchoolDescription')
     },
+    {
+    imageSrc:'/images/yelp-camp.png',
+    projectName: 'Yelp Camp',
+    location:'',
+    date:'',
+    jobDescription: $t('projects.yelpcamp')
+    },
   ];
 
   /**
@@ -176,8 +183,12 @@ import { onMount } from "svelte";
           <div class="main-text-projects w-full md:w-5/6">
             <h2 class="sub-title">{item.projectName}</h2>
             <div class="content-location">
+              {#if item.location}
               <h3 class="location-title">{item.location}</h3>
+              {/if}
+              {#if item.date}
               <h3 class="date-title">{item.date}</h3>
+              {/if}
             </div>
           </div>
         </div>
