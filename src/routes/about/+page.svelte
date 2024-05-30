@@ -1,9 +1,12 @@
 <script>
-  import { fade } from "svelte/transition";
+  import { fade, fly } from "svelte/transition";
   import { onMount } from "svelte";
   import { t } from "$lib/language/translations";
 
   let mounted = false;
+  let previewImage = false;
+  let x =0;
+  let y =0;
 
   onMount(() => {
     mounted = true;
@@ -135,6 +138,22 @@
     }
     return 0;
   });
+
+  function handleMouseOn (e){
+    previewImage = true;
+    x = e.pageX;
+		y = e.pageY;
+  }
+
+  function mouseMove(event) {
+		x = event.pageX;
+		y = event.pageY;
+	}
+
+  function handleMouseLeave(){
+    previewImage = false;
+  }
+
 </script>
 
 <style lang="postcss">
@@ -176,13 +195,6 @@
     line-height: 32px;
     font-weight: 800;
   }
-  .img-grid-tools {
-    width: 60px;
-    height: 100%;
-    min-width: 60px;
-    min-height: 60px;
-    border-radius: 8px;
-  }
   .img-div {
     width: 75px;
     height: 100%;
@@ -217,6 +229,7 @@
     border-radius: 18px;
     align-items: center;
     justify-content: center;
+    z-index: -1;
   }
 
   .custom-etec-logo {
@@ -246,6 +259,7 @@
     display: flex;
     align-items: center;
     padding-left: 0.5rem;
+    margin-bottom: 1.5rem;
   }
 
   @media (min-width: 640px) {
@@ -337,6 +351,21 @@
             {$t("about.language.englishLanguage")}
           </div>
         </div>
+        <h1 class="title">{$t("about.certification.title")}</h1>
+        <div class="about">
+          <div class="space-x-12">
+            <div class="sub-title cursor-default" on:pointerenter={handleMouseOn} on:pointerleave={handleMouseLeave} on:mousemove={mouseMove}>
+              <p>Web Developer Bootcamp - Colt Steele</p>
+              <p class="pl-1">{$t("about.certification.hours")}</p>
+              {#if previewImage}
+              <div class="w-3/5" style="top: {y-200}px; left: {x-250}px; position:absolute; z-index= 1; cursor: default;" >
+                <img src="https://udemy-certificate.s3.amazonaws.com/image/UC-9d086f4c-810d-45a4-9a57-2a5d39b68f47.jpg" alt="certification-web" in:fly = {{duration: 800 ,y:100}} out:fly = {{duration: 500 ,y:100}}/>
+              </div>
+              {/if}
+            </div>
+          </div>
+        </div>
+        <span class="text-sm"><a href="https://www.linkedin.com/in/leonardo-sanger-297ab713a/">{$t("about.certification.moreInfo")}</a></span>
     </div>
   <div>
       {#each listOfTypes as type}

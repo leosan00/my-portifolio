@@ -12,6 +12,11 @@
         "title":"Language",
         "englishLanguage": "Advanced"
     },
+    "certification":{
+        "title":"Certifications",
+        "hours": "74 hours",
+        "moreInfo" : "For more information, check my Linkedin profile here"
+    },
     "tools":{
         "title": "Tools"
     },

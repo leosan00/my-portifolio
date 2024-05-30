@@ -12,6 +12,11 @@
         "title":"Idiomas",
         "englishLanguage": "Avançado"
     },
+    "certification":{
+        "title":"Certificações",
+        "hours": "74 horas",
+        "moreInfo" : "Para mais informações, acesse meu Linkedin aqui"
+    },
     "tools":{
         "title": "Ferramentas"
     },
