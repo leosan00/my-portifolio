@@ -8,5 +8,6 @@
     "hackathonHcDate":"September 2018",
     "hackathonHc":"Designed a web app prototype to aid patients with post-surgical follow-up. Earned second place in the competition.",
     "startUpInSchoolDescriptionDate": "October 2016",
-    "startUpInSchoolDescription": "Created a startup from the scratch using the Google method. The target market was defined by the group. Developed a prototype using MIT App Inventor and presented a pitch deck to the judges. Achieved TOP 10 projects in the competition. To view the presentation video, click<span><a target='_blank' href = 'https://www.youtube.com/watch?v=mz7mEwR92vA'>here</a></span>."
+    "startUpInSchoolDescription": "Created a startup from the scratch using the Google method. The target market was defined by the group. Developed a prototype using MIT App Inventor and presented a pitch deck to the judges. Achieved TOP 10 projects in the competition. To view the presentation video, click<span><a target='_blank' href = 'https://www.youtube.com/watch?v=mz7mEwR92vA'>here</a></span>.",
+    "yelpcamp": "Develped a web app to register and update camping sites around the world. With <a target= '_blank' href = 'https://www.mapbox.com/' >MapBox</a> integration, it is possible to see in a map the exact location. The tecnologies to do the app were:  NodeJS, expressJS, JSX e MongoDB Atlas. Check the GitHub repository <span><a target='_blank' href = 'https://github.com/leosan00/yelp-camp'>here</a></span>."
 }
